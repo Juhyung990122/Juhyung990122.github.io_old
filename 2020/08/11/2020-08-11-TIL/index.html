@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/mons_fav.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/mons_fav.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/mons_fav.png">
+  <link rel="mask-icon" href="/images/mons_fav.png" color="#222">
+  <meta name="google-site-verification" content="axv8F5XUYwgAEqM6mad_Dpm8dURcOb6zJJumBXpZOH8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyung990122.github.io","root":"/","scheme":"Mist","version":"8.0.0-rc.4","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
+  </script>
+
+
+  <meta name="description" content="🌟Django social login🎯Social login소셜로그인이란 네이버, 구글에서 기존에 사용하던 회원정보를 통해 회원가입 및 로그인 할 수 있는 기능입니다. 🎯Django-allauth란?Django-allauth는 소셜 인증 정보를 처리하는 장고의 응용 프로그램입니다.두 웹사이에서 공유해야하는 정보를 관리하여 로그인, 로그아웃, 회원가입,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[2020.08.11]TIL">
+<meta property="og:url" content="http://juhyung990122.github.io/2020/08/11/2020-08-11-TIL/index.html">
+<meta property="og:site_name" content="여름산책">
+<meta property="og:description" content="🌟Django social login🎯Social login소셜로그인이란 네이버, 구글에서 기존에 사용하던 회원정보를 통해 회원가입 및 로그인 할 수 있는 기능입니다. 🎯Django-allauth란?Django-allauth는 소셜 인증 정보를 처리하는 장고의 응용 프로그램입니다.두 웹사이에서 공유해야하는 정보를 관리하여 로그인, 로그아웃, 회원가입,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-11T13:44:41.000Z">
+<meta property="article:modified_time" content="2020-08-17T17:42:52.352Z">
+<meta property="article:author" content="Guinness">
+<meta property="article:tag" content="TIL">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://juhyung990122.github.io/2020/08/11/2020-08-11-TIL/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>[2020.08.11]TIL | 여름산책</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">여름산책</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Django-social-login"><span class="nav-number">1.</span> <span class="nav-text">🌟Django social login</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Social-login"><span class="nav-number">1.1.</span> <span class="nav-text">🎯Social login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Django-allauth란"><span class="nav-number">1.2.</span> <span class="nav-text">🎯Django-allauth란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Site-framework"><span class="nav-number">1.3.</span> <span class="nav-text">🎯Site framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-AUTHENTICATION-BACKENDS"><span class="nav-number">1.4.</span> <span class="nav-text">🎯 AUTHENTICATION_BACKENDS</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Guinness"
+      src="/images/profile.png">
+  <p class="site-author-name" itemprop="name">Guinness</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0d1aW5uZXNzOTkwMTIy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Guinness990122"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/harukawa99@naver.com" title="E-Mail → harukawa99@naver.com"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3Byb2ZpbGUucGhwP2lkPTEwMDAxNDc1NDEwNDIyMQ==" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100014754104221"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/08/11/2020-08-11-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [2020.08.11]TIL
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-11 22:44:41" itemprop="dateCreated datePublished" datetime="2020-08-11T22:44:41+09:00">2020-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-18 02:42:52" itemprop="dateModified" datetime="2020-08-18T02:42:52+09:00">2020-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/08/11/2020-08-11-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/11/2020-08-11-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="🌟Django-social-login"><a href="#🌟Django-social-login" class="headerlink" title="🌟Django social login"></a>🌟Django social login</h2><h3 id="🎯Social-login"><a href="#🎯Social-login" class="headerlink" title="🎯Social login"></a>🎯Social login</h3><p>소셜로그인이란 네이버, 구글에서 기존에 사용하던 회원정보를 통해 회원가입 및 로그인 할 수 있는 기능입니다.</p>
+<h3 id="🎯Django-allauth란"><a href="#🎯Django-allauth란" class="headerlink" title="🎯Django-allauth란?"></a>🎯Django-allauth란?</h3><p>Django-allauth는 소셜 인증 정보를 처리하는 장고의 응용 프로그램입니다.<br>두 웹사이에서 공유해야하는 정보를 관리하여 로그인, 로그아웃, 회원가입, 계정관리 등등의 통합적인 기능을 제공합니다.</p>
+<p>공식문서 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Blbm5lcnNyL2RqYW5nby1hbGxhdXRo">https://github.com/pennersr/django-allauth<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="🎯Site-framework"><a href="#🎯Site-framework" class="headerlink" title="🎯Site framework"></a>🎯Site framework</h3><p>사이트 프레임워크는 장고로 만든 사이트의 도메인이름과 같은 기본 정보를 보관하는 곳 입니다.<br>이름 설정을 통해 제작한 기능을 웹사이트에 연결할 때 사용합니다.<br>이러한 사이트 프레임워크는 다음 기능을 수행할 때 유용합니다.</p>
+<ol>
+<li>콘텐츠 하나를 다중의 사이트에 보여주고 싶을 때 </li>
+</ol>
+<p>-&gt; sites 모델을 manytomany field로 정의합니다.<br>위의 과정을 통해 django admin으로 content를 단일 데이터로 관리하며, 이를 다중의 사이트에 일괄적으로 적용할 수 있습니다.<br>2. 콘텐츠를 단일 사이트에만 보여주고 싶을때<br>-&gt; sites모델을 foreignkey로 정의합니다.<br>3. 장고에서 다중의 사이트를 관리할 때<br>-&gt; 작성된 view코드에서 설정한 sites의 객체들을 호출할 수도 있습니다.<br>예시 : </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">example</span><span class="params">(request)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> settings.SITE_ID == <span class="string">'1'</span>:</span><br><span class="line">       <span class="number">1</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">elif</span>  settings.SITE_ID == <span class="string">'2'</span>:</span><br><span class="line">       <span class="number">2</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">else</span>: </span><br><span class="line">       예외처리</span><br></pre></td></tr></table></figure>
+
+<h3 id="🎯-AUTHENTICATION-BACKENDS"><a href="#🎯-AUTHENTICATION-BACKENDS" class="headerlink" title="🎯 AUTHENTICATION_BACKENDS"></a>🎯 AUTHENTICATION_BACKENDS</h3><p>AUTHENTICATION_BACKENDS는 인증을 할 때 돌 모델을 설정하는 공간입니다.<br>튜플로 구성되어 있으며 이 안에 모델을 작성하면 순서대로 인증을 시도하게 됩니다.<br>디폴트로  django.contrib.auth.backends.ModelBackend를 통해 인증하게 되어있으며<br>이를 변경하고 싶다면 아래의 코드처럼 settings.py에 설정해주면 됩니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AUTHENTICATION_BACKENDS = [</span><br><span class="line">    <span class="string">'allauth.account.auth_backends.AuthenticationBackend'</span>, <span class="comment"># 소셜로그인 회원정보모델</span></span><br><span class="line">    <span class="string">'django.contrib.auth.backends.ModelBackend'</span>, <span class="comment"># Django 기본 회원정보 모델</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIL/" rel="tag"># TIL</a>
+              <a href="/tags/Django/" rel="tag"># Django</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/07/%EC%8A%A4%ED%8C%80%EA%B2%8C%EC%9E%84%20%EB%9E%AD%ED%82%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-2%ED%9A%8C%EC%B0%A8/" rel="prev" title="스팀게임 랭킹사이트-2회차">
+      <i class="fa fa-chevron-left"></i> 스팀게임 랭킹사이트-2회차
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/16/2020-08-16-TIL/" rel="next" title="[2020.08.16]TIL">
+      [2020.08.16]TIL <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guinness</span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://guinness990122.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://juhyung990122.github.io/2020/08/11/2020-08-11-TIL/";
+    this.page.identifier = "2020/08/11/2020-08-11-TIL/";
+    this.page.title = "[2020.08.11]TIL";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://guinness990122.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
