@@ -369,7 +369,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-28 00:04:18" itemprop="dateModified" datetime="2020-08-28T00:04:18+09:00">2020-08-28</time>
+                <time title="Modified: 2020-08-28 00:20:56" itemprop="dateModified" datetime="2020-08-28T00:20:56+09:00">2020-08-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -428,11 +428,8 @@
 <p>하지만 두 방법 다 매번 runserver마다 작성해야하므로 쓰기 번거롭습니다.<br>이때 <code>가상환경 내</code>에 DJANGO_SETTINGS_MODULE 환경변수를<br>등록해두면 –settings 없이도 사용할 수 있게 됩니다.<br>shell을 통해 .env 위치로 들어간 뒤, 가상환경을 활성화 하고<br>다음 내용을 작성하여 환경변수를 등록해줍니다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DJANGO_SETTINGS_MODULE = 프로젝트 폴더.settings.사용할 파일명</span><br></pre></td></tr></table></figure>
 
-
-<ol start="4">
-<li>requirements.txt<br>settings.py를 개발용과 배포용으로 나눈김에<br>requirements.txt도 공통,개발용,배포용으로 나누면<br>패키지설치에 필요한 시간과 메모리를 줄일 수 있습니다.<br>두 환경 다 <code>공통적으로 설치해야하는 것</code>은 <strong>base.txt</strong>에<br><code>개발할때만 필요한 패키지</code>는 <strong>development.txt</strong>에<br><code>배포할때 필요한 패키지</code>는 <strong>production.txt</strong>에 넣어서 따로따로 설정합니다.</li>
-</ol>
-<p>참고링크<br><span class="exturl" data-url="aHR0cHM6Ly9jamg1NDE0LmdpdGh1Yi5pby9kamFuZ28tc2V0dGluZ3Mtc2VwYXJhdGUv">https://cjh5414.github.io/django-settings-separate/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly93aWtpZG9jcy5uZXQvNjYwNiNfNQ==">https://wikidocs.net/6606#_5<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="🎯-requirements-txt-분리하기"><a href="#🎯-requirements-txt-분리하기" class="headerlink" title="🎯 requirements.txt 분리하기"></a>🎯 requirements.txt 분리하기</h3><p>settings.py를 개발용과 배포용으로 나눈김에<br>requirements.txt도 공통,개발용,배포용으로 나누면<br>패키지설치에 필요한 시간과 메모리를 줄일 수 있습니다.<br>두 환경 다 <code>공통적으로 설치해야하는 것</code>은 <strong>base.txt</strong>에<br><code>개발할때만 필요한 패키지</code>는 <strong>development.txt</strong>에<br><code>배포할때 필요한 패키지</code>는 <strong>production.txt</strong>에 넣어서 따로따로 설정합니다.</p>
+<p>참고링크<br><span class="exturl" data-url="aHR0cHM6Ly9jamg1NDE0LmdpdGh1Yi5pby9kamFuZ28tc2V0dGluZ3Mtc2VwYXJhdGUv">https://cjh5414.github.io/django-settings-separate/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly93aWtpZG9jcy5uZXQvNjYwNiNfNQ==">https://wikidocs.net/6606#_5<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9laGZnazc4LmdpdGh1Yi5pby8yMDE4LzAyLzAyL0RqYW5nby1TZXR0aW5nc19SZXF1aXJlbWVudHMvI2hlYWRpbmctNS1yZXF1aXJlbWVudHN0eHQtJUVCJUI2JTg0JUVCJUE2JUFD">https://ehfgk78.github.io/2018/02/02/Django-Settings_Requirements/#heading-5-requirementstxt-%EB%B6%84%EB%A6%AC<i class="fa fa-external-link-alt"></i></span></p>
 
       
     </div>
