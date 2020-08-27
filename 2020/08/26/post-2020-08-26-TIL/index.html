@@ -24,14 +24,18 @@
   </script>
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="🌟장고 Settings 분리하기🎯settings.py를 하나로 쓸때의 문제점기존처럼 settings.py를 하나로 사용하게 되면 개발 시DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다. 🎯settings.py 왜 분리해서 사용할까요?setti">
+<meta property="og:type" content="article">
 <meta property="og:title" content="[2020.08.26]TIL">
 <meta property="og:url" content="http://juhyung990122.github.io/2020/08/26/post-2020-08-26-TIL/index.html">
 <meta property="og:site_name" content="여름산책">
+<meta property="og:description" content="🌟장고 Settings 분리하기🎯settings.py를 하나로 쓸때의 문제점기존처럼 settings.py를 하나로 사용하게 되면 개발 시DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다. 🎯settings.py 왜 분리해서 사용할까요?setti">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-26T05:18:43.000Z">
-<meta property="article:modified_time" content="2020-08-27T06:37:19.703Z">
+<meta property="article:modified_time" content="2020-08-27T15:04:18.415Z">
 <meta property="article:author" content="Guinness">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://juhyung990122.github.io/2020/08/26/post-2020-08-26-TIL/">
@@ -163,7 +167,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -175,6 +179,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟장고-Settings-분리하기"><span class="nav-number">1.</span> <span class="nav-text">🌟장고 Settings 분리하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py를-하나로-쓸때의-문제점"><span class="nav-number">1.1.</span> <span class="nav-text">🎯settings.py를 하나로 쓸때의 문제점</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-왜-분리해서-사용할까요"><span class="nav-number">1.2.</span> <span class="nav-text">🎯settings.py 왜 분리해서 사용할까요?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-분리방식"><span class="nav-number">1.3.</span> <span class="nav-text">🎯settings.py 분리방식</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-분리하기"><span class="nav-number">1.4.</span> <span class="nav-text">🎯settings.py 분리하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯분리한-settings-py-적용하기"><span class="nav-number">1.5.</span> <span class="nav-text">🎯분리한 settings.py 적용하기</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -280,8 +285,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 15:37:19" itemprop="dateModified" datetime="2020-08-27T15:37:19+09:00">2020-08-27</time>
+                <time title="Modified: 2020-08-28 00:04:18" itemprop="dateModified" datetime="2020-08-28T00:04:18+09:00">2020-08-28</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -315,7 +329,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="🌟장고-Settings-분리하기"><a href="#🌟장고-Settings-분리하기" class="headerlink" title="🌟장고 Settings 분리하기"></a>🌟장고 Settings 분리하기</h2><h3 id="🎯settings-py를-하나로-쓸때의-문제점"><a href="#🎯settings-py를-하나로-쓸때의-문제점" class="headerlink" title="🎯settings.py를 하나로 쓸때의 문제점"></a>🎯settings.py를 하나로 쓸때의 문제점</h3><p>기존처럼 settings.py를 하나로 사용하게 되면 개발 시<br>DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.<br>이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다.</p>
+<h3 id="🎯settings-py-왜-분리해서-사용할까요"><a href="#🎯settings-py-왜-분리해서-사용할까요" class="headerlink" title="🎯settings.py 왜 분리해서 사용할까요?"></a>🎯settings.py 왜 분리해서 사용할까요?</h3><p>settings.py를 분리하게 되면 몇가지 장점들이 있는데 다음과 같습니다.</p>
+<ol>
+<li>기본 환경에 들어있는 디버그 변수를 사용하지 않아도 된다.</li>
+<li>개발할 땐 개발용 세팅을, 배포할땐 배포용 세팅을 따로 분리해두므로 그때그때 변경하지 않아도 된다.</li>
+<li>local환경 버전관리에도 좀더 용이하다.<br>결론적으로 얘기하자면 <code>환경마다 settings.py 설정 및 적용을 달리할 수 있다는 장점때문에</code><br>실무에서는 주로 settings.py를 분리해서 사용합니다.</li>
+</ol>
+<h3 id="🎯settings-py-분리방식"><a href="#🎯settings-py-분리방식" class="headerlink" title="🎯settings.py 분리방식"></a>🎯settings.py 분리방식</h3><p>settings.py를 쪼갤때는 <code>공개여부</code>에 따라 파일을 분리합니다.<br>모든 환경에서 공통적으로 사용되는 공개 설정은 base.py 라는 파일에 작성하고<br>환경에 따라 설정을 달리 작성할 때는 local(development).py,production.py를 활용합니다.<br>비공개 설정은 대부분 환경변수를 활용합니다. 설정값에 환경변수를 로드하여 공개여부를 설정할 수 있습니다.<br>공개적인 설정은 레포지토리에서 저장되지만, 비공개 설정은 gitignore에 반드시 추가하여 관리해야 합니다.</p>
+<h3 id="🎯settings-py-분리하기"><a href="#🎯settings-py-분리하기" class="headerlink" title="🎯settings.py 분리하기"></a>🎯settings.py 분리하기</h3><ol>
+<li><p><strong>development.py</strong><br>베이스를 전부 임포트해와서 상속받은 뒤, debug는 true로,<br>database는 개발용 임시db(default)로 정의해줍니다.<br>이때는 debug가 true이므로 allowed_host엔 자동으로 로컬주소가 입력됩니다.</p>
+</li>
+<li><p><strong>production.py</strong><br>베이스를 전부 임포트해와서 상속받은 뒤, debug는 false로, database는 배포용 데이터베이스로 정의해줍니다.<br>추가적으로 allowed_host에 실제로 런칭할 서비스의 웹사이트 도메인을 추가하여,<br>권한을 도용하여 중요기능을 실행시키는 <code>CSRF 공격</code>으로부터 웹사이트를 보호합니다.<br>이는 debug가 false값일때 활성화되며 allowed_host에 도메인이 추가되어있지 않으면<br>Disallowedhost가 발생하여 웹사이트가 정상적으로 작동하지 않습니다.</p>
+</li>
+<li><p><strong>settings.py</strong><br>base.py에 있는 <code>BASE_DIR은 프로젝트의 root 경로를 저장해두는 변수</code>입니다.<br>이 변수를 통해 파일의 경로를 지정하는데, 우리는 기존의 settings.py를 안쪽으로 한번 쪼갰으므로<br>기존의 변수에서 os.path.dirname()을 한번 더 추가하여 root 경로를 한단계 더 안쪽으로 설정해줍니다.</p>
+</li>
+</ol>
+<h3 id="🎯분리한-settings-py-적용하기"><a href="#🎯분리한-settings-py-적용하기" class="headerlink" title="🎯분리한 settings.py 적용하기"></a>🎯분리한 settings.py 적용하기</h3><p>각각 나눠진 파일들을 아래의 명령어를 통해 따로따로 적용하여 runserver 할 수 있습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py shell --settings = 프로젝트 폴더.settings.사용할 파일명</span><br><span class="line">python3 manage.py runserver --settings = 프로젝트 폴더.settings.사용할 파일명</span><br></pre></td></tr></table></figure>
+<p>이외에도 shell을 통해서 환경변수를 지정해주는 방식도 있습니다.</p>
+<p>하지만 두 방법 다 매번 runserver마다 작성해야하므로 쓰기 번거롭습니다.<br>이때 <code>가상환경 내</code>에 DJANGO_SETTINGS_MODULE 환경변수를<br>등록해두면 –settings 없이도 사용할 수 있게 됩니다.<br>shell을 통해 .env 위치로 들어간 뒤, 가상환경을 활성화 하고<br>다음 내용을 작성하여 환경변수를 등록해줍니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DJANGO_SETTINGS_MODULE = 프로젝트 폴더.settings.사용할 파일명</span><br></pre></td></tr></table></figure>
+
+
+<ol start="4">
+<li>requirements.txt<br>settings.py를 개발용과 배포용으로 나눈김에<br>requirements.txt도 공통,개발용,배포용으로 나누면<br>패키지설치에 필요한 시간과 메모리를 줄일 수 있습니다.<br>두 환경 다 <code>공통적으로 설치해야하는 것</code>은 <strong>base.txt</strong>에<br><code>개발할때만 필요한 패키지</code>는 <strong>development.txt</strong>에<br><code>배포할때 필요한 패키지</code>는 <strong>production.txt</strong>에 넣어서 따로따로 설정합니다.</li>
+</ol>
+<p>참고링크<br><span class="exturl" data-url="aHR0cHM6Ly9jamg1NDE0LmdpdGh1Yi5pby9kamFuZ28tc2V0dGluZ3Mtc2VwYXJhdGUv">https://cjh5414.github.io/django-settings-separate/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly93aWtpZG9jcy5uZXQvNjYwNiNfNQ==">https://wikidocs.net/6606#_5<i class="fa fa-external-link-alt"></i></span></p>
+
     </div>
 
     
@@ -323,6 +364,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Django/" rel="tag"># Django</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
 
         
 
