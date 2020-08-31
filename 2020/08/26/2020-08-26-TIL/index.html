@@ -24,15 +24,15 @@
   </script>
 
 
-  <meta name="description" content="🌟장고 Settings 분리하기🎯settings.py를 하나로 쓸때의 문제점기존처럼 settings.py를 하나로 사용하게 되면 개발 시DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다. 🎯settings.py 왜 분리해서 사용할까요?setti">
+  <meta name="description" content="🌟Django Settings 분리하기🎯settings.py를 하나로 쓸때의 문제점기존처럼 settings.py를 하나로 사용하게 되면 개발 시DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다. 🎯settings.py 왜 분리해서 사용할까요?s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[2020.08.26]TIL">
 <meta property="og:url" content="http://juhyung990122.github.io/2020/08/26/2020-08-26-TIL/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="🌟장고 Settings 분리하기🎯settings.py를 하나로 쓸때의 문제점기존처럼 settings.py를 하나로 사용하게 되면 개발 시DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다. 🎯settings.py 왜 분리해서 사용할까요?setti">
+<meta property="og:description" content="🌟Django Settings 분리하기🎯settings.py를 하나로 쓸때의 문제점기존처럼 settings.py를 하나로 사용하게 되면 개발 시DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다. 🎯settings.py 왜 분리해서 사용할까요?s">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-26T05:18:43.000Z">
-<meta property="article:modified_time" content="2020-08-27T15:42:25.020Z">
+<meta property="article:modified_time" content="2020-08-31T04:45:55.392Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="Django">
 <meta property="article:tag" content="python">
@@ -179,7 +179,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟장고-Settings-분리하기"><span class="nav-number">1.</span> <span class="nav-text">🌟장고 Settings 분리하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py를-하나로-쓸때의-문제점"><span class="nav-number">1.1.</span> <span class="nav-text">🎯settings.py를 하나로 쓸때의 문제점</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-왜-분리해서-사용할까요"><span class="nav-number">1.2.</span> <span class="nav-text">🎯settings.py 왜 분리해서 사용할까요?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-분리방식"><span class="nav-number">1.3.</span> <span class="nav-text">🎯settings.py 분리방식</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-분리하기"><span class="nav-number">1.4.</span> <span class="nav-text">🎯settings.py 분리하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯분리한-settings-py-적용하기"><span class="nav-number">1.5.</span> <span class="nav-text">🎯분리한 settings.py 적용하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-requirements-txt-분리하기"><span class="nav-number">1.6.</span> <span class="nav-text">🎯 requirements.txt 분리하기</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Django-Settings-분리하기"><span class="nav-number">1.</span> <span class="nav-text">🌟Django Settings 분리하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py를-하나로-쓸때의-문제점"><span class="nav-number">1.1.</span> <span class="nav-text">🎯settings.py를 하나로 쓸때의 문제점</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-왜-분리해서-사용할까요"><span class="nav-number">1.2.</span> <span class="nav-text">🎯settings.py 왜 분리해서 사용할까요?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-분리방식"><span class="nav-number">1.3.</span> <span class="nav-text">🎯settings.py 분리방식</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯settings-py-분리하기"><span class="nav-number">1.4.</span> <span class="nav-text">🎯settings.py 분리하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯분리한-settings-py-적용하기"><span class="nav-number">1.5.</span> <span class="nav-text">🎯분리한 settings.py 적용하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-requirements-txt-분리하기"><span class="nav-number">1.6.</span> <span class="nav-text">🎯 requirements.txt 분리하기</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -285,7 +285,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-28 00:42:25" itemprop="dateModified" datetime="2020-08-28T00:42:25+09:00">2020-08-28</time>
+                <time title="Modified: 2020-08-31 13:45:55" itemprop="dateModified" datetime="2020-08-31T13:45:55+09:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -329,7 +329,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="🌟장고-Settings-분리하기"><a href="#🌟장고-Settings-분리하기" class="headerlink" title="🌟장고 Settings 분리하기"></a>🌟장고 Settings 분리하기</h2><h3 id="🎯settings-py를-하나로-쓸때의-문제점"><a href="#🎯settings-py를-하나로-쓸때의-문제점" class="headerlink" title="🎯settings.py를 하나로 쓸때의 문제점"></a>🎯settings.py를 하나로 쓸때의 문제점</h3><p>기존처럼 settings.py를 하나로 사용하게 되면 개발 시<br>DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.<br>이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다.</p>
+        <h2 id="🌟Django-Settings-분리하기"><a href="#🌟Django-Settings-분리하기" class="headerlink" title="🌟Django Settings 분리하기"></a>🌟Django Settings 분리하기</h2><h3 id="🎯settings-py를-하나로-쓸때의-문제점"><a href="#🎯settings-py를-하나로-쓸때의-문제점" class="headerlink" title="🎯settings.py를 하나로 쓸때의 문제점"></a>🎯settings.py를 하나로 쓸때의 문제점</h3><p>기존처럼 settings.py를 하나로 사용하게 되면 개발 시<br>DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.<br>이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다.</p>
 <h3 id="🎯settings-py-왜-분리해서-사용할까요"><a href="#🎯settings-py-왜-분리해서-사용할까요" class="headerlink" title="🎯settings.py 왜 분리해서 사용할까요?"></a>🎯settings.py 왜 분리해서 사용할까요?</h3><p>settings.py를 분리하게 되면 몇가지 장점들이 있는데 다음과 같습니다.</p>
 <ol>
 <li>기본 환경에 들어있는 디버그 변수를 사용하지 않아도 된다.</li>
