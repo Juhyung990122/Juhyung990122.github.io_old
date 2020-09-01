@@ -32,7 +32,7 @@
 <meta property="og:description" content="🌟Django social login🎯Social login소셜로그인이란 네이버, 구글에서 기존에 사용하던 회원정보를 통해 회원가입 및 로그인 할 수 있는 기능입니다. 🎯Django-allauth란?Django-allauth는 소셜 인증 정보를 처리하는 장고의 응용 프로그램입니다.두 웹사이에서 공유해야하는 정보를 관리하여 로그인, 로그아웃, 회원가입,">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-11T13:44:41.000Z">
-<meta property="article:modified_time" content="2020-08-17T17:42:52.352Z">
+<meta property="article:modified_time" content="2020-09-01T12:49:17.258Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="TIL">
 <meta property="article:tag" content="Django">
@@ -195,7 +195,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -208,7 +208,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -286,7 +286,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-18 02:42:52" itemprop="dateModified" datetime="2020-08-18T02:42:52+09:00">2020-08-18</time>
+                <time title="Modified: 2020-09-01 21:49:17" itemprop="dateModified" datetime="2020-09-01T21:49:17+09:00">2020-09-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -335,11 +335,12 @@
 <p>공식문서 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Blbm5lcnNyL2RqYW5nby1hbGxhdXRo">https://github.com/pennersr/django-allauth<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="🎯Site-framework"><a href="#🎯Site-framework" class="headerlink" title="🎯Site framework"></a>🎯Site framework</h3><p>사이트 프레임워크는 장고로 만든 사이트의 도메인이름과 같은 기본 정보를 보관하는 곳 입니다.<br>이름 설정을 통해 제작한 기능을 웹사이트에 연결할 때 사용합니다.<br>이러한 사이트 프레임워크는 다음 기능을 수행할 때 유용합니다.</p>
 <ol>
-<li>콘텐츠 하나를 다중의 사이트에 보여주고 싶을 때 </li>
-</ol>
-<p>-&gt; sites 모델을 manytomany field로 정의합니다.<br>위의 과정을 통해 django admin으로 content를 단일 데이터로 관리하며, 이를 다중의 사이트에 일괄적으로 적용할 수 있습니다.<br>2. 콘텐츠를 단일 사이트에만 보여주고 싶을때<br>-&gt; sites모델을 foreignkey로 정의합니다.<br>3. 장고에서 다중의 사이트를 관리할 때<br>-&gt; 작성된 view코드에서 설정한 sites의 객체들을 호출할 수도 있습니다.<br>예시 : </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">example</span><span class="params">(request)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> settings.SITE_ID == <span class="string">'1'</span>:</span><br><span class="line">       <span class="number">1</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">elif</span>  settings.SITE_ID == <span class="string">'2'</span>:</span><br><span class="line">       <span class="number">2</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">else</span>: </span><br><span class="line">       예외처리</span><br></pre></td></tr></table></figure>
+<li>콘텐츠 하나를 다중의 사이트에 보여주고 싶을 때<br> -&gt; sites 모델을 manytomany field로 정의합니다.<br> 위의 과정을 통해 django admin으로 content를 단일 데이터로 관리하며, 이를 다중의 사이트에 일괄적으로 적용할 수 있습니다.</li>
+<li>콘텐츠를 단일 사이트에만 보여주고 싶을때<br> -&gt; sites모델을 foreignkey로 정의합니다.</li>
+<li>장고에서 다중의 사이트를 관리할 때<br> -&gt; 작성된 view코드에서 설정한 sites의 객체들을 호출할 수도 있습니다.<br>예시 : <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">example</span><span class="params">(request)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> settings.SITE_ID == <span class="string">'1'</span>:</span><br><span class="line">       <span class="number">1</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">elif</span>  settings.SITE_ID == <span class="string">'2'</span>:</span><br><span class="line">       <span class="number">2</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">else</span>: </span><br><span class="line">       예외처리</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
 <h3 id="🎯-AUTHENTICATION-BACKENDS"><a href="#🎯-AUTHENTICATION-BACKENDS" class="headerlink" title="🎯 AUTHENTICATION_BACKENDS"></a>🎯 AUTHENTICATION_BACKENDS</h3><p>AUTHENTICATION_BACKENDS는 인증을 할 때 돌 모델을 설정하는 공간입니다.<br>튜플로 구성되어 있으며 이 안에 모델을 작성하면 순서대로 인증을 시도하게 됩니다.<br>디폴트로  django.contrib.auth.backends.ModelBackend를 통해 인증하게 되어있으며<br>이를 변경하고 싶다면 아래의 코드처럼 settings.py에 설정해주면 됩니다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AUTHENTICATION_BACKENDS = [</span><br><span class="line">    <span class="string">'allauth.account.auth_backends.AuthenticationBackend'</span>, <span class="comment"># 소셜로그인 회원정보모델</span></span><br><span class="line">    <span class="string">'django.contrib.auth.backends.ModelBackend'</span>, <span class="comment"># Django 기본 회원정보 모델</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
     </div>

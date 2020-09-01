@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -200,7 +200,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -243,6 +243,128 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/09/01/2020-09-01-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/2020-09-01-TIL/" class="post-title-link" itemprop="url">[2020.09.01]TIL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-09-01 19:45:36 / Modified: 21:51:36" itemprop="dateCreated datePublished" datetime="2020-09-01T19:45:36+09:00">2020-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/01/2020-09-01-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/01/2020-09-01-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟우아한-테크러닝-1회차"><a href="#🌟우아한-테크러닝-1회차" class="headerlink" title="🌟우아한 테크러닝 1회차"></a>🌟우아한 테크러닝 1회차</h2><h3 id="🎯Typescript란"><a href="#🎯Typescript란" class="headerlink" title="🎯Typescript란?"></a>🎯Typescript란?</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL3BsYXk/I2NvZGUvUQ==">https://www.typescriptlang.org/play?#code/Q<i class="fa fa-external-link-alt"></i></span><br>타입스크립트는 javascript의 구문과 의미를 지원하면서 동시에<br>정적 유형을 지원하는 오픈소스 프로그래밍 언어입니다.</p>
+<h3 id="🎯Typescript-기본정보"><a href="#🎯Typescript-기본정보" class="headerlink" title="🎯Typescript 기본정보"></a>🎯Typescript 기본정보</h3><ul>
+<li><p><strong>타입 추론과 명시</strong><br>  컴파일러가 10이라는 숫자를 넣으면 숫자인걸 추론할 수 있습니다.<br>  타입을 명시해주려면 lef foo : 타입명 의 형식으로 명시해줍니다.</p>
+</li>
+<li><p><strong>Type Alias</strong><br>  type 의미부여된 이름 = 형식; 으로 타입에 닉네임을 붙여 가독성을 높입니다.<br>  자바스크립트로 변환시 컴파일타임까지만 작동한 뒤 사라집니다.</p>
+</li>
+<li><p><strong>type alias와 interface를 이용하여 객체생성</strong></p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">type 객체이름 = &#123;</span><br><span class="line">    요소 : 형식;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface 객체이름 &#123;</span><br><span class="line">    요소 : 형식;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> 변수 : 객체 &#123;</span><br><span class="line">    요소입력,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  둘의 차이는 나중에 다룰 것!</p>
+</li>
+</ul>
+<h3 id="🎯React"><a href="#🎯React" class="headerlink" title="🎯React"></a>🎯React</h3><ul>
+<li><p><strong>React 프로젝트 맨 상단에 항상 React를 import 하는 이유</strong><br>  리액트 컴포넌트 패키지를 항상 임포트 시켜야합니다. createlement 메소드를 사용하기 때문입니다.<br>  우리가 흔히 사용하는 <APP/> 은 JSX라는 문법입니다.<br>  이 엘리먼트는 실제로 React.createElement()를 간단하게 호출하기 위해 쓰입니다.<br>  crateElement 메소드가 호출되면 JSX로 들어온 데이터를 (tagname, props, child)요소로 javascript 형태로 변환합니다.</p>
+</li>
+<li><p><strong>Reactstrictmode</strong><br>  리액트 컴포넌트들중에서 리액트가 판단하기에 문제점을 가지고 있는 컴포넌트에 대하여 경고를 보내줍니다.<br>  개발단에서만 작동합니다.</p>
+</li>
+<li><p><strong>React 기본 컴포넌트 정의방법</strong></p>
+<pre><code class="javascript"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;
+<span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;
+
+</code></pre>
+</li>
+</ul>
+<pre><code>//리액트 컴포넌트
+function App(props){
+return(
+&lt;h1&gt;{props.title}&lt;/h1&gt;
+)
+
+}
+
+//reactdom.render 은 최상위에서만 한번 호출(트리형태)
+ReactDOM.render(
+&lt;React.StrictMode&gt; 
+    &lt;App title=&quot;Tech hello?&quot; color=&quot;blue&quot;/&gt;
+&lt;/React.StrictMode&gt;,
+//props에 title이라는 속성 넘겨줘서 app에 넣을 수 있음.
+document.getElementById(&apos;root&apos;)
+);
+
+``` </code></pre><p><strong>+) CLI 장단점</strong><br>장점 : 간단하고 앵간한건 다 제공합니다.<br>단점 : 제공하지 않는 세팅을 하는게 힘들며 다양한 환경에 대한 대응이 어렵습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -913,7 +1035,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-18 02:42:52" itemprop="dateModified" datetime="2020-08-18T02:42:52+09:00">2020-08-18</time>
+                <time title="Modified: 2020-09-01 21:49:17" itemprop="dateModified" datetime="2020-09-01T21:49:17+09:00">2020-09-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -955,11 +1077,12 @@
 <p>공식문서 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Blbm5lcnNyL2RqYW5nby1hbGxhdXRo">https://github.com/pennersr/django-allauth<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="🎯Site-framework"><a href="#🎯Site-framework" class="headerlink" title="🎯Site framework"></a>🎯Site framework</h3><p>사이트 프레임워크는 장고로 만든 사이트의 도메인이름과 같은 기본 정보를 보관하는 곳 입니다.<br>이름 설정을 통해 제작한 기능을 웹사이트에 연결할 때 사용합니다.<br>이러한 사이트 프레임워크는 다음 기능을 수행할 때 유용합니다.</p>
 <ol>
-<li>콘텐츠 하나를 다중의 사이트에 보여주고 싶을 때 </li>
-</ol>
-<p>-&gt; sites 모델을 manytomany field로 정의합니다.<br>위의 과정을 통해 django admin으로 content를 단일 데이터로 관리하며, 이를 다중의 사이트에 일괄적으로 적용할 수 있습니다.<br>2. 콘텐츠를 단일 사이트에만 보여주고 싶을때<br>-&gt; sites모델을 foreignkey로 정의합니다.<br>3. 장고에서 다중의 사이트를 관리할 때<br>-&gt; 작성된 view코드에서 설정한 sites의 객체들을 호출할 수도 있습니다.<br>예시 : </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">example</span><span class="params">(request)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> settings.SITE_ID == <span class="string">'1'</span>:</span><br><span class="line">       <span class="number">1</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">elif</span>  settings.SITE_ID == <span class="string">'2'</span>:</span><br><span class="line">       <span class="number">2</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">else</span>: </span><br><span class="line">       예외처리</span><br></pre></td></tr></table></figure>
+<li>콘텐츠 하나를 다중의 사이트에 보여주고 싶을 때<br> -&gt; sites 모델을 manytomany field로 정의합니다.<br> 위의 과정을 통해 django admin으로 content를 단일 데이터로 관리하며, 이를 다중의 사이트에 일괄적으로 적용할 수 있습니다.</li>
+<li>콘텐츠를 단일 사이트에만 보여주고 싶을때<br> -&gt; sites모델을 foreignkey로 정의합니다.</li>
+<li>장고에서 다중의 사이트를 관리할 때<br> -&gt; 작성된 view코드에서 설정한 sites의 객체들을 호출할 수도 있습니다.<br>예시 : <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">example</span><span class="params">(request)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> settings.SITE_ID == <span class="string">'1'</span>:</span><br><span class="line">       <span class="number">1</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">elif</span>  settings.SITE_ID == <span class="string">'2'</span>:</span><br><span class="line">       <span class="number">2</span>에 설정해둔 페이지 기능</span><br><span class="line">   <span class="keyword">else</span>: </span><br><span class="line">       예외처리</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
 <h3 id="🎯-AUTHENTICATION-BACKENDS"><a href="#🎯-AUTHENTICATION-BACKENDS" class="headerlink" title="🎯 AUTHENTICATION_BACKENDS"></a>🎯 AUTHENTICATION_BACKENDS</h3><p>AUTHENTICATION_BACKENDS는 인증을 할 때 돌 모델을 설정하는 공간입니다.<br>튜플로 구성되어 있으며 이 안에 모델을 작성하면 순서대로 인증을 시도하게 됩니다.<br>디폴트로  django.contrib.auth.backends.ModelBackend를 통해 인증하게 되어있으며<br>이를 변경하고 싶다면 아래의 코드처럼 settings.py에 설정해주면 됩니다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AUTHENTICATION_BACKENDS = [</span><br><span class="line">    <span class="string">'allauth.account.auth_backends.AuthenticationBackend'</span>, <span class="comment"># 소셜로그인 회원정보모델</span></span><br><span class="line">    <span class="string">'django.contrib.auth.backends.ModelBackend'</span>, <span class="comment"># Django 기본 회원정보 모델</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
       
@@ -1161,100 +1284,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">options.add_argument(<span class="string">"lang=ko_KR"</span>)</span><br></pre></td></tr></table></figure>
 
 <p>참고 : <span class="exturl" data-url="aHR0cHM6Ly9iZW9taS5naXRodWIuaW8vMjAxNy8wOS8yOC9Ib3dUb01ha2VXZWJDcmF3bGVyLUhlYWRsZXNzLUNocm9tZS8=">https://beomi.github.io/2017/09/28/HowToMakeWebCrawler-Headless-Chrome/<i class="fa fa-external-link-alt"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/08/05/%EC%8A%A4%ED%8C%80%EA%B2%8C%EC%9E%84%20%EB%9E%AD%ED%82%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20-%201%20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/05/%EC%8A%A4%ED%8C%80%EA%B2%8C%EC%9E%84%20%EB%9E%AD%ED%82%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20-%201%20/" class="post-title-link" itemprop="url">스팀게임 랭킹사이트 - 1회차</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-08-05 01:18:49 / Modified: 04:17:41" itemprop="dateCreated datePublished" datetime="2020-08-05T01:18:49+09:00">2020-08-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/08/05/%EC%8A%A4%ED%8C%80%EA%B2%8C%EC%9E%84%20%EB%9E%AD%ED%82%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20-%201%20/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/05/스팀게임 랭킹사이트 - 1 /" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="🌟스팀게임-랭킹사이트-프로젝트"><a href="#🌟스팀게임-랭킹사이트-프로젝트" class="headerlink" title="🌟스팀게임 랭킹사이트 프로젝트"></a>🌟스팀게임 랭킹사이트 프로젝트</h2><h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>backend: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0d1aW5uZXNzOTkwMTIyL1N0ZWFtUmFua2luZ19iYWNrZW5k">비공개레포<i class="fa fa-external-link-alt"></i></span><br>frontend: <a href="">비공개레포</a></p>
-<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>DRF와 Vue.js 를 활용한 스팀게임 인기순위 100위 랭킹페이지입니다.<br>크롤러를 통해 하루단위로 데이터를 업데이트 하는것이 목표입니다.</p>
-<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
-<li>DRF를 사용하여 백엔드 기본설정</li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9zdG9yZS5zdGVhbXBvd2VyZWQuY29tL3N0YXRzLz9sPWtvcmVhbmE=">https://store.steampowered.com/stats/?l=koreana<i class="fa fa-external-link-alt"></i></span> 에 표시된<br>인기 게임순위 100위를 크롤링하여 리스트에 저장</li>
-</ul>
-<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
-<li><p>gitignore 에러<br> <strong>문제 :</strong> 처음에 gitignore없는 상태에서 업로드했다가 뒤늦게 추가했더니<br> ignore 된 파일들이 자꾸 표시되는 문제가 발생했습니다.<br> <strong>해결 :</strong> 구글링 결과, git내의 저장된 캐시가 문제가 되어<br> 이를 삭제하는 다음의 코드를 통해 해결하였습니다.</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cache</span><br><span class="line">git add --all</span><br><span class="line">git commit -m &quot;Message&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>soup.select(태그) 에러<br> <strong>문제 :</strong> 크롤링할때 설정한 태그명에 맞는 데이터가 출력되지 않고 빈 리스트가 출력되었습니다.<br> <strong>해결 :</strong> 입력한 태그명에 문제가 있다고 판단하여, 하위태그부터 테스트해가며 재설정해주었습니다. </p>
-</li>
-</ol>
 
       
     </div>
