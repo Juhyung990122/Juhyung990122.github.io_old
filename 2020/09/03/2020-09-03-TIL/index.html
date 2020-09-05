@@ -32,7 +32,7 @@
 <meta property="og:description" content="🌟우아한 테크러닝 2회차🎯javascript overview 자바스크립트의 함수  값을 무조건적으로 반환하게 합니다.  변수 안에 함수를 값으로 취급하여 넣을 수 있습니다.   1234&#x2F;&#x2F;함수를 값으로 취급할떄는 function() 이름없는 함수 가능.const bar &#x3D; function bar()&amp;#123;    return 0;&amp;#125;;   여기">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-03T10:36:24.000Z">
-<meta property="article:modified_time" content="2020-09-04T09:04:49.018Z">
+<meta property="article:modified_time" content="2020-09-05T05:10:23.174Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="React">
@@ -196,7 +196,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -287,7 +287,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-04 18:04:49" itemprop="dateModified" datetime="2020-09-04T18:04:49+09:00">2020-09-04</time>
+                <time title="Modified: 2020-09-05 14:10:23" itemprop="dateModified" datetime="2020-09-05T14:10:23+09:00">2020-09-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -356,11 +356,11 @@
 </li>
 <li><p><strong>this 와 closer</strong></p>
 <ul>
-<li><p>this<br>  자바스크립트는 this를 해석할 때 실행 컨택스트 맥락상<br>  해당 함수를 호출할 때의 소유자를 판단하여 그 소유자로 해석합니다.</p>
+<li><p><strong>this</strong><br>  자바스크립트는 this를 해석할 때 실행 컨택스트 맥락상<br>  해당 함수를 호출할 때의 소유자를 판단하여 그 소유자로 해석합니다.</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">name : <span class="string">'이주형'</span>,</span><br><span class="line">getName()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    <span class="comment">//this는 person   </span></span><br><span class="line">&#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(person.getName()); <span class="comment">//정상작동</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> man = person.getName(); <span class="comment">//소유자가 벗겨짐</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(man())</span><br><span class="line"><span class="comment">//호출자가 없어서 전역객체에 연결(this가 person 이 아닌 window객체가 되므로 에러)</span></span><br></pre></td></tr></table></figure>
 <p>  위의 코드에서는 getName의 소유자인 person이 this 가 되겠네요.<br>  하지만 그 아래에 있는 man처럼 소유자가 벗겨진 형태로 getName을 할당하게 되면<br>  man 을 호출했을때는 호출자가 없어서 전역객체인 window에 연결됩니다,<br>  이렇게 벗겨진 호출에 대해서는 this를 사용자가 직접 지정해주기 위하여<br>  bind,call함수를 사용합니다.(arrow에서는 제외)</p>
 </li>
-<li><p>closure<br>  closure는 보호하고싶은 값이 있을때 사용.<br>  영역을 지정하고 캡처하여, 외부에서 임의로 값을 입력,수정하는 것을 막을 수 있습니다.</p>
+<li><p><strong>closure</strong><br>  closure는 보호하고싶은 값이 있을때 사용.<br>  영역을 지정하고 캡처하여, 외부에서 임의로 값을 입력,수정하는 것을 막을 수 있습니다.</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">age:<span class="number">10</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//이 명령어 막고싶을때</span></span><br><span class="line">person.age = <span class="number">500</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MakePerson</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">let</span> age = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">    getAge()&#123;</span><br><span class="line">    <span class="comment">//클로저가 이 함수를 캡쳐해서</span></span><br><span class="line">    <span class="comment">//age에 접근할 수 있는건 getAge만 가능</span></span><br><span class="line">    <span class="keyword">return</span> age;</span><br><span class="line">    &#125;,</span><br><span class="line">    setAge(x)&#123;</span><br><span class="line">    age = x &gt; <span class="number">1</span> &amp;&amp; x &lt;<span class="number">130</span> ? x : age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//클로저 캡처로 getage와 setage로만 값 접근 가능하게 만듬. </span></span><br><span class="line"><span class="keyword">let</span> p = MakePerson();</span><br><span class="line"><span class="built_in">console</span>.log(p)</span><br></pre></td></tr></table></figure>
 <h3 id="🎯동기-비동기"><a href="#🎯동기-비동기" class="headerlink" title="🎯동기 비동기"></a>🎯동기 비동기</h3></li>
 <li><p><strong>Promise</strong><br>  비동기 방식은 사람의 생각과는 다르게 움직이는데<br>  코드 뎁스가 깊어지면서 에러잡기가 어려워짐에 따라 프로미스가 등장합니다.</p>
@@ -372,31 +372,17 @@
 </ul>
 <p>  +)pending 상태</p>
 <ul>
-<li>커링테크닉  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a,b,c</span>)</span></span><br><span class="line"><span class="function"><span class="title">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b+c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>커링테크닉</strong>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a,b,c</span>)</span></span><br><span class="line"><span class="function"><span class="title">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b+c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="🎯Redux의-원리"><a href="#🎯Redux의-원리" class="headerlink" title="🎯Redux의 원리"></a>🎯Redux의 원리</h3><pre><code>리덕스의 기본 컨셉은 다음과 같습니다.
-    1. 앱에 쓰이는 상태를 한군데에 몰아넣고 이를 store 객체라는 이름의 객체에 넣어줍니다.
-    2. 이 객체를 컴포넌트한테 흘려보내 줍니다.
-    3. 이렇게 흘려보내게 되면 각자 컴포넌트들은 흘러가는 객체 속 데이터중에 
-    자신에게 필요한것만 뽑아서 화면에 그립니다.
+<h3 id="🎯Redux의-원리"><a href="#🎯Redux의-원리" class="headerlink" title="🎯Redux의 원리"></a>🎯Redux의 원리</h3><p>리덕스의 기본 컨셉은 다음과 같습니다.<br>    1. 앱에 쓰이는 상태를 한군데에 몰아넣고 이를 store 객체라는 이름의 객체에 넣어줍니다.<br>    2. 이 객체를 컴포넌트한테 흘려보내 줍니다.<br>    3. 이렇게 흘려보내게 되면 각자 컴포넌트들은 흘러가는 객체 속 데이터중에<br>    자신에게 필요한것만 뽑아서 화면에 그립니다.</p>
+<p>리액트가 나오기 전에는 이 컨셉을 구현하는 것이 불가능했습니다.<br>객체 속 데이터 중 하나만 바뀌어도 자바스크립트가 돔에 직접 접근해서<br>전체 화면을 전부 다시 그려야하는게 효율적이지 못하기 때문입니다.</p>
+<p>하지만 리액트에서 virtual dom 이라는 개념을 가지고 나오기 시작하면서<br>랜더링 흐름이 다음과 같이 바뀌었습니다.<br>Jsx -&gt; vdom(데이터 수정) -&gt; dom<br>        vdom(데이터 수정 전)<br>이런 구조를 통해 자바스크립트가 직접적으로 dom 에 접근하는 대신<br>vdom을 통해 한번 걸러서 접근하고, 만약 이 구조내에서 Ui내의 데이터를 수정하게 된다면<br>react는 수정된 데이터를 기반으로 새롭게 vdom 을 만들어서 기존의 vdom과 비교 한 뒤<br>수정된 데이터만 dom 에 반영합니다.  </p>
 
-리액트가 나오기 전에는 이 컨셉을 구현하는 것이 불가능했습니다. 
-객체 속 데이터 중 하나만 바뀌어도 자바스크립트가 돔에 직접 접근해서
-전체 화면을 전부 다시 그려야하는게 효율적이지 못하기 때문입니다.
-
-하지만 리액트에서 virtual dom 이라는 개념을 가지고 나오기 시작하면서
-랜더링 흐름이 다음과 같이 바뀌었습니다.
-Jsx -&gt; vdom(데이터 수정) -&gt; dom  
-       vdom(데이터 수정 전)
-이런 구조를 통해 자바스크립트가 직접적으로 dom 에 접근하는 대신 
-vdom을 통해 한번 걸러서 접근하고, 만약 이 구조내에서 Ui내의 데이터를 수정하게 된다면
-react는 수정된 데이터를 기반으로 새롭게 vdom 을 만들어서 기존의 vdom과 비교 한 뒤 수정된 데이터만 
-dom 에 반영합니다.  </code></pre>
     </div>
 
     
@@ -420,7 +406,10 @@ dom 에 반영합니다.  </code></pre>
     <a href="/2020/09/01/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-python3-%ED%98%B8%ED%85%94%EB%B0%A9%EB%B0%B0%EC%A0%95-1/" rel="prev" title="[프로그래머스/python3]호텔방배정">
       <i class="fa fa-chevron-left"></i> [프로그래머스/python3]호텔방배정
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/05/2020-09-05-TIL/" rel="next" title="[2020.09.05]TIL">
+      [2020.09.05]TIL <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
