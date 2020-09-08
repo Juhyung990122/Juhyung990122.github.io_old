@@ -24,23 +24,20 @@
   </script>
 
 
-  <meta name="description" content="🌟DRF Serialization🎯DRF란?Django 내에서 RESTful api 서버를 구축하게끔 해주는 라이브러리입니다.   🎯Serialization이란?한 환경이 다른 환경과 데이터 객체를 주고받기위해선 동일한 데이터 구조를 갖추어야 하므로, 형식을 맞추어주는 절차가 필요합니다.Serialization 즉 직렬화란 이 데이터 형식을 맞추어 주">
+  <meta name="description" content="🌟Java 언어공부2본 포스팅은 기본 문법 정리를 포함하지 않습니다. 🎯접근 관계인스턴스 메소드는 클래스 맴버에 접근할 수 있다.클래스 메소드는 인스턴스 맴버에 접근할 수 없다.클래스 메소드가 인스턴스 맴버보다 생성시점이 이전이기 때문에클래스 -&gt; 인스턴스 순으로 생성되는데  우선 메소드만 놓고 봤을 때 메소드 안에서 선언한 변수는 그 메소드가 실">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[2020.07.27]TIL">
-<meta property="og:url" content="http://juhyung990122.github.io/2020/07/27/2020-07-26-TIL/index.html">
+<meta property="og:title" content="[2020.09.08]TIL">
+<meta property="og:url" content="http://juhyung990122.github.io/2020/09/08/2020-09-08-TIL/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="🌟DRF Serialization🎯DRF란?Django 내에서 RESTful api 서버를 구축하게끔 해주는 라이브러리입니다.   🎯Serialization이란?한 환경이 다른 환경과 데이터 객체를 주고받기위해선 동일한 데이터 구조를 갖추어야 하므로, 형식을 맞추어주는 절차가 필요합니다.Serialization 즉 직렬화란 이 데이터 형식을 맞추어 주">
+<meta property="og:description" content="🌟Java 언어공부2본 포스팅은 기본 문법 정리를 포함하지 않습니다. 🎯접근 관계인스턴스 메소드는 클래스 맴버에 접근할 수 있다.클래스 메소드는 인스턴스 맴버에 접근할 수 없다.클래스 메소드가 인스턴스 맴버보다 생성시점이 이전이기 때문에클래스 -&gt; 인스턴스 순으로 생성되는데  우선 메소드만 놓고 봤을 때 메소드 안에서 선언한 변수는 그 메소드가 실">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-27T14:22:09.000Z">
-<meta property="article:modified_time" content="2020-07-29T10:16:04.085Z">
+<meta property="article:published_time" content="2020-09-08T04:43:03.000Z">
+<meta property="article:modified_time" content="2020-09-08T12:20:09.873Z">
 <meta property="article:author" content="Guinness">
-<meta property="article:tag" content="TIL">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="DRF">
-<meta property="article:tag" content="REST">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://juhyung990122.github.io/2020/07/27/2020-07-26-TIL/">
+<link rel="canonical" href="http://juhyung990122.github.io/2020/09/08/2020-09-08-TIL/">
 
 
 <script class="page-configurations">
@@ -53,7 +50,7 @@
   };
 </script>
 
-  <title>[2020.07.27]TIL | 여름산책</title>
+  <title>[2020.09.08]TIL | 여름산책</title>
   
 
 
@@ -181,7 +178,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟DRF-Serialization"><span class="nav-number">1.</span> <span class="nav-text">🌟DRF Serialization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯DRF란"><span class="nav-number">1.1.</span> <span class="nav-text">🎯DRF란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Serialization이란"><span class="nav-number">1.2.</span> <span class="nav-text">🎯Serialization이란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯DRF-Serializer"><span class="nav-number">1.3.</span> <span class="nav-text">🎯DRF Serializer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯왜-JSON을-쓰는걸까-🤔"><span class="nav-number">1.4.</span> <span class="nav-text">🎯왜 JSON을 쓰는걸까?🤔</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Java-언어공부2"><span class="nav-number">1.</span> <span class="nav-text">🌟Java 언어공부2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯접근-관계"><span class="nav-number">1.1.</span> <span class="nav-text">🎯접근 관계</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯정적-스코프-static-scope"><span class="nav-number">1.2.</span> <span class="nav-text">🎯정적 스코프(static scope)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯todtj"><span class="nav-number">1.3.</span> <span class="nav-text">🎯todtj</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯생성자"><span class="nav-number">1.4.</span> <span class="nav-text">🎯생성자</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯상속"><span class="nav-number">1.5.</span> <span class="nav-text">🎯상속</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -257,7 +254,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/07/27/2020-07-26-TIL/">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/09/08/2020-09-08-TIL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/profile.png">
@@ -270,7 +267,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [2020.07.27]TIL
+          [2020.09.08]TIL
         </h1>
 
         <div class="post-meta">
@@ -279,16 +276,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-07-27 23:22:09" itemprop="dateCreated datePublished" datetime="2020-07-27T23:22:09+09:00">2020-07-27</time>
+              <time title="Created: 2020-09-08 13:43:03 / Modified: 21:20:09" itemprop="dateCreated datePublished" datetime="2020-09-08T13:43:03+09:00">2020-09-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-29 19:16:04" itemprop="dateModified" datetime="2020-07-29T19:16:04+09:00">2020-07-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -315,8 +306,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/07/27/2020-07-26-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/07/27/2020-07-26-TIL/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/09/08/2020-09-08-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/08/2020-09-08-TIL/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -331,17 +322,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="🌟DRF-Serialization"><a href="#🌟DRF-Serialization" class="headerlink" title="🌟DRF Serialization"></a>🌟DRF Serialization</h2><h3 id="🎯DRF란"><a href="#🎯DRF란" class="headerlink" title="🎯DRF란?"></a>🎯DRF란?</h3><p>Django 내에서 RESTful api 서버를 구축하게끔 해주는 라이브러리입니다.  </p>
-<h3 id="🎯Serialization이란"><a href="#🎯Serialization이란" class="headerlink" title="🎯Serialization이란?"></a>🎯Serialization이란?</h3><p>한 환경이 다른 환경과 데이터 객체를 주고받기위해선 동일한 데이터 구조를 갖추어야 하므로, 형식을 맞추어주는 절차가 필요합니다.<br>Serialization 즉 직렬화란 이 데이터 형식을 맞추어 주는 것을 의미합니다.<br>프로그래밍 언어끼리의 통신이라면 byte형으로, HTTP 통신이라면 주로 XML이나 JSON 형식으로 변환합니다.</p>
-<p><strong>+) Deserialization</strong><br>Serializer로 변환하여 받은 문자열 형식의 데이터를 다시 원래의 데이터로 변환하는 것을 Deserializer(역직렬화) 라고 합니다.</p>
-<h3 id="🎯DRF-Serializer"><a href="#🎯DRF-Serializer" class="headerlink" title="🎯DRF Serializer"></a>🎯DRF Serializer</h3><p>Serializer는 Model(DB)에 저장되어있는 쿼리셋이나 모델인스턴스등의 데이터 객체를 API 통신에 적합한 JSON, XML와 같은 문자열 형식으로 변환시켜줍니다.<br>이를 통해 연속적이지 않던 데이터 객체를 변환하며, 변환한 데이터들을 파일형태로 저장합니다. 이렇게  Serializer을 통해 변환된 데이터들은 타 환경으로 전송할 수 있게 됩니다.<br>Serializer는 데이터를 변환한다는 점에서 form과 유사하지만 form 은 데이터를 HTML로 변환시켜주고 serilaizer은 JSON 문자열로 변환해준다는 차이점을 가집니다.</p>
-<h3 id="🎯왜-JSON을-쓰는걸까-🤔"><a href="#🎯왜-JSON을-쓰는걸까-🤔" class="headerlink" title="🎯왜 JSON을 쓰는걸까?🤔"></a>🎯왜 JSON을 쓰는걸까?🤔</h3><ol>
-<li>데이터를 전송할 때 최소한의 용량으로 전달하게 해줍니다.</li>
-<li>대부분의 언어가 JSON 포맷의 데이터를 다룰 라이브러리를 제공합니다.</li>
-<li>JSON 내에서 데이터 타입을 가지므로 수용할 수 있는 데이터 타입이 다양합니다.</li>
-<li>javascript에서 객체접근이 쉬우므로 javascript기반인 웹이나 API에 데이터를 제공할때 좋습니다.</li>
-</ol>
-<p><span class="exturl" data-url="aHR0cHM6Ly9jaHJpc2p1bmUuZ2l0aHViLmlvL2RyZi0wMi1qc29uLXNlcmlhbGl6YXRpb24=">참고1<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly92ZWxvZy5pby9AZ3JvdW5kNGVrZC9kamFuZ28tcmVzdC1mcmFtZXdvcms=">참고2<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9pd2J0Yml0ai50aXN0b3J5LmNvbS8xMDEjOn46dGV4dD1qc29uJUVDJTlEJTg0JTIwJUVDJTgyJUFDJUVDJTlBJUE5JUVEJTk1JTk4JUVCJThBJTk0JTIwJUVDJTlEJUI0JUVDJTlDJUEwLCVFQiU4QiVBNCVFQyU5NiU5MSVFRCU5NSU5QyUyMCVFQyU5NiVCOCVFQyU5NiVCNCVFQyU5NyU5MCUyMCVFQyU4MiVBQyVFQyU5QSVBOSVFQiU5MCVBOSVFQiU4QiU4OCVFQiU4QiVBNC4mdGV4dD1qc29uJUVDJTlEJTgwJTIwJUVBJUIwJTlEJUVDJUIyJUI0JTIwJUVCJUIzJTgwJUVDJTg4JTk4JTIwJUVCJUIwJUIwJUVDJTk3JUI0LCVFRCU5NSVBOCVFQyU4OCU5OCVFQiVBNSVCQyUyMCVFQyU4MiVBQyVFQyU5QSVBOSVFRCU5NSU5OCVFQyVBNyU4MCVFQyU5NSU4QSVFQyU4QSVCNSVFQiU4QiU4OCVFQiU4QiVBNA==">참고3<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9qYXZhMTE5LnRpc3RvcnkuY29tLzUz">참고4<i class="fa fa-external-link-alt"></i></span></p>
+        <h2 id="🌟Java-언어공부2"><a href="#🌟Java-언어공부2" class="headerlink" title="🌟Java 언어공부2"></a>🌟Java 언어공부2</h2><p>본 포스팅은 기본 문법 정리를 포함하지 않습니다.</p>
+<h3 id="🎯접근-관계"><a href="#🎯접근-관계" class="headerlink" title="🎯접근 관계"></a>🎯접근 관계</h3><p>인스턴스 메소드는 클래스 맴버에 접근할 수 있다.<br>클래스 메소드는 인스턴스 맴버에 접근할 수 없다.<br>클래스 메소드가 인스턴스 맴버보다 생성시점이 이전이기 때문에<br>클래스 -&gt; 인스턴스 순으로 생성되는데 </p>
+<p>우선 메소드만 놓고 봤을 때 메소드 안에서 선언한 변수는 그 메소드가 실행될 때 만들어지고, 그 메소드가 종료되면 삭제된다.<br>만약 클래스 아래의 변수와 메소드 아래의 변수가 같은 이름을 가지고 있다면 메소드 아래의 변수가 우선하게 된다. 메소드 내의 변수가 존재하지 않을 때 클래스 아래의 변수를 사용하게 되는 것이다. 지역적인 것이 전역적인 것보다 우선순위가 높다</p>
+<h3 id="🎯정적-스코프-static-scope"><a href="#🎯정적-스코프-static-scope" class="headerlink" title="🎯정적 스코프(static scope)"></a>🎯정적 스코프(static scope)</h3><p>이러한 방식을 정적 스코프(static scope) 혹은 렉시컬 스코프(lexical scope)라고도 부른다. 즉 사용되는 시점에서의 유효범위(메소드 a의 i)를 사용하는 것이 아니라 정의된 시점에서의 유효범위(i = 5)를 사용하는 것이다.</p>
+<h3 id="🎯todtj"><a href="#🎯todtj" class="headerlink" title="🎯todtj"></a>🎯todtj</h3><p>this를 통해 인스턴스 변수에 접근할 수 있다.</p>
+<h3 id="🎯생성자"><a href="#🎯생성자" class="headerlink" title="🎯생성자"></a>🎯생성자</h3><p>인자를 강제할 수 있다.<br>리턴값이 없고 클래스 이름과 동일하게 이름짓는것이 원칙</p>
+<h3 id="🎯상속"><a href="#🎯상속" class="headerlink" title="🎯상속"></a>🎯상속</h3><p>객체를 자신이 만들지 않아 메소드 관리가 어렵거나, 다른곳에서 쓰이는 객체까지 건드리고싶지 않을때<br>상속사용</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOprands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>.left+<span class="keyword">this</span>.right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">avg</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println((<span class="keyword">this</span>.left + <span class="keyword">this</span>.right)/<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubstractionableCalculator</span> <span class="keyword">extends</span> <span class="title">Calculator</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">substract</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>.left - <span class="keyword">this</span>.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorDemo1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        SubstractionableCalculator c1 = <span class="keyword">new</span> SubstractionableCalculator();</span><br><span class="line">        c1.setOprands(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">        c1.sum();</span><br><span class="line">        c1.avg();</span><br><span class="line">        c1.substract();</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>기존의 Calculator에서 substract()기능만을 추가하여<br>객체 생성시 Calculator 기존 기능에 추가로 substract 기능을 사용할 수 있다. 상속받아 생성한 클래스를 다시 상속하여 새로운 클래스를 만들수도 있다.<br>이를 통해 불필요한 코드사용을 줄일 수 있지만, 프로젝트가 커질수록<br>구조가 복잡해질 수 있다는 리스크를 가집니다.</p>
 
     </div>
 
@@ -351,10 +340,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/TIL/" rel="tag"># TIL</a>
-              <a href="/tags/python/" rel="tag"># python</a>
-              <a href="/tags/DRF/" rel="tag"># DRF</a>
-              <a href="/tags/REST/" rel="tag"># REST</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
           </div>
 
         
@@ -363,13 +349,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/24/2020-07-25-TIL/" rel="prev" title="[2020.07.24]TIL">
-      <i class="fa fa-chevron-left"></i> [2020.07.24]TIL
+    <a href="/2020/09/05/2020-09-05-TIL/" rel="prev" title="[2020.09.07]TIL">
+      <i class="fa fa-chevron-left"></i> [2020.09.07]TIL
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/07/30/2020-07-30-TIL/" rel="next" title="[2020.07.30]TIL">
-      [2020.07.30]TIL <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -503,9 +486,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://juhyung990122.github.io/2020/07/27/2020-07-26-TIL/";
-    this.page.identifier = "2020/07/27/2020-07-26-TIL/";
-    this.page.title = "[2020.07.27]TIL";
+    this.page.url = "http://juhyung990122.github.io/2020/09/08/2020-09-08-TIL/";
+    this.page.identifier = "2020/09/08/2020-09-08-TIL/";
+    this.page.title = "[2020.09.08]TIL";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
