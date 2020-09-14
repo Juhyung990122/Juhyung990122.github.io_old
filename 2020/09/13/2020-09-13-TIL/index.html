@@ -24,14 +24,17 @@
   </script>
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="🌟Java 언어공부4(fin)본 포스팅은 기본 문법 정리를 포함하지 않습니다. 🎯Polymorphism하나의 메소드가 다양한 방법으로 동작하는 것을 의미합니다.키보드를 누를때 ‘버튼을 누른다’라는 동일한 행동을 하지만누른 키가 어떤 키이느냐에 따라 다르게 동작하는 것으로 이해하시면 됩니다. 123456789101112131415161718192021cl">
+<meta property="og:type" content="article">
 <meta property="og:title" content="[2020.09.13]TIL">
 <meta property="og:url" content="http://juhyung990122.github.io/2020/09/13/2020-09-13-TIL/index.html">
 <meta property="og:site_name" content="여름산책">
+<meta property="og:description" content="🌟Java 언어공부4(fin)본 포스팅은 기본 문법 정리를 포함하지 않습니다. 🎯Polymorphism하나의 메소드가 다양한 방법으로 동작하는 것을 의미합니다.키보드를 누를때 ‘버튼을 누른다’라는 동일한 행동을 하지만누른 키가 어떤 키이느냐에 따라 다르게 동작하는 것으로 이해하시면 됩니다. 123456789101112131415161718192021cl">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-13T14:41:56.000Z">
-<meta property="article:modified_time" content="2020-09-13T14:41:56.101Z">
+<meta property="article:modified_time" content="2020-09-14T15:50:24.197Z">
 <meta property="article:author" content="Guinness">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://juhyung990122.github.io/2020/09/13/2020-09-13-TIL/">
@@ -163,7 +166,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -175,6 +178,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Java-언어공부4-fin"><span class="nav-number">1.</span> <span class="nav-text">🌟Java 언어공부4(fin)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Polymorphism"><span class="nav-number">1.1.</span> <span class="nav-text">🎯Polymorphism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯abstract"><span class="nav-number">1.2.</span> <span class="nav-text">🎯abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯final"><span class="nav-number">1.3.</span> <span class="nav-text">🎯final</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯interface"><span class="nav-number">1.4.</span> <span class="nav-text">🎯interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯abstract-vs-interface"><span class="nav-number">1.5.</span> <span class="nav-text">🎯abstract vs interface</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -275,6 +279,26 @@
 
               <time title="Created: 2020-09-13 23:41:56" itemprop="dateCreated datePublished" datetime="2020-09-13T23:41:56+09:00">2020-09-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-15 00:50:24" itemprop="dateModified" datetime="2020-09-15T00:50:24+09:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -308,7 +332,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="🌟Java-언어공부4-fin"><a href="#🌟Java-언어공부4-fin" class="headerlink" title="🌟Java 언어공부4(fin)"></a>🌟Java 언어공부4(fin)</h2><p>본 포스팅은 기본 문법 정리를 포함하지 않습니다.</p>
+<h3 id="🎯Polymorphism"><a href="#🎯Polymorphism" class="headerlink" title="🎯Polymorphism"></a>🎯Polymorphism</h3><p>하나의 메소드가 다양한 방법으로 동작하는 것을 의미합니다.<br>키보드를 누를때 ‘버튼을 누른다’라는 동일한 행동을 하지만<br>누른 키가 어떤 키이느냐에 따라 다르게 동작하는 것으로 이해하시면 됩니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">x</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="string">"A.x"</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">x</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="string">"B.x"</span>;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">y</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="string">"y"</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B2</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">x</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="string">"B2.x"</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        A obj = <span class="keyword">new</span> B();</span><br><span class="line">        A obj2 = <span class="keyword">new</span> B2();</span><br><span class="line">        System.out.println(obj.x()); <span class="comment">//b.x</span></span><br><span class="line">        System.out.println(obj2.x()); <span class="comment">//b2.x</span></span><br><span class="line">        <span class="comment">//System.out.println(obj.y());</span></span><br><span class="line">        <span class="comment">//얘는 안된다 -&gt; 왜? A에 y메소드가 없기때문에</span></span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 코드를 보시면 동일한 데이터타입 A(같은 동작)을 가지고 있는 객체<br>B,B2의 x를 호출했을때 서로 다르게 동작하는 것을 확인하실 수 있습니다.<br>간단히 정리하자면 A에 있는 메소드만 사용할 수 있되<br>B,B2에 있는 메소드랑 이름이 겹치면 오버라이딩됩니다.</p>
+<h3 id="🎯abstract"><a href="#🎯abstract" class="headerlink" title="🎯abstract"></a>🎯abstract</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">A_class</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">A_method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>추상 메소드는 시그니처만이 정의되어있는 메소드를 의미합니다.<br>추상 메소드는 내용이 없기 때문에 인스턴스로 호출하여<br>사용할 수 없다는 특징을 가집니다.<br>추상메소드를 사용하기 위해서는 추상메소드를 상속하여<br>하단의 코드에서 구체적인 정의(오버라이딩)를 해주어야 합니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">b</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">c</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">d</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="number">3</span>;&#125; <span class="comment">//추상클래스 내부 추상메소드+일반메소드 가능</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//상속 후 오버라이딩</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">b</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="number">1</span>;&#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">c</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="number">2</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        B obj = <span class="keyword">new</span> B();</span><br><span class="line">        <span class="comment">//인스턴스화 호출 가능</span></span><br><span class="line">        System.out.println(obj.b());</span><br><span class="line">        System.out.println(obj.c());</span><br><span class="line">        System.out.println(obj.d());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>추상의 개념을 활용하여 부모 클래스에 들어있는 공통된 메소드는 상위에 두고<br>상황에 따라 함께 쓰기도, 따로 쓰기도 해야하는 메소드들을<br>하위 클래스에 구현하도록 하면 코드의 중복을 줄이고 직관성을 높여 유지보수에 좋습니다.</p>
+<h3 id="🎯final"><a href="#🎯final" class="headerlink" title="🎯final"></a>🎯final</h3><p>final 은 한번 정해진 값, 메소드, 클래스를 바꾸지 못하게 하는 필드입니다.<br>메소드와 클래스 앞에 final 을 붙이면 상속이 제한됩니다.</p>
+<h3 id="🎯interface"><a href="#🎯interface" class="headerlink" title="🎯interface"></a>🎯interface</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">z</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">implements</span> <span class="title">I</span> </span>&#123; <span class="comment">//A는 I의 구현부 == I에 있는 메소드 무조건 포함</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">z</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Happy?"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        A obj = <span class="keyword">new</span> A();</span><br><span class="line">        obj.z();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>인터페이스는 기능의 기본 골격이라고 생각하시면 편합니다.<br>메소드의 스펙을 제시하여 같은 기능이지만<br>클래스마다 다른 방법으로 동작하게끔 만드는 것입니다.<br>이는 다시말해 클래스의 <code>다형성</code>을 실현하게 해준다고 할 수 있습니다.<br>또한 이 메소드의 구현을 강제하기 때문에 객체의 동작을 보장할 수 있습니다.</p>
+<p>인터페이스에는 다음과 같은 규칙이 있습니다.<br>    <strong>1. 하나의 클래스는 하나이상의 인터페이스를 구현할 수 있습니다(다중인터페이스 구현)</strong><br>    각 인터페이스 내의 모든 메소드를 구현해야 합니다.<br>    <strong>2. 인터페이스의 맴버는 public이어야 합니다</strong></p>
+<h3 id="🎯abstract-vs-interface"><a href="#🎯abstract-vs-interface" class="headerlink" title="🎯abstract vs interface"></a>🎯abstract vs interface</h3><p>추상클래스는 기능을 상속받아 그를 확장시키는 것이 목적입니다.<br>추상클래스 내에서는 구체적인 로직과 상태를 가질 수 있습니다.<br>그와달리 인터페이스는 구체적인 로직과 상태를 가질 수 없는 껍데기입니다.<br>메소드의 구현을 강제하는것에 목적이 있으며<br>이를 통해 메소드를 포함한 객체의 같은 동작을 보장합니다.</p>
+
     </div>
 
     
@@ -316,6 +354,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
 
         
 
