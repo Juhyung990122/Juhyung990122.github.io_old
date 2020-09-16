@@ -194,13 +194,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -278,7 +278,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-17 00:41:55" itemprop="dateModified" datetime="2020-09-17T00:41:55+09:00">2020-09-17</time>
+                <time title="Modified: 2020-09-17 01:28:46" itemprop="dateModified" datetime="2020-09-17T01:28:46+09:00">2020-09-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,7 +290,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+                  <a href="/categories/TIL/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
             </span>
 
@@ -324,8 +324,48 @@
 <h3 id="🎯초기화-수정버전"><a href="#🎯초기화-수정버전" class="headerlink" title="🎯초기화 수정버전"></a>🎯초기화 수정버전</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_class</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line">    <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Calculator_class</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left + <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left - <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mul</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left * <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left / <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calculator_class cal = <span class="keyword">new</span> Calculator_class(<span class="number">25</span>,<span class="number">10</span>);</span><br><span class="line">        System.out.println(cal.sum());</span><br><span class="line">        System.out.println(cal.sub());</span><br><span class="line">        System.out.println(cal.mul());</span><br><span class="line">        System.out.println(cal.div());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="🎯상속-버전"><a href="#🎯상속-버전" class="headerlink" title="🎯상속 버전"></a>🎯상속 버전</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_set</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line">    <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOperands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_func</span> <span class="keyword">extends</span> <span class="title">Calculator_set</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left + <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left - <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mul</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left * <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left / <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calculator_func cal = <span class="keyword">new</span> Calculator_func();</span><br><span class="line">        cal.setOperands(<span class="number">25</span>,<span class="number">10</span>);</span><br><span class="line">        System.out.println(cal.sum());</span><br><span class="line">        System.out.println(cal.sub());</span><br><span class="line">        System.out.println(cal.mul());</span><br><span class="line">        System.out.println(cal.div());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>deploy test1</p>
+<h3 id="🎯상속-버전"><a href="#🎯상속-버전" class="headerlink" title="🎯상속 버전"></a>🎯상속 버전</h3><pre><code class="java"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_set</span></span>{
+    <span class="keyword">int</span> left, right;
+    <span class="keyword">int</span> total = <span class="number">0</span>;
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOperands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>{
+        <span class="keyword">this</span>.left = left;
+        <span class="keyword">this</span>.right = right;
+    }
+}
+<span class="class"><span class="keyword">class</span> <span class="title">Calculator_func</span> <span class="keyword">extends</span> <span class="title">Calculator_set</span></span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span></span>{
+        total = <span class="keyword">this</span>.left + <span class="keyword">this</span>.right;
+        <span class="keyword">return</span> total;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">()</span></span>{
+        total = <span class="keyword">this</span>.left - <span class="keyword">this</span>.right;
+        <span class="keyword">return</span> total;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mul</span><span class="params">()</span></span>{
+        total = <span class="keyword">this</span>.left * <span class="keyword">this</span>.right;
+        <span class="keyword">return</span> total;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">()</span></span>{
+        total = <span class="keyword">this</span>.left / <span class="keyword">this</span>.right;
+        <span class="keyword">return</span> total;
+    } 
+}
+
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+        Calculator_func cal = <span class="keyword">new</span> Calculator_func();
+        cal.setOperands(<span class="number">25</span>,<span class="number">10</span>);
+        System.out.println(cal.sum());
+        System.out.println(cal.sub());
+        System.out.println(cal.mul());
+        System.out.println(cal.div());
+    }
+}</code></pre>
 
       
     </div>
