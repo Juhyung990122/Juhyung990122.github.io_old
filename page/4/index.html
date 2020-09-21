@@ -187,14 +187,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -243,6 +243,115 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/07/12/2020-07-12TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/12/2020-07-12TIL/" class="post-title-link" itemprop="url">[2020.07.12]TIL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-12 21:53:29" itemprop="dateCreated datePublished" datetime="2020-07-12T21:53:29+09:00">2020-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-08 22:03:52" itemprop="dateModified" datetime="2020-09-08T22:03:52+09:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/07/12/2020-07-12TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/07/12/2020-07-12TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟Django-collectstatic"><a href="#🌟Django-collectstatic" class="headerlink" title="🌟Django collectstatic"></a>🌟Django collectstatic</h2><h3 id="🎯static-파일-처리-과정"><a href="#🎯static-파일-처리-과정" class="headerlink" title="🎯static 파일 처리 과정"></a>🎯static 파일 처리 과정</h3><p>static파일이 포함된 프로젝트를 서버로 배포하기 위해선 크게 두가지의 과정을 거쳐야 합니다.</p>
+<ol>
+<li>static 파일의 위치를 설정해주기</li>
+<li>위치로 가서 static파일을 한곳에 모으기</li>
+</ol>
+<p>위의 과정을 수행하기 위하여 해야 할 일은 다음과 같습니다.</p>
+<ol>
+<li>앱 내에 static 폴더를 만들어 위치를 지정하기</li>
+<li>static 폴더위치를 장고에게 알려주기(settings.py)</li>
+<li>python manage.py collectstatic 을 실행하여 모아주기(파일을 복사)</li>
+</ol>
+<h3 id="static-파일을-왜-모아줘야하는걸까요-🤔"><a href="#static-파일을-왜-모아줘야하는걸까요-🤔" class="headerlink" title="+)static 파일을 왜 모아줘야하는걸까요?🤔"></a>+)static 파일을 왜 모아줘야하는걸까요?🤔</h3><p>우리가 하고있는 Django는 실질적으로 웹서버가 아니라 웹 애플리케이션을 개발하는 프레임워크입니다.<br>웹 애플리케이션은 웹서버가 받은 요청을 넘겨주면 로직에 맞추어 데이터를 처리한 후<br>웹서버에게 돌려주어 사용자에게 응답하게 하는 역할을 합니다.</p>
+<p>하지만 사실 사용자에게 응답하는 것은 웹서버 자체에서 할 수 있기때문에 굳이 웹 애플리케이션에서 처리할 필요가 없습니다. 오히려 웹 애플리케이션을 거치게 되면 wsgi(웹서버와 웹 애플리케이션 간의 통신을 위한 인터페이스)를 거쳐야하므로 비효율적인 로직이 하나 더 늘어납니다.</p>
+<p>따라서 Django에서는 static 파일을 직접 처리하는 기능을 담고있지 않습니다.<br>대신 프로젝트를 실제로 배포할 때 collectstatic을 통해 프로젝트 내에 흩어져있는 static 파일들(각각의 앱에 딸린 static폴더)를 한군데에 모은 뒤 서버로 복사해줍니다.</p>
+<p>이렇게 모으는 과정을 거치면 실제 배포되는 웹서버는 웹 애플리케이션이 복사해준 static 파일들을 저장한 뒤 클라이언트의 요청에 직접 응답할 수 있게 됩니다.</p>
+<h2 id="🌟static-설정항목"><a href="#🌟static-설정항목" class="headerlink" title="🌟static 설정항목"></a>🌟static 설정항목</h2><h3 id="🎯STATICFILES-DIRS"><a href="#🎯STATICFILES-DIRS" class="headerlink" title="🎯STATICFILES_DIRS"></a>🎯STATICFILES_DIRS</h3><p><strong>개발 단계(DEBUG = True)</strong> 즉 웹 애플리케이션 내에 위치한 static 파일의 위치를 지정하는 항목입니다. 여러개의 경로도 설정할 수 있습니다.</p>
+<h3 id="🎯STATIC-URL"><a href="#🎯STATIC-URL" class="headerlink" title="🎯STATIC_URL"></a>🎯STATIC_URL</h3><p>STATIC_ROOT(실제경로)에 위치한  참조하기위한 url입니다. </p>
+<h3 id="🎯STATIC-ROOT"><a href="#🎯STATIC-ROOT" class="headerlink" title="🎯STATIC_ROOT"></a>🎯STATIC_ROOT</h3><p><strong>서버 배포 단계(DEBUG = False)</strong>에서 static 파일을 모으기 위한 절대경로를 의미합니다. 이 경로에 있는 모든 파일을 웹서버가 직접 제공할 수 있게 됩니다. 앱 내에 위치한 static 폴더와 STATICFILES_DIRS에 명시된 경로에 있는 모든 파일을 모읍니다. </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
