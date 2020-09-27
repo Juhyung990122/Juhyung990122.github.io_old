@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -243,6 +243,125 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/07/20/2020-07-20-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/20/2020-07-20-TIL/" class="post-title-link" itemprop="url">[2020.07.20]TIL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-20 16:21:55" itemprop="dateCreated datePublished" datetime="2020-07-20T16:21:55+09:00">2020-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-08 22:04:19" itemprop="dateModified" datetime="2020-09-08T22:04:19+09:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/07/20/2020-07-20-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/07/20/2020-07-20-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟Vue-component-communication"><a href="#🌟Vue-component-communication" class="headerlink" title="🌟Vue component communication"></a>🌟Vue component communication</h2><h3 id="🎯Component간-데이터-공유-불가능"><a href="#🎯Component간-데이터-공유-불가능" class="headerlink" title="🎯Component간 데이터 공유 불가능"></a>🎯Component간 데이터 공유 불가능</h3><p>뷰는 각자의 범위 즉 스코프로 나뉘어 진 컴포넌트로 이루어지므로<br>다른 컴포넌트와 데이터를 직접적으로 공유할 수 없습니다.</p>
+<h3 id="🎯Vue-Component-간-통신"><a href="#🎯Vue-Component-간-통신" class="headerlink" title="🎯Vue Component 간 통신"></a>🎯Vue Component 간 통신</h3><p>컴포넌트간 데이터를 공유하기 위해선 뷰에서 정의하는 컴포넌트 데이터 전달방식을 사용해야 하는데 이는 다음과 같습니다. </p>
+<ol>
+<li>컴포넌트는 부모와 자식의 관계로 이루어져 있습니다.</li>
+<li>부모는 <strong>props</strong>를 통해 자식에게 데이터를 전달합니다.</li>
+<li>자식은 <strong>이벤트</strong>를 통해 데이터의 변화를 부모에게 알립니다.</li>
+</ol>
+<h3 id="🎯부모컴포넌트-gt-자식컴포넌트-통신"><a href="#🎯부모컴포넌트-gt-자식컴포넌트-통신" class="headerlink" title="🎯부모컴포넌트 -&gt; 자식컴포넌트 통신"></a>🎯부모컴포넌트 -&gt; 자식컴포넌트 통신</h3><p>자식은 부모의 데이터를 직접 참조할 수 없고 대신 <strong>props</strong>를 통해 데이터를 받아오게 되는데<br>이때 자식 컴포넌트 내에 부모로부터 어떤 데이터를 받아올건지 선언해주어야 합니다.</p>
+<ul>
+<li><p>HTML</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">'el에서 설정해준 적용범위'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">childcmp</span> <span class="attr">downdata</span> = <span class="string">"데이터를 childcmp로 내려줍니다"</span>&gt;</span><span class="tag">&lt;/<span class="name">childcmp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Javascript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123; <span class="comment">// 뷰 인스턴스 자체가 부모 컴포넌트</span></span><br><span class="line">    el: ,<span class="comment">//적용범위</span></span><br><span class="line">    components: &#123;</span><br><span class="line">        <span class="string">'childcmp'</span>:&#123; <span class="comment">// 자식 컴포넌트 정의</span></span><br><span class="line">            props : [<span class="string">'downdata'</span>], <span class="comment">// 받아올 데이터</span></span><br><span class="line">            template:<span class="string">'&#123;&#123; downdata &#125;&#125;'</span> <span class="comment">// 받아온 데이터를 설정해준 형태대로 템플릿에 출력</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="🎯v-bind를-통한-props-동적-바인딩"><a href="#🎯v-bind를-통한-props-동적-바인딩" class="headerlink" title="🎯v-bind를 통한 props 동적 바인딩"></a>🎯v-bind를 통한 props 동적 바인딩</h3><p>v-bind 를 사용하여 동적으로 데이터를 관리합니다.<br>이를 통해 데이터 업데이트 시 자식이 받는 데이터를 일일히 바꿔주어야 했던 1.2의 방식과 달리<br>부모 컴포넌트 내의(vue instance 내의) 데이터가 업데이트 되면 자식컴포넌트가 받는 데이터도<br>자동으로 업데이트 되게끔 할 수 있습니다.</p>
+</li>
+<li><p>HTML</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">'el에서 설정해준 적용범위'</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">childcmp</span> <span class="attr">v-bind:receivedata</span> = <span class="string">"downdata"</span>&gt;</span><span class="tag">&lt;/<span class="name">childcmp</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Javascript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="comment">//적용범위,</span></span><br><span class="line">    data : &#123;</span><br><span class="line">        downdata : <span class="string">'props로 내려줄 데이터 정보'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    components : &#123;</span><br><span class="line">        childcmp : &#123; <span class="comment">// 자식 컴포넌트 정의</span></span><br><span class="line">            props : recievedata,</span><br><span class="line">            template:<span class="string">'&#123;&#123; receivedata &#125;&#125;'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="🎯자식-컴포넌트-gt-부모-컴포넌트-통신"><a href="#🎯자식-컴포넌트-gt-부모-컴포넌트-통신" class="headerlink" title="🎯자식 컴포넌트 -&gt; 부모 컴포넌트 통신"></a>🎯자식 컴포넌트 -&gt; 부모 컴포넌트 통신</h3><p>자식은 부모에게 데이터를 직접 받아올 순 없지만<br>$emit으로 이벤트를 발생시켜서 부모에게 신호를 보내 부모의 method를 호출할 수 있습니다.<br>이렇게 발생시킨 이벤트는 v-on가 수신하여 method를 호출합니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">upnum</span> <span class="attr">v-on:increase</span> = <span class="string">'UpNumClicked'</span>&gt;</span><span class="tag">&lt;/<span class="name">upnum</span>&gt;</span> <span class="comment">&lt;!--자식에서 increase이벤트 발생시 부모의 UpNumClicked 호출--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">downnum</span> <span class="attr">v-on:decrease</span> = <span class="string">'DownNumClicked'</span>&gt;</span><span class="tag">&lt;/<span class="name">downnum</span>&gt;</span><span class="comment">&lt;!--자식에서 decrease이벤트 발생시 부모의 DownNumClicked 호출--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//자식을 부모랑 분리해서 선언</span></span><br><span class="line"><span class="keyword">var</span> upnum = &#123; </span><br><span class="line">    template : <span class="string">'&lt;button v-on:click = "IncreaseNum&gt;증가&lt;/button&gt;'</span>, <span class="comment">// 버튼클릭시 자식 내 IncreaseNum 호출</span></span><br><span class="line">    methods : &#123;</span><br><span class="line">        IncreaseNum : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//부모에게 increase 이벤트 전송</span></span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'increase'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> donwnnum = &#123;</span><br><span class="line">    template : <span class="string">'&lt;button v-on:click = "DecreaseNum&gt;감소&lt;/button&gt;'</span>, <span class="comment">// 버튼클릭시 자식 내 DecreaseNum 호출</span></span><br><span class="line">    methods : &#123;</span><br><span class="line">        DecreaseNum : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//부모에게 decrease 이벤트 전송</span></span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'decrease'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        num : <span class="number">10</span></span><br><span class="line">    &#125;,</span><br><span class="line">    components : &#123; <span class="comment">//자식 컴포넌트 등록</span></span><br><span class="line">        <span class="string">'upnum'</span> : upnum, </span><br><span class="line">        <span class="string">'downnum'</span> : downnum</span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123; <span class="comment">//이벤트 오면 호출될 메소드들</span></span><br><span class="line">        UpNumClicked : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.num++;</span><br><span class="line">        &#125;,</span><br><span class="line">        DownNumClicked : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.num--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>위의 코드는<br>    1. 화면 내 버튼을 클릭합니다.<br>    2. 증가 버튼을 눌렀다면 increase / 감소버튼을 눌렀다면 decrease 이벤트가 발생합니다.<br>    3. 이벤트를 HTML 코드가 받아서 정해진 메소드를 호출합니다.<br>의 순서로 동작합니다. </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
