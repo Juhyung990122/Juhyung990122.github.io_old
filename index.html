@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -247,6 +247,103 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/10/01/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%805/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/01/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%805/" class="post-title-link" itemprop="url">Uniplogger개발일지5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-01 02:43:07 / Modified: 03:10:09" itemprop="dateCreated datePublished" datetime="2020-10-01T02:43:07+09:00">2020-10-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/01/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%805/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/01/Uniplogger개발일지5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : 비공개</p>
+<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
+<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
+<li>fcm-django를 이용하여 푸시알림 기능 추가</li>
+<li>애플로그인 추가 시도</li>
+</ul>
+<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
+<li><p>클라이언트 푸시키 없음.<br>푸시알림을 클라이언트단에서 파이어베이스에서 발급되는 키값(기기정보)을 서버에 넘겨주면<br>서버가 그걸 받아서 서버내 데이터베이스에 작성(기기등록)해뒀다가<br>때마다 조건이 맞는 유저를 필터링해서 FCM에 요청을 보내면<br>FCM은 해당 기기에 푸시알림을 보내는 구조로 이해했습니다.<br>서버를 구축하고 간단하게 테스트 하려했는데, 클라이언트단에서 넘겨주는 푸시키가<br>없어서 테스트가 불가능했고 이에 기기등록, 요청전송 함수의 틀만 짜놓는 것으로<br>오늘의 작업을 마무리했습니다.</p>
+</li>
+<li><p>애플로그인 추가보류<br>만드는 어플이 iOS라 애플로그인 기능이 필수적인데<br>애플로그인을 넣으려면 애플 개발자로 등록되어있어야 합니다.<br>애플 개발자라니 어쩐지 간지도 나도 해서 신나게 신청서를 작성했는데<br>맨 마지막 고지서에 연당 12만 9000원을 내라는 소리 보고 일단 드롭..ㅎ..<br>스크럼시간때 프론트팀과 상의해서 비벼볼 예정입니다.</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/09/28/2020-09-28-TIL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -278,7 +375,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-29 00:30:56" itemprop="dateModified" datetime="2020-09-29T00:30:56+09:00">2020-09-29</time>
+                <time title="Modified: 2020-09-29 01:33:57" itemprop="dateModified" datetime="2020-09-29T01:33:57+09:00">2020-09-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,9 +416,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="🌟-Django에-MYSQL-연동하기"><a href="#🌟-Django에-MYSQL-연동하기" class="headerlink" title="🌟 Django에 MYSQL 연동하기"></a>🌟 Django에 MYSQL 연동하기</h2><h3 id="🎯-sqlite3-vs-MYSQL"><a href="#🎯-sqlite3-vs-MYSQL" class="headerlink" title="🎯 sqlite3 vs MYSQL"></a>🎯 sqlite3 vs MYSQL</h3><p>동시에 여러 클라이언트가 데이터베이스에 접근해야할때 단일쓰기 작업만 지원하여 제한적, 관리가 미흡함, 확장에 어려움이 있음</p>
-<p>postgres 는 </p>
+          <h2 id="🌟-Django에-MYSQL-연동하기"><a href="#🌟-Django에-MYSQL-연동하기" class="headerlink" title="🌟 Django에 MYSQL 연동하기"></a>🌟 Django에 MYSQL 연동하기</h2><h3 id="🎯-sqlite3-vs-MYSQL"><a href="#🎯-sqlite3-vs-MYSQL" class="headerlink" title="🎯 sqlite3 vs MYSQL"></a>🎯 sqlite3 vs MYSQL</h3><p>sqlite3는 동시에 여러 클라이언트가 데이터베이스에 접근해야할때 단일쓰기 작업만 지원하여 제한적, 관리가 미흡함, 확장에 어려움이 있음</p>
+<p>postgres 는 안전하고 관리가 잘 되지만 읽기기능이 많을경우 과도하게 돌아감 </p>
 <p>동시성은 높지않지만 갱신되는 데이터가 많고,<br>동시에 읽어들이는 작업도 많은 어플을 개발하고 있기때문에<br>가장 보편적이고 무난한 mysql로 가는게 맞다고 판단했습니다.</p>
+<p>홈브류 설치<br>mysql mysql-client mysqlworkbench 설치<br>mysql_secure_installation 비밀번호 설정<br>mysql -uroot -p비밀번호<br>create database 테이블이름 character set utf8mb4 collate utf8mb4_general_ci;</p>
+<p>pip install mysqlclient<br>settings.py<br>DATABASE설정 바꾸기</p>
+<p>DATABASES = {<br>    ‘default’: {<br>        ‘ENGINE’: ‘django.db.backends.mysql’,<br>        ‘NAME’ : ‘테이블이름’,<br>        ‘USER’ : ‘DB사용자이름’,<br>        ‘PASSWORD’ : ‘비밀번호’,<br>        ‘HOST’ : ‘localhost’,<br>        ‘PORT’ : ‘3306’,<br>    }<br>}</p>
+<p>비밀번호 유출되면 안되니까 프로젝트 폴더 내에 hide_settings.py 만들어주고<br>위의 내용을 옮긴 뒤 .gitignore에 추가<br>기존의 settings.py 에는<br>import hide_settings<br>DATABASES = hide_settings.DATABASES<br>로 변경</p>
+<p>python3 manage.py makemigrations 앱들<br>python3 manage.py migrate 앱들<br>python3 manage.py migrate</p>
+<p>한뒤 런서버해보면 끝!~~!</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly92ZWxvZy5pby9AZGV2bWluL0RqYW5nby1NeVNRTC1Db25uZWN0">https://velog.io/@devmin/Django-MySQL-Connect<i class="fa fa-external-link-alt"></i></span></p>
 
       
     </div>
@@ -1147,105 +1251,6 @@ setTimeout(()=&gt;{
 <h3 id="🎯async"><a href="#🎯async" class="headerlink" title="🎯async"></a>🎯async</h3><p>async function bar()<br>async await -&gt; 프로미스객체 있을때만 사용</p>
 <p>async function* main(){<br>    await delay(3000);<br>    console.log(‘3초뒤’);<br>}</p>
 <p>main();</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/09/09/2020-09-09-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/09/2020-09-09-TIL/" class="post-title-link" itemprop="url">[2020.09.09]TIL</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-09 11:38:58" itemprop="dateCreated datePublished" datetime="2020-09-09T11:38:58+09:00">2020-09-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-14 22:20:29" itemprop="dateModified" datetime="2020-09-14T22:20:29+09:00">2020-09-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/09/09/2020-09-09-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/09/2020-09-09-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="🌟Java-언어공부3"><a href="#🌟Java-언어공부3" class="headerlink" title="🌟Java 언어공부3"></a>🌟Java 언어공부3</h2><p>본 포스팅은 기본 문법 정리를 포함하지 않습니다.</p>
-<h3 id="🎯method-overriding"><a href="#🎯method-overriding" class="headerlink" title="🎯method overriding"></a>🎯method overriding</h3><p>상위 클래스에서 넘겨준 기능을 하위클래스가 받아서 사용할때<br>하위 클래스 단에서 필요에 맞게 기능을 수정하는 것을 의미합니다.<br>오버라이딩을 할때는 다음과 같은 조건(메소드의 서명)을 충족시켜야합니다.<br>    1. 메소드의 이름이 동일해야합니다.<br>    2. 매개변수의 데이터 정보와 갯수가 동일해야합니다.<br>    3. 리턴타입이 동일해야합니다.</p>
-<h3 id="🎯super"><a href="#🎯super" class="headerlink" title="🎯super"></a>🎯super</h3><p>부모 클래스의 메소드와 자식 클래스의 메소드가 중복될때는<br>상위클래스의 메소드를 호출하는 super()을 이용하여 중복을 제거해줍니다.</p>
-<h3 id="🎯method-overloading"><a href="#🎯method-overloading" class="headerlink" title="🎯method overloading"></a>🎯method overloading</h3><p>이름은 같지만 서명이 다른 메소드를 중복해서 선언할 수 있는 것을 의미합니다.<br>오버로딩된 메소드는 자바단에서 매개변수의 타입이나 갯수에 따라<br>어떤 메소드를 호출할 지 판단합니다.<br>다만 서명중에서 <code>리턴타입</code>을 달리하면 오류가 발생합니다.<br>리턴타입은 호출시점에서 전달되지 않기 때문에<br>자바가 메소드를 구별할 수 없기 때문입니다.</p>
-<h3 id="🎯Class-path"><a href="#🎯Class-path" class="headerlink" title="🎯Class path"></a>🎯Class path</h3><p>컴파일 시 클래스 파일은 클래스 하나당 한개씩 생성됩니다.<br>만약 한 클래스가 다른 한 클래스를 참조하는데, 이 둘이 같은 디렉토리에 위치하고 있지않으면 다음명령어를 통해 참조 클래스의 위치를 지정하여, 가상머신에게 알려줍니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -classpath &quot;.;참조되는 메소드의 class파일이 위치한 디렉토리명&quot; 메인 class명</span><br></pre></td></tr></table></figure>
-
-<h3 id="🎯Package"><a href="#🎯Package" class="headerlink" title="🎯Package"></a>🎯Package</h3><p>같은 이름을 가진 클래스의 충돌을 막기위해 사용됩니다.<br>코드 상단에 디렉토리 이름과 똑같은 패키지를 호출하여 사용한다.</p>
 
       
     </div>
