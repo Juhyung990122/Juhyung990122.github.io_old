@@ -24,15 +24,15 @@
   </script>
 
 
-  <meta name="description" content="🌟 Django에 MYSQL 연동하기🎯 sqlite3 vs MYSQLsqlite3는 동시에 여러 클라이언트가 데이터베이스에 접근해야할때 단일쓰기 작업만 지원하여 제한적, 관리가 미흡함, 확장에 어려움이 있음 postgres 는 안전하고 관리가 잘 되지만 읽기기능이 많을경우 과도하게 돌아감  동시성은 높지않지만 갱신되는 데이터가 많고,동시에 읽어들이는 작">
+  <meta name="description" content="🌟 Django에 MYSQL 연동하기🎯 sqlite3 vs  Postgres vs MYSQL1.sqlite3    간단한 테스트용 디비용도로 사용하기 좋은 데이터베이스 입니다.    장점 : 단순하고 간편합니다.    단점 : 단일쓰기 작업만 지원하므로 동시에 여러 클라이언트가    데이터베이스에 접근해야할때 제한적이고 구조가 단순한 만큼 기능을 확장하">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[2020.09.28]TIL">
 <meta property="og:url" content="http://juhyung990122.github.io/2020/09/28/2020-09-28-TIL/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="🌟 Django에 MYSQL 연동하기🎯 sqlite3 vs MYSQLsqlite3는 동시에 여러 클라이언트가 데이터베이스에 접근해야할때 단일쓰기 작업만 지원하여 제한적, 관리가 미흡함, 확장에 어려움이 있음 postgres 는 안전하고 관리가 잘 되지만 읽기기능이 많을경우 과도하게 돌아감  동시성은 높지않지만 갱신되는 데이터가 많고,동시에 읽어들이는 작">
+<meta property="og:description" content="🌟 Django에 MYSQL 연동하기🎯 sqlite3 vs  Postgres vs MYSQL1.sqlite3    간단한 테스트용 디비용도로 사용하기 좋은 데이터베이스 입니다.    장점 : 단순하고 간편합니다.    단점 : 단일쓰기 작업만 지원하므로 동시에 여러 클라이언트가    데이터베이스에 접근해야할때 제한적이고 구조가 단순한 만큼 기능을 확장하">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-28T14:33:03.000Z">
-<meta property="article:modified_time" content="2020-09-28T16:33:57.789Z">
+<meta property="article:modified_time" content="2020-10-06T17:33:33.514Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="TIL">
 <meta property="article:tag" content="Django">
@@ -182,7 +182,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟-Django에-MYSQL-연동하기"><span class="nav-number">1.</span> <span class="nav-text">🌟 Django에 MYSQL 연동하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-sqlite3-vs-MYSQL"><span class="nav-number">1.1.</span> <span class="nav-text">🎯 sqlite3 vs MYSQL</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟-Django에-MYSQL-연동하기"><span class="nav-number">1.</span> <span class="nav-text">🌟 Django에 MYSQL 연동하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-sqlite3-vs-Postgres-vs-MYSQL"><span class="nav-number">1.1.</span> <span class="nav-text">🎯 sqlite3 vs  Postgres vs MYSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-MYSQL-세팅하기"><span class="nav-number">1.2.</span> <span class="nav-text">🎯 MYSQL 세팅하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-Django-에-적용하기"><span class="nav-number">1.3.</span> <span class="nav-text">🎯 Django 에 적용하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-DB에-테이블-생성하기"><span class="nav-number">1.4.</span> <span class="nav-text">🎯 DB에 테이블 생성하기</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -288,7 +288,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-29 01:33:57" itemprop="dateModified" datetime="2020-09-29T01:33:57+09:00">2020-09-29</time>
+                <time title="Modified: 2020-10-07 02:33:33" itemprop="dateModified" datetime="2020-10-07T02:33:33+09:00">2020-10-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -336,16 +336,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="🌟-Django에-MYSQL-연동하기"><a href="#🌟-Django에-MYSQL-연동하기" class="headerlink" title="🌟 Django에 MYSQL 연동하기"></a>🌟 Django에 MYSQL 연동하기</h2><h3 id="🎯-sqlite3-vs-MYSQL"><a href="#🎯-sqlite3-vs-MYSQL" class="headerlink" title="🎯 sqlite3 vs MYSQL"></a>🎯 sqlite3 vs MYSQL</h3><p>sqlite3는 동시에 여러 클라이언트가 데이터베이스에 접근해야할때 단일쓰기 작업만 지원하여 제한적, 관리가 미흡함, 확장에 어려움이 있음</p>
-<p>postgres 는 안전하고 관리가 잘 되지만 읽기기능이 많을경우 과도하게 돌아감 </p>
-<p>동시성은 높지않지만 갱신되는 데이터가 많고,<br>동시에 읽어들이는 작업도 많은 어플을 개발하고 있기때문에<br>가장 보편적이고 무난한 mysql로 가는게 맞다고 판단했습니다.</p>
-<p>홈브류 설치<br>mysql mysql-client mysqlworkbench 설치<br>mysql_secure_installation 비밀번호 설정<br>mysql -uroot -p비밀번호<br>create database 테이블이름 character set utf8mb4 collate utf8mb4_general_ci;</p>
-<p>pip install mysqlclient<br>settings.py<br>DATABASE설정 바꾸기</p>
-<p>DATABASES = {<br>    ‘default’: {<br>        ‘ENGINE’: ‘django.db.backends.mysql’,<br>        ‘NAME’ : ‘테이블이름’,<br>        ‘USER’ : ‘DB사용자이름’,<br>        ‘PASSWORD’ : ‘비밀번호’,<br>        ‘HOST’ : ‘localhost’,<br>        ‘PORT’ : ‘3306’,<br>    }<br>}</p>
-<p>비밀번호 유출되면 안되니까 프로젝트 폴더 내에 hide_settings.py 만들어주고<br>위의 내용을 옮긴 뒤 .gitignore에 추가<br>기존의 settings.py 에는<br>import hide_settings<br>DATABASES = hide_settings.DATABASES<br>로 변경</p>
-<p>python3 manage.py makemigrations 앱들<br>python3 manage.py migrate 앱들<br>python3 manage.py migrate</p>
-<p>한뒤 런서버해보면 끝!~~!</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly92ZWxvZy5pby9AZGV2bWluL0RqYW5nby1NeVNRTC1Db25uZWN0">https://velog.io/@devmin/Django-MySQL-Connect<i class="fa fa-external-link-alt"></i></span></p>
+        <h2 id="🌟-Django에-MYSQL-연동하기"><a href="#🌟-Django에-MYSQL-연동하기" class="headerlink" title="🌟 Django에 MYSQL 연동하기"></a>🌟 Django에 MYSQL 연동하기</h2><h3 id="🎯-sqlite3-vs-Postgres-vs-MYSQL"><a href="#🎯-sqlite3-vs-Postgres-vs-MYSQL" class="headerlink" title="🎯 sqlite3 vs  Postgres vs MYSQL"></a>🎯 sqlite3 vs  Postgres vs MYSQL</h3><p><strong>1.sqlite3</strong><br>    간단한 테스트용 디비용도로 사용하기 좋은 데이터베이스 입니다.<br>    장점 : 단순하고 간편합니다.<br>    단점 : 단일쓰기 작업만 지원하므로 동시에 여러 클라이언트가<br>    데이터베이스에 접근해야할때 제한적이고 구조가 단순한 만큼 기능을 확장하기 어렵습니다. </p>
+<p><strong>2. Postgres</strong><br>    기본적으로 성능이 좋은 데이터베이스입니다.<br>    장점 : 안정되어있고 데이터의 무결성을 보장합니다.<br>    확장성이 좋아 복잡한 기능구현이 가능합니다.<br>    단점 : 읽기기능이 많은 서비스일 경우 오히려 성능이 떨어질 수 있습니다.</p>
+<p><strong>3. MYSQL</strong><br>    가장 보편적이고 무난한 데이터베이스입니다.<br>    장점 : 간단하고 보편적입니다. 이용자가 많은만큼 지원이 많고 확장성이 좋습니다.<br>    단점 : 새로 개발된 기능의 경우 안정성이 부족합니다.</p>
+<h3 id="🎯-MYSQL-세팅하기"><a href="#🎯-MYSQL-세팅하기" class="headerlink" title="🎯 MYSQL 세팅하기"></a>🎯 MYSQL 세팅하기</h3><p><strong>1. Homebrew 설치하기</strong><br>    MacOS 전용 패키지 관리자인 Homebrew를 설치합니다.<br>    <span class="exturl" data-url="aHR0cHM6Ly9icmV3LnNoL2luZGV4X2tv66Gc">https://brew.sh/index_ko로<i class="fa fa-external-link-alt"></i></span> 이동하여 나와있는 코드를 복사한 뒤<br>    터미널을 켜서 붙여넣어줍니다.</p>
+<p><strong>2. mysql 패키지 설치하기</strong><br>    Homebrew 설치가 완료되면 다음의 명령어들을 입력해줍니다.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># mysql</span><br><span class="line">brew install mysql </span><br><span class="line"># mysql-client &#x3D; 커맨드라인에서 mysql 서버 접속</span><br><span class="line">brew install mysql-client </span><br><span class="line"># mysql workbench</span><br><span class="line">brew install mysqlworkbench 설치</span><br></pre></td></tr></table></figure><br>    세개가 다 설치된다면 터미널에 mysql -uroot를 입력해서<br>    mysql에 잘 접속되는지 확인해줍니다.</p>
+<p><strong>3. mysql 설정하기</strong><br>    <code>mysql_secure_installation</code>을 입력하여 비밀번호를 설정해줍니다.<br>    이때 설정하는 비밀번호는 root의 비밀번호가 됩니다.<br>    옵션들을 상황에 맞춰서 y와 n로 설정해 준 뒤에,<br>    <code>mysql -uroot -p방금 설정한 비밀번호</code>를 터미널에 입력하면<br>    잘 접속이 되는걸 확인할 수 있습니다.</p>
+<p><strong>4. mysql 내에 DB 생성하기</strong><br>    mysql 세팅이 다 끝났으면 mysql로 DB를 생성해줍니다.<br>    생성명령어는 다음과 같으며, 테이블 이름 뒤에 있는 인자는<br>    모든 문자형태를 MYSQL에 저장할 수 있게하는 명령어입니다.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 테이블이름 character set utf8mb4 collate utf8mb4_general_ci;</span><br></pre></td></tr></table></figure></p>
+<h3 id="🎯-Django-에-적용하기"><a href="#🎯-Django-에-적용하기" class="headerlink" title="🎯 Django 에 적용하기"></a>🎯 Django 에 적용하기</h3><pre><code>장고에서 사용할 mysqlclient를 설치해줍니다. 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mysqlclient</span><br></pre></td></tr></table></figure>
+
+그 다음 settings.py의 DATABASES를 찾아가보면
+장고의 기본 내장 데이터베이스인 sqlite3으로 설정되어있는걸 확인하실 수 있습니다.
+이 설정을 방금 구성한 MYSQL로 바꿔주면 django에서 쓰는 DB가 바뀌게 됩니다.
+설정양식은 다음과 같습니다.
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES &#x3D; &#123;</span><br><span class="line">    &#39;default&#39;: &#123;</span><br><span class="line">        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,</span><br><span class="line">        &#39;NAME&#39; : &#39;테이블이름&#39;,</span><br><span class="line">        &#39;USER&#39; : &#39;DB사용자이름&#39;,</span><br><span class="line">        &#39;PASSWORD&#39; : &#39;비밀번호&#39;,</span><br><span class="line">        &#39;HOST&#39; : &#39;localhost&#39;,</span><br><span class="line">        &#39;PORT&#39; : &#39;3306&#39;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+이때 데이터베이스의 비밀번호와 같은 정보들은 유출되면 문제가 생기므로 숨겨주어야 합니다.
+이를 위해 프로젝트 내에 secret.json을 만들어주고
+위의 내용을 옮긴 뒤 secret.json은 .gitignore에 추가하여 레포지토리에 올라가지 않도록 설정합니다. 
+그 다음 secret.json 내의 DB설정내용을 가져오기 위해서 
+settings.py 에 다음 코드를 삽입해줍니다.
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> secret</span><br><span class="line">DATABASES = secret[DATABASES]</span><br></pre></td></tr></table></figure></code></pre><h3 id="🎯-DB에-테이블-생성하기"><a href="#🎯-DB에-테이블-생성하기" class="headerlink" title="🎯 DB에 테이블 생성하기"></a>🎯 DB에 테이블 생성하기</h3><pre><code>모든 설정을 마쳤으니 마지막으로 마이그레이션 해서 DB내에 테이블을 생성합니다.
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py makemigrations 앱이름</span><br><span class="line">python3 manage.py migrate 앱이름</span><br><span class="line">python3 manage.py migrate </span><br><span class="line">&#96;</span><br></pre></td></tr></table></figure></code></pre><p>참고 :<br><span class="exturl" data-url="aHR0cHM6Ly92ZWxvZy5pby9AZGV2bWluL0RqYW5nby1NeVNRTC1Db25uZWN0">https://velog.io/@devmin/Django-MySQL-Connect<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9teWphbW9uZy50aXN0b3J5LmNvbS8xMDI=">https://myjamong.tistory.com/102<i class="fa fa-external-link-alt"></i></span></p>
 
     </div>
 
