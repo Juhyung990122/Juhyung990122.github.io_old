@@ -270,10 +270,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-10-09 11:43:20 / Modified: 16:33:03" itemprop="dateCreated datePublished" datetime="2020-10-09T11:43:20+09:00">2020-10-09</time>
+              <time title="Created: 2020-10-09 11:43:20" itemprop="dateCreated datePublished" datetime="2020-10-09T11:43:20+09:00">2020-10-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-11 23:41:57" itemprop="dateModified" datetime="2020-10-11T23:41:57+09:00">2020-10-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -320,12 +326,11 @@
 <li>API 기능 리스트업</li>
 </ul>
 <h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
-<li><p>AssertionError: Expected a ‘Response’, ‘HttpResponse’ or ‘HttpStreamingResponse’<br>to be returned from the view, but received a ‘&lt;class ‘NoneType’&gt;’</p>
-</li>
-<li><p>AttributeError: ‘ListSerializer’ object has no attribute ‘rank_save’</p>
-</li>
-<li><p>알고리즘이 맘에 안든다..ㅋㅋ</p>
-</li>
+<li>AssertionError: Expected a ‘Response’, ‘HttpResponse’ or ‘HttpStreamingResponse’<br>to be returned from the view, but received a ‘&lt;class ‘NoneType’&gt;’</li>
+</ol>
+<p><strong>문제:</strong> Response나 HttpResponse가 형식상 들어가야하는데 넣지않아서 생긴 에러입니다.<br>2. AttributeError: ‘ListSerializer’ object has no attribute ‘rank_save’<br><strong>문제:</strong> serializer의 매개변수중 many = True 를 설정할 시 ListSerializer형태로 바뀌게 되는데, rank_save는 일반 ModelSerailizer 내에 선언되어 있어서 발생하는 에러입니다.</p>
+<ol start="3">
+<li>알고리즘…<br>요청을 보내면 여태까지의 기록을 통해 순위를 갱신해주는 함수를 만들었는데,<br>(feed 내 사진갯수,uid)로 불러온 뒤 사진갯수 수대로 내림차순 정렬 후<br>feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름차순으로 정렬<br>모델 내 데이터를 차례대로 순회하면서 순위값을 갱신하는 방식입니다.<br>근데 정렬이 두번이나 들어가는게 맘에 안들어서.. 좀 더 효율적인 방법 없을까 고민중입니다..</li>
 </ol>
 
       
