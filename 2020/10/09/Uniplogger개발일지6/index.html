@@ -24,18 +24,18 @@
   </script>
 
 
-  <meta name="description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : 비공개 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 순위 정렬 알고리즘 추가 API 기능 리스트업  🎯에러로그 AssertionError: Expe">
+  <meta name="description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : 비공개 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 순위 정렬 알고리즘 추가 API 기능 리스트업  🎯에러로그1. AssertionError: Ex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Uniplogger개발일지6">
 <meta property="og:url" content="http://juhyung990122.github.io/2020/10/09/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%806/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : 비공개 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 순위 정렬 알고리즘 추가 API 기능 리스트업  🎯에러로그 AssertionError: Expe">
+<meta property="og:description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : 비공개 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 순위 정렬 알고리즘 추가 API 기능 리스트업  🎯에러로그1. AssertionError: Ex">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-09T02:43:20.000Z">
-<meta property="article:modified_time" content="2020-10-11T14:42:30.513Z">
+<meta property="article:modified_time" content="2020-10-12T14:09:07.389Z">
 <meta property="article:author" content="Guinness">
-<meta property="article:tag" content="DRF">
 <meta property="article:tag" content="Python">
+<meta property="article:tag" content="DRF">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://juhyung990122.github.io/2020/10/09/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%806/">
@@ -201,13 +201,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -285,7 +285,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-11 23:42:30" itemprop="dateModified" datetime="2020-10-11T23:42:30+09:00">2020-10-11</time>
+                <time title="Modified: 2020-10-12 23:09:07" itemprop="dateModified" datetime="2020-10-12T23:09:07+09:00">2020-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,18 +339,19 @@
 <li>순위 정렬 알고리즘 추가</li>
 <li>API 기능 리스트업</li>
 </ul>
-<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
-<li>AssertionError: Expected a ‘Response’, ‘HttpResponse’ or ‘HttpStreamingResponse’<br>to be returned from the view, but received a ‘&lt;class ‘NoneType’&gt;’</li>
-</ol>
-<p><strong>문제:</strong> Response나 HttpResponse가 형식상 들어가야하는데 넣지않아서 생긴 에러입니다. </p>
-<ol start="2">
-<li>AttributeError: ‘ListSerializer’ object has no attribute ‘rank_save’</li>
-</ol>
-<p><strong>문제:</strong> serializer의 매개변수중 many = True 를 설정할 시 ListSerializer형태로 바뀌게 되는데, rank_save는 일반 ModelSerailizer 내에 선언되어 있어서 발생하는 에러입니다.</p>
-<ol start="3">
-<li>알고리즘…<br>요청을 보내면 여태까지의 기록을 통해 순위를 갱신해주는 함수를 만들었는데,<br>(feed 내 사진갯수,uid)로 불러온 뒤 사진갯수 수대로 내림차순 정렬 후<br>feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름차순으로 정렬<br>모델 내 데이터를 차례대로 순회하면서 순위값을 갱신하는 방식입니다.<br>근데 정렬이 두번이나 들어가는게 맘에 안들어서.. 좀 더 효율적인 방법 없을까 고민중입니다..</li>
-</ol>
+<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><pre><code>1. AssertionError: Expected a &apos;Response&apos;, &apos;HttpResponse&apos; or &apos;HttpStreamingResponse&apos;
+to be returned from the view, but received a &apos;&lt;class &apos;NoneType&apos;&gt;&apos;
+**문제:** Response나 HttpResponse가 형식상 들어가야하는데 넣지않아서 생긴 에러입니다. 
 
+2. AttributeError: &apos;ListSerializer&apos; object has no attribute &apos;rank_save&apos;
+**문제:** serializer의 매개변수중 many = True 를 설정할 시 ListSerializer형태로 바뀌게 되는데, rank_save는 일반 ModelSerailizer 내에 선언되어 있어서 발생하는 에러입니다.
+
+3. 알고리즘...
+요청을 보내면 여태까지의 기록을 통해 순위를 갱신해주는 함수를 만들었는데, 
+(feed 내 사진갯수,uid)로 불러온 뒤 사진갯수 수대로 내림차순 정렬 후 
+feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름차순으로 정렬
+모델 내 데이터를 차례대로 순회하면서 순위값을 갱신하는 방식입니다.
+근데 정렬이 두번이나 들어가는게 맘에 안들어서.. 좀 더 효율적인 방법 없을까 고민중입니다..</code></pre>
     </div>
 
     
@@ -359,8 +360,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/DRF/" rel="tag"># DRF</a>
               <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/DRF/" rel="tag"># DRF</a>
           </div>
 
         
@@ -369,10 +370,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/09/2020-10-09-TIL/" rel="prev" title="[2020.10.09]TIL">
-      <i class="fa fa-chevron-left"></i> [2020.10.09]TIL
+    <a href="/2020/10/01/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%805/" rel="prev" title="Uniplogger개발일지5">
+      <i class="fa fa-chevron-left"></i> Uniplogger개발일지5
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/12/2020-10-09-TIL/" rel="next" title="[2020.10.12]TIL">
+      [2020.10.12]TIL <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
