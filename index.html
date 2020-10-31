@@ -762,7 +762,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-18 16:30:23" itemprop="dateModified" datetime="2020-10-18T16:30:23+09:00">2020-10-18</time>
+                <time title="Modified: 2020-10-31 15:54:39" itemprop="dateModified" datetime="2020-10-31T15:54:39+09:00">2020-10-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -809,19 +809,15 @@
 <li>순위 정렬 알고리즘 추가</li>
 <li>API 기능 리스트업</li>
 </ul>
-<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><pre><code>1. AssertionError: Expected a &apos;Response&apos;, &apos;HttpResponse&apos; or &apos;HttpStreamingResponse&apos;
-to be returned from the view, but received a &apos;&lt;class &apos;NoneType&apos;&gt;&apos;
-**문제:** Response나 HttpResponse가 형식상 들어가야하는데 넣지않아서 생긴 에러입니다. 
+<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
+<li><p>AssertionError: Expected a ‘Response’, ‘HttpResponse’ or ‘HttpStreamingResponse’<br> to be returned from the view, but received a ‘&lt;class ‘NoneType’&gt;’<br> <strong>문제:</strong> Response나 HttpResponse가 형식상 들어가야하는데 넣지않아서 생긴 에러입니다. </p>
+</li>
+<li><p>AttributeError: ‘ListSerializer’ object has no attribute ‘rank_save’<br> <strong>문제:</strong> serializer의 매개변수중 many = True 를 설정할 시 ListSerializer형태로 바뀌게 되는데, rank_save는 일반 ModelSerailizer 내에 선언되어 있어서 발생하는 에러입니다.</p>
+</li>
+<li><p>알고리즘…<br> 요청을 보내면 여태까지의 기록을 통해 순위를 갱신해주는 함수를 만들었는데,<br> (feed 내 사진갯수,uid)로 불러온 뒤 사진갯수 수대로 내림차순 정렬 후<br> feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름차순으로 정렬<br> 모델 내 데이터를 차례대로 순회하면서 순위값을 갱신하는 방식입니다.<br> 근데 정렬이 두번이나 들어가는게 맘에 안들어서.. 좀 더 효율적인 방법 없을까 고민중입니다..</p>
+</li>
+</ol>
 
-2. AttributeError: &apos;ListSerializer&apos; object has no attribute &apos;rank_save&apos;
-**문제:** serializer의 매개변수중 many = True 를 설정할 시 ListSerializer형태로 바뀌게 되는데, rank_save는 일반 ModelSerailizer 내에 선언되어 있어서 발생하는 에러입니다.
-
-3. 알고리즘...
-요청을 보내면 여태까지의 기록을 통해 순위를 갱신해주는 함수를 만들었는데, 
-(feed 내 사진갯수,uid)로 불러온 뒤 사진갯수 수대로 내림차순 정렬 후 
-feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름차순으로 정렬
-모델 내 데이터를 차례대로 순회하면서 순위값을 갱신하는 방식입니다.
-근데 정렬이 두번이나 들어가는게 맘에 안들어서.. 좀 더 효율적인 방법 없을까 고민중입니다..</code></pre>
       
     </div>
 
@@ -871,7 +867,7 @@ feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-18 16:30:28" itemprop="dateModified" datetime="2020-10-18T16:30:28+09:00">2020-10-18</time>
+                <time title="Modified: 2020-10-31 15:54:53" itemprop="dateModified" datetime="2020-10-31T15:54:53+09:00">2020-10-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -919,9 +915,9 @@ feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름�
 <li>애플로그인 추가 시도</li>
 </ul>
 <h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
-<li><p>클라이언트 푸시키 없음.<br>푸시알림을 클라이언트단에서 파이어베이스에서 발급되는 키값(기기정보)을 서버에 넘겨주면<br>서버가 그걸 받아서 서버내 데이터베이스에 작성(기기등록)해뒀다가<br>때마다 조건이 맞는 유저를 필터링해서 FCM에 요청을 보내면<br>FCM은 해당 기기에 푸시알림을 보내는 구조로 이해했습니다.<br>서버를 구축하고 간단하게 테스트 하려했는데, 클라이언트단에서 넘겨주는 푸시키가<br>없어서 테스트가 불가능했고 이에 기기등록, 요청전송 함수의 틀만 짜놓는 것으로<br>오늘의 작업을 마무리했습니다.</p>
+<li><p>클라이언트 푸시키 없음.<br> 푸시알림을 클라이언트단에서 파이어베이스에서 발급되는 키값(기기정보)을 서버에 넘겨주면<br> 서버가 그걸 받아서 서버내 데이터베이스에 작성(기기등록)해뒀다가<br> 때마다 조건이 맞는 유저를 필터링해서 FCM에 요청을 보내면<br> FCM은 해당 기기에 푸시알림을 보내는 구조로 이해했습니다.<br> 서버를 구축하고 간단하게 테스트 하려했는데, 클라이언트단에서 넘겨주는 푸시키가<br> 없어서 테스트가 불가능했고 이에 기기등록, 요청전송 함수의 틀만 짜놓는 것으로<br> 오늘의 작업을 마무리했습니다.</p>
 </li>
-<li><p>애플로그인 추가보류<br>만드는 어플이 iOS라 애플로그인 기능이 필수적인데<br>애플로그인을 넣으려면 애플 개발자로 등록되어있어야 합니다.<br>애플 개발자라니 어쩐지 간지도 나도 해서 신나게 신청서를 작성했는데<br>맨 마지막 고지서에 연당 12만 9000원을 내라는 소리 보고 일단 드롭..ㅎ..<br>스크럼시간때 프론트팀과 상의해서 비벼볼 예정입니다.</p>
+<li><p>애플로그인 추가보류<br> 만드는 어플이 iOS라 애플로그인 기능이 필수적인데<br> 애플로그인을 넣으려면 애플 개발자로 등록되어있어야 합니다.<br> 애플 개발자라니 어쩐지 간지도 나도 해서 신나게 신청서를 작성했는데<br> 맨 마지막 고지서에 연당 12만 9000원을 내라는 소리 보고 일단 드롭..ㅎ..<br> 스크럼시간때 프론트팀과 상의해서 비벼볼 예정입니다.</p>
 </li>
 </ol>
 
@@ -974,7 +970,7 @@ feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-29 23:42:44" itemprop="dateModified" datetime="2020-10-29T23:42:44+09:00">2020-10-29</time>
+                <time title="Modified: 2020-10-31 16:01:41" itemprop="dateModified" datetime="2020-10-31T16:01:41+09:00">2020-10-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1022,21 +1018,11 @@ feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름�
 <p><strong>2. mysql 패키지 설치하기</strong><br>    Homebrew 설치가 완료되면 다음의 명령어들을 입력해줍니다.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># mysql</span><br><span class="line">brew install mysql </span><br><span class="line"># mysql-client &#x3D; 커맨드라인에서 mysql 서버 접속</span><br><span class="line">brew install mysql-client </span><br><span class="line"># mysql workbench</span><br><span class="line">brew install mysqlworkbench 설치</span><br></pre></td></tr></table></figure><br>    세개가 다 설치된다면 터미널에 mysql -uroot를 입력해서<br>    mysql에 잘 접속되는지 확인해줍니다.</p>
 <p><strong>3. mysql 설정하기</strong><br>    <code>mysql_secure_installation</code>을 입력하여 비밀번호를 설정해줍니다.<br>    이때 설정하는 비밀번호는 root의 비밀번호가 됩니다.<br>    옵션들을 상황에 맞춰서 y와 n로 설정해 준 뒤에,<br>    <code>mysql -uroot -p방금 설정한 비밀번호</code>를 터미널에 입력하면<br>    잘 접속이 되는걸 확인할 수 있습니다.</p>
 <p><strong>4. mysql 내에 DB 생성하기</strong><br>    mysql 세팅이 다 끝났으면 mysql로 DB를 생성해줍니다.<br>    생성명령어는 다음과 같으며, 테이블 이름 뒤에 있는 인자는<br>    모든 문자형태를 MYSQL에 저장할 수 있게하는 명령어입니다.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 테이블이름 character set utf8mb4 collate utf8mb4_general_ci;</span><br></pre></td></tr></table></figure></p>
-<h3 id="🎯-Django-에-적용하기"><a href="#🎯-Django-에-적용하기" class="headerlink" title="🎯 Django 에 적용하기"></a>🎯 Django 에 적용하기</h3><pre><code>장고에서 사용할 mysqlclient를 설치해줍니다. 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mysqlclient</span><br></pre></td></tr></table></figure>
-
-그 다음 settings.py의 DATABASES를 찾아가보면
-장고의 기본 내장 데이터베이스인 sqlite3으로 설정되어있는걸 확인하실 수 있습니다.
-이 설정을 방금 구성한 MYSQL로 바꿔주면 django에서 쓰는 DB가 바뀌게 됩니다.
-설정양식은 다음과 같습니다.
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES &#x3D; &#123;</span><br><span class="line">    &#39;default&#39;: &#123;</span><br><span class="line">        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,</span><br><span class="line">        &#39;NAME&#39; : &#39;테이블이름&#39;,</span><br><span class="line">        &#39;USER&#39; : &#39;DB사용자이름&#39;,</span><br><span class="line">        &#39;PASSWORD&#39; : &#39;비밀번호&#39;,</span><br><span class="line">        &#39;HOST&#39; : &#39;localhost&#39;,</span><br><span class="line">        &#39;PORT&#39; : &#39;3306&#39;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-이때 데이터베이스의 비밀번호와 같은 정보들은 유출되면 문제가 생기므로 숨겨주어야 합니다.
-이를 위해 프로젝트 내에 secret.json을 만들어주고
-위의 내용을 옮긴 뒤 secret.json은 .gitignore에 추가하여 레포지토리에 올라가지 않도록 설정합니다. 
-그 다음 secret.json 내의 DB설정내용을 가져오기 위해서 
-settings.py 에 다음 코드를 삽입해줍니다.
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> secret</span><br><span class="line">DATABASES = secret[DATABASES]</span><br></pre></td></tr></table></figure></code></pre><h3 id="🎯-DB에-테이블-생성하기"><a href="#🎯-DB에-테이블-생성하기" class="headerlink" title="🎯 DB에 테이블 생성하기"></a>🎯 DB에 테이블 생성하기</h3><pre><code>모든 설정을 마쳤으니 마지막으로 마이그레이션 해서 DB내에 테이블을 생성합니다.
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py makemigrations 앱이름</span><br><span class="line">python3 manage.py migrate 앱이름</span><br><span class="line">python3 manage.py migrate </span><br><span class="line">&#96;</span><br></pre></td></tr></table></figure></code></pre><p>참고 :<br><span class="exturl" data-url="aHR0cHM6Ly92ZWxvZy5pby9AZGV2bWluL0RqYW5nby1NeVNRTC1Db25uZWN0">https://velog.io/@devmin/Django-MySQL-Connect<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9teWphbW9uZy50aXN0b3J5LmNvbS8xMDI=">https://myjamong.tistory.com/102<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="🎯-Django-에-적용하기"><a href="#🎯-Django-에-적용하기" class="headerlink" title="🎯 Django 에 적용하기"></a>🎯 Django 에 적용하기</h3><p><strong>1. mysqlclient를 설치</strong><br>    장고에서 사용할 mysqlclient를 설치해줍니다.<br>        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mysqlclient</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. Settings.py 수정하기</strong><br>    그 다음 settings.py의 DATABASES를 찾아가보면<br>    장고의 기본 내장 데이터베이스인 sqlite3으로 설정되어있는걸 확인하실 수 있습니다.<br>    이 설정을 방금 구성한 MYSQL로 바꿔주면 django에서 쓰는 DB가 바뀌게 됩니다.<br>    설정양식은 다음과 같습니다.</p>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span> : <span class="string">'테이블이름'</span>,</span><br><span class="line">        <span class="string">'USER'</span> : <span class="string">'DB사용자이름'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span> : <span class="string">'비밀번호'</span>,</span><br><span class="line">        <span class="string">'HOST'</span> : <span class="string">'localhost'</span>,</span><br><span class="line">        <span class="string">'PORT'</span> : <span class="string">'3306'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><p><strong>3. DB정보 숨기기</strong><br>    이때 데이터베이스의 비밀번호와 같은 정보들은 유출되면 문제가 생기므로 숨겨주어야 합니다.<br>    이를 위해 프로젝트 내에 secret.json을 만들어주고<br>    위의 내용을 옮긴 뒤 secret.json은 .gitignore에 추가하여 레포지토리에 올라가지 않도록 설정합니다.<br>    그 다음 secret.json 내의 DB설정내용을 가져오기 위해서<br>    settings.py 에 다음 코드를 삽입해줍니다.<br>        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> secret</span><br><span class="line">DATABASES = secret[DATABASES]</span><br></pre></td></tr></table></figure></p>
+<h3 id="🎯-DB에-테이블-생성하기"><a href="#🎯-DB에-테이블-생성하기" class="headerlink" title="🎯 DB에 테이블 생성하기"></a>🎯 DB에 테이블 생성하기</h3><p>모든 설정을 마쳤으니 마지막으로 마이그레이션 해서 DB내에 테이블을 생성합니다.</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py makemigrations 앱이름</span><br><span class="line">python3 manage.py migrate 앱이름</span><br><span class="line">python3 manage.py migrate</span><br></pre></td></tr></table></figure></code></pre><p>참고 :<br><span class="exturl" data-url="aHR0cHM6Ly92ZWxvZy5pby9AZGV2bWluL0RqYW5nby1NeVNRTC1Db25uZWN0">https://velog.io/@devmin/Django-MySQL-Connect<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9teWphbW9uZy50aXN0b3J5LmNvbS8xMDI=">https://myjamong.tistory.com/102<i class="fa fa-external-link-alt"></i></span></p>
 
       
     </div>
