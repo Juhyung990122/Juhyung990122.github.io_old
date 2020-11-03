@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/mons_fav.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/mons_fav.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/mons_fav.png">
+  <link rel="mask-icon" href="/images/mons_fav.png" color="#222">
+  <meta name="google-site-verification" content="axv8F5XUYwgAEqM6mad_Dpm8dURcOb6zJJumBXpZOH8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyung990122.github.io","root":"/","scheme":"Mist","version":"8.0.0-rc.4","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
+  </script>
+
+
+  <meta name="description" content="⚠️ 본 포스팅은 2019.10.10 에 작성된 포스팅을 백업한 것이므로실제 AWS 웹 화면이 첨부이미지와 다를 수 있습니다 🌟AWS 해킹 및 실수로 인한 청구 해결하기저번달에 aws에서 과금문제가 발생했었다.내가 사용하는 리전에는 인스턴스가 하나도 없는거보면 내 과실은 아니란 얘기고.그럼 남이 내 계정을 쓰고있단 말인데.. 보통 이런건 크게당하면 백만원">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS 과금에 대처하는 법">
+<meta property="og:url" content="http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/index.html">
+<meta property="og:site_name" content="여름산책">
+<meta property="og:description" content="⚠️ 본 포스팅은 2019.10.10 에 작성된 포스팅을 백업한 것이므로실제 AWS 웹 화면이 첨부이미지와 다를 수 있습니다 🌟AWS 해킹 및 실수로 인한 청구 해결하기저번달에 aws에서 과금문제가 발생했었다.내가 사용하는 리전에는 인스턴스가 하나도 없는거보면 내 과실은 아니란 얘기고.그럼 남이 내 계정을 쓰고있단 말인데.. 보통 이런건 크게당하면 백만원">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-03T18:21:47.000Z">
+<meta property="article:modified_time" content="2020-11-03T18:56:04.323Z">
+<meta property="article:author" content="Guinness">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AWS 과금에 대처하는 법 | 여름산책</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">여름산책</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟AWS-해킹-및-실수로-인한-청구-해결하기"><span class="nav-number">1.</span> <span class="nav-text">🌟AWS 해킹 및 실수로 인한 청구 해결하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭"><span class="nav-number">1.1.</span> <span class="nav-text">🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-create-case-주황버튼-을-클릭"><span class="nav-number">1.2.</span> <span class="nav-text">🎯 create case(주황버튼)을 클릭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-account-and-billing-support-로-선택"><span class="nav-number">1.3.</span> <span class="nav-text">🎯 account and billing support 로 선택</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택"><span class="nav-number">1.4.</span> <span class="nav-text">🎯 case classification Type -&gt; Billing &#x2F; Category -&gt; Charge Inquiry 선택</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-결백하다는-or-실수했다는-호소문-작성"><span class="nav-number">1.5.</span> <span class="nav-text">🎯 결백하다는 (or 실수했다는) 호소문 작성</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯컨택방법-선택하기"><span class="nav-number">1.6.</span> <span class="nav-text">🎯컨택방법 선택하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯메세지-메일-따라하기"><span class="nav-number">1.7.</span> <span class="nav-text">🎯메세지(메일) 따라하기</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Guinness"
+      src="/images/profile.png">
+  <p class="site-author-name" itemprop="name">Guinness</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjI=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/harukawa99@naver.com" title="E-Mail → harukawa99@naver.com"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3Byb2ZpbGUucGhwP2lkPTEwMDAxNDc1NDEwNDIyMQ==" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100014754104221"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AWS 과금에 대처하는 법
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-04 03:21:47 / Modified: 03:56:04" itemprop="dateCreated datePublished" datetime="2020-11-04T03:21:47+09:00">2020-11-04</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/04/AWS과금대처/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>⚠️ <strong>본 포스팅은 2019.10.10 에 작성된 포스팅을 백업한 것이므로<br>실제 AWS 웹 화면이 첨부이미지와 다를 수 있습니다</strong></p>
+<h2 id="🌟AWS-해킹-및-실수로-인한-청구-해결하기"><a href="#🌟AWS-해킹-및-실수로-인한-청구-해결하기" class="headerlink" title="🌟AWS 해킹 및 실수로 인한 청구 해결하기"></a>🌟AWS 해킹 및 실수로 인한 청구 해결하기</h2><p>저번달에 aws에서 과금문제가 발생했었다.<br>내가 사용하는 리전에는 인스턴스가 하나도 없는거보면 내 과실은 아니란 얘기고.<br>그럼 남이 내 계정을 쓰고있단 말인데..</p>
+<p>보통 이런건 크게당하면 백만원에서 천만원단위 까지 가던데<br>난 학생이라 불쌍했는지 3만원 썼더라.</p>
+<p>환불받을 기회는 한번이고 적게 쓰면 넘어가는 사람들도 왕왕 있다고는 하던데<br>괜히 찝찝해서 한번 환불받고 계정을 닫을 각오로 문의를 보냈다.</p>
+<h3 id="🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭"><a href="#🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭" class="headerlink" title="🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭"></a>🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭</h3><img src = "assets/images/aws1.png" height='300'/>
+
+<h3 id="🎯-create-case-주황버튼-을-클릭"><a href="#🎯-create-case-주황버튼-을-클릭" class="headerlink" title="🎯 create case(주황버튼)을 클릭"></a>🎯 create case(주황버튼)을 클릭</h3><img src = "assets/images/aws2.png" />
+
+<h3 id="🎯-account-and-billing-support-로-선택"><a href="#🎯-account-and-billing-support-로-선택" class="headerlink" title="🎯 account and billing support 로 선택"></a>🎯 account and billing support 로 선택</h3><img src = "assets/images/aws3.png" />
+
+<h3 id="🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택"><a href="#🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택" class="headerlink" title="🎯 case classification Type -&gt; Billing / Category -&gt; Charge Inquiry 선택"></a>🎯 case classification Type -&gt; Billing / Category -&gt; Charge Inquiry 선택</h3><p>다른카테고리도 많긴했는데 난 모르겠어서 그냥 저걸로 했었다. 환불된거보면 별 상관은 없는 듯 하다<br>    <img src = "assets/images/aws4.png" /></p>
+<h3 id="🎯-결백하다는-or-실수했다는-호소문-작성"><a href="#🎯-결백하다는-or-실수했다는-호소문-작성" class="headerlink" title="🎯 결백하다는 (or 실수했다는) 호소문 작성"></a>🎯 결백하다는 (or 실수했다는) 호소문 작성</h3><img src = "assets/images/aws5.png" />
+간단하게 작성해도 된다. 예시로 내가 쓴걸 들자면 
+
+
+<blockquote>
+<p>안부인사<br>나 한국의 학생인데 빌지보고 겁나 놀랐다.<br>교육목적으로 1시간 쓰고 다 지웠는데 청구가 됐더라,<br>자주쓰는 리전 확인도 해봤는데 아무것도 없다 등등 상황설명<br>내가 시도했던 것들 나열..<br>다른사람이 내 계정을 쓰고있는 것 같은데 어떻게 해야함?</p>
+</blockquote>
+<p>딱 알아먹을 수 있을 정도로만 썼는데 불쌍해보여서 효과가 좋았던 것 같다.<br>나는 영어실력이 안되서 딱히 걱정 없었지만 간혹가다가 너무 유려하게 쓰면 환불안해준다는 말도 있더라..<br>적당히 띨띨해보이게 쓰는걸 추천한다.</p>
+<p>첨부파일 넣어주면 더 좋단 소리가 있어서  청구서 + 자주 썼던 리전의 EC2 리소스목록 요렇게 두장 넣어줬다.<br><img src = "assets/images/aws6.png" /><br><img src = "assets/images/aws7.png" /></p>
+<h3 id="🎯컨택방법-선택하기"><a href="#🎯컨택방법-선택하기" class="headerlink" title="🎯컨택방법 선택하기"></a>🎯컨택방법 선택하기</h3><img src = "assets/images/aws8.png" />
+
+<p>web 선택시 이메일, phone 선택시 전화로 해결책을 알려준다.<br>나는 web으로 선택했는데 한 네다섯시간 후에 전화도 왔다.<br>번호가 거진 스팸전화처럼 오는데 그거 AWS 맞으니 안심하고 받으면 된다.<br>처음받으면 갑작스런 영어에 뇌가 일차적으로 충격받고 그와중에 소리가 끊겨서 2차 충격을 받게되지만<br>그래도 누가 언어는 기세라고 했다. 쫄지말고 들어보자.<br>나는 전화받았을때 본인확인+계정으로 메일이랑 메세지 (my support case에서 제출한 문의제목 클릭하면 볼 수 있음.) 보낼테니 시도해보고 연락주라는 것 같아서 응응 오케이~하고 끊었다.</p>
+<h3 id="🎯메세지-메일-따라하기"><a href="#🎯메세지-메일-따라하기" class="headerlink" title="🎯메세지(메일) 따라하기"></a>🎯메세지(메일) 따라하기</h3><p>사람마다 메세지 내용이 다르니까 각자 따라해보고<br>다했다고 답하면 뭘 더하라느니 아니면 이제 됐으니 기다리라는 회신이 온다.<br>그럼 존버하면된다. 청구서는 거의 바로..아님 하루? 정도 걸리고 입금은 한 3~5일정도 지나면 들어온다.<br>안되면 언제쯤 처리되느냐고 메세지보내면 기다리라는 답변이 올거다.<br>어차피 기다리라곤 하겠지만 그래도 재촉하면 괜히 빨리 되는 듯한 기분이 들어서 마음이 풀어지니<br>만일 좀 걱정된다싶으면 망설이지말고 보내보는걸 추천한다.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/03/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8011/" rel="prev" title="Uniplogger개발일지11">
+      <i class="fa fa-chevron-left"></i> Uniplogger개발일지11
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guinness</span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Guinness990122.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/";
+    this.page.identifier = "2020/11/04/AWS과금대처/";
+    this.page.title = "AWS 과금에 대처하는 법";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Guinness990122.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
