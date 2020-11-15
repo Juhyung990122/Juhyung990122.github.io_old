@@ -24,19 +24,21 @@
   </script>
 
 
-  <meta name="description" content="⚠️ 본 포스팅은 2019.10.10 에 작성된 포스팅을 백업한 것이므로실제 AWS 웹 화면이 첨부이미지와 다를 수 있습니다 🌟AWS 해킹 및 실수로 인한 청구 해결하기저번달에 aws에서 과금문제가 발생했었다.내가 사용하는 리전에는 인스턴스가 하나도 없는거보면 내 과실은 아니란 얘기고아마 플젝 배포하면서 키가 노출되지 않았나 싶었다. 보통 이런건 크게당하">
+  <meta name="description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : https:&#x2F;&#x2F;github.com&#x2F;Yapp-17th&#x2F;iOS_2_Backend 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 레벨 관리 로직 만들기 피드">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AWS 과금에 대처하는 법">
-<meta property="og:url" content="http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/index.html">
+<meta property="og:title" content="Uniplogger개발일지12">
+<meta property="og:url" content="http://juhyung990122.github.io/2020/11/15/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8012/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="⚠️ 본 포스팅은 2019.10.10 에 작성된 포스팅을 백업한 것이므로실제 AWS 웹 화면이 첨부이미지와 다를 수 있습니다 🌟AWS 해킹 및 실수로 인한 청구 해결하기저번달에 aws에서 과금문제가 발생했었다.내가 사용하는 리전에는 인스턴스가 하나도 없는거보면 내 과실은 아니란 얘기고아마 플젝 배포하면서 키가 노출되지 않았나 싶었다. 보통 이런건 크게당하">
+<meta property="og:description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : https:&#x2F;&#x2F;github.com&#x2F;Yapp-17th&#x2F;iOS_2_Backend 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 레벨 관리 로직 만들기 피드">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-03T18:21:47.000Z">
-<meta property="article:modified_time" content="2020-11-05T05:51:14.126Z">
+<meta property="article:published_time" content="2020-11-15T14:40:58.000Z">
+<meta property="article:modified_time" content="2020-11-15T14:41:41.062Z">
 <meta property="article:author" content="Guinness">
+<meta property="article:tag" content="DRF">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/">
+<link rel="canonical" href="http://juhyung990122.github.io/2020/11/15/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8012/">
 
 
 <script class="page-configurations">
@@ -49,7 +51,7 @@
   };
 </script>
 
-  <title>AWS 과금에 대처하는 법 | 여름산책</title>
+  <title>Uniplogger개발일지12 | 여름산책</title>
   
 
 
@@ -177,7 +179,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟AWS-해킹-및-실수로-인한-청구-해결하기"><span class="nav-number">1.</span> <span class="nav-text">🌟AWS 해킹 및 실수로 인한 청구 해결하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭"><span class="nav-number">1.1.</span> <span class="nav-text">🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-create-case-주황버튼-을-클릭"><span class="nav-number">1.2.</span> <span class="nav-text">🎯 create case(주황버튼)을 클릭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-account-and-billing-support-로-선택"><span class="nav-number">1.3.</span> <span class="nav-text">🎯 account and billing support 로 선택</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택"><span class="nav-number">1.4.</span> <span class="nav-text">🎯 case classification Type -&gt; Billing &#x2F; Category -&gt; Charge Inquiry 선택</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-결백하다는-or-실수했다는-호소문-작성"><span class="nav-number">1.5.</span> <span class="nav-text">🎯 결백하다는 (or 실수했다는) 호소문 작성</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯컨택방법-선택하기"><span class="nav-number">1.6.</span> <span class="nav-text">🎯컨택방법 선택하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯메세지-메일-따라하기"><span class="nav-number">1.7.</span> <span class="nav-text">🎯메세지(메일) 따라하기</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯깃허브-링크"><span class="nav-number">1.</span> <span class="nav-text">🎯깃허브 링크</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯프로젝트-소개"><span class="nav-number">2.</span> <span class="nav-text">🎯프로젝트 소개</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯진행내역"><span class="nav-number">3.</span> <span class="nav-text">🎯진행내역</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -253,7 +255,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/11/15/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8012/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/profile.png">
@@ -266,7 +268,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          AWS 과금에 대처하는 법
+          Uniplogger개발일지12
         </h1>
 
         <div class="post-meta">
@@ -275,16 +277,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-11-04 03:21:47" itemprop="dateCreated datePublished" datetime="2020-11-04T03:21:47+09:00">2020-11-04</time>
+              <time title="Created: 2020-11-15 23:40:58 / Modified: 23:41:41" itemprop="dateCreated datePublished" datetime="2020-11-15T23:40:58+09:00">2020-11-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-05 14:51:14" itemprop="dateModified" datetime="2020-11-05T14:51:14+09:00">2020-11-05</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -302,8 +311,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/04/AWS과금대처/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/11/15/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8012/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/15/Uniplogger개발일지12/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -318,30 +327,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>⚠️ <strong>본 포스팅은 2019.10.10 에 작성된 포스팅을 백업한 것이므로<br>실제 AWS 웹 화면이 첨부이미지와 다를 수 있습니다</strong></p>
-<h2 id="🌟AWS-해킹-및-실수로-인한-청구-해결하기"><a href="#🌟AWS-해킹-및-실수로-인한-청구-해결하기" class="headerlink" title="🌟AWS 해킹 및 실수로 인한 청구 해결하기"></a>🌟AWS 해킹 및 실수로 인한 청구 해결하기</h2><p>저번달에 aws에서 과금문제가 발생했었다.<br>내가 사용하는 리전에는 인스턴스가 하나도 없는거보면 내 과실은 아니란 얘기고<br>아마 플젝 배포하면서 키가 노출되지 않았나 싶었다.</p>
-<p>보통 이런건 크게당하면 백만원에서 천만원단위 까지 털리기도 하던데 난 학생이라 불쌍했는지 3만원 썼더라.</p>
-<p>환불받을 기회는 한번뿐이라 적게 쓰면 그냥 돈 내고 마는 사람들도 있긴한데<br>괜히 털린게 찝찝해서 한번 환불받고 계정을 닫을 각오로 문의를 보냈다.</p>
-<h3 id="🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭"><a href="#🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭" class="headerlink" title="🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭"></a>🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭</h3><img src = "/assets/images/aws1.png" height='300'/>
-
-<h3 id="🎯-create-case-주황버튼-을-클릭"><a href="#🎯-create-case-주황버튼-을-클릭" class="headerlink" title="🎯 create case(주황버튼)을 클릭"></a>🎯 create case(주황버튼)을 클릭</h3><img src = "/assets/images/aws2.png" />
-
-<h3 id="🎯-account-and-billing-support-로-선택"><a href="#🎯-account-and-billing-support-로-선택" class="headerlink" title="🎯 account and billing support 로 선택"></a>🎯 account and billing support 로 선택</h3><img src = "/assets/images/aws3.png" />
-
-<h3 id="🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택"><a href="#🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택" class="headerlink" title="🎯 case classification Type -&gt; Billing / Category -&gt; Charge Inquiry 선택"></a>🎯 case classification Type -&gt; Billing / Category -&gt; Charge Inquiry 선택</h3><p>다른 카테고리도 많긴했는데 난 모르겠어서 그냥 저걸로 했었다. 환불 된거보면 별 상관은 없는 듯 하다<br>    <img src = "/assets/images/aws4.png" /></p>
-<h3 id="🎯-결백하다는-or-실수했다는-호소문-작성"><a href="#🎯-결백하다는-or-실수했다는-호소문-작성" class="headerlink" title="🎯 결백하다는 (or 실수했다는) 호소문 작성"></a>🎯 결백하다는 (or 실수했다는) 호소문 작성</h3><img src = "/assets/images/aws5.png" />
-간단하게 작성해도 된다. 예시로 내가 쓴걸 들자면 
-
-
-<blockquote>
-<p>안부인사<br>나 한국의 학생인데 빌지보고 겁나 놀랐다.<br>교육목적으로 1시간 쓰고 다 지웠는데 청구가 됐더라,<br>자주쓰는 리전 확인도 해봤는데 아무것도 없다 등등 상황설명<br>내가 시도했던 것들 나열..<br>다른사람이 내 계정을 쓰고있는 것 같은데 어떻게 해야함?</p>
-</blockquote>
-<p>딱 알아먹을 수 있을 정도로만 썼는데 불쌍해보여서 효과가 좋았던 것 같다.<br>간혹가다가 너무 유려하게 쓰면 환불안해준다는 말도 있으니<br>내가 영어를 좀 한다 싶으면 적당히 띨띨해보이게 쓰는걸 추천한다.</p>
-<p>첨부파일 넣어주면 더 좋단 소리가 있어서  청구서 + 자주 썼던 리전의 EC2 리소스목록 요렇게 두장 넣어줬다.<br><img src = "/assets/images/aws6.png" /><br><img src = "/assets/images/aws7.png" /></p>
-<h3 id="🎯컨택방법-선택하기"><a href="#🎯컨택방법-선택하기" class="headerlink" title="🎯컨택방법 선택하기"></a>🎯컨택방법 선택하기</h3><img src = "/assets/images/aws8.png" />
-
-<p>web 선택시 이메일, phone 선택시 전화로 해결책을 알려준다.<br>나는 web으로 선택했는데 한 네다섯시간 후에 전화도 왔다.<br>번호가 거진 스팸전화처럼 오는데 그거 AWS 맞으니 안심하고 받으면 된다.<br>처음받으면 갑작스런 영어에 뇌가 1차 충격받고 그와중에 소리가 끊겨서 2차 충격을 받게되지만<br>그래도 누가 언어는 기세라고 했다. 쫄지말고 들어보자.<br>나는 전화받았을때 본인확인+계정으로 메일이랑 메세지 (my support case에서 제출한 문의제목 클릭하면 볼 수 있음.) 보낼테니 시도해보고 연락주라는 것 같아서 응응 오케이~하고 끊었다.</p>
-<h3 id="🎯메세지-메일-따라하기"><a href="#🎯메세지-메일-따라하기" class="headerlink" title="🎯메세지(메일) 따라하기"></a>🎯메세지(메일) 따라하기</h3><p>사람마다 메세지 내용이 다르니까 각자 따라해보고<br>다했다고 답하면 뭘 더하라느니 아니면 이제 됐으니 기다리라는 회신이 온다.<br>그럼 존버하면된다. 청구서는 거의 바로..아님 하루? 정도 걸리고 입금은 한 3~5일정도 지나면 들어온다.<br>안되면 언제쯤 처리되느냐고 메세지 보내면 기다리라는 답변이 올거다.<br>어차피 기다리라곤 하겠지만 그래도 재촉하면 괜히 빨리 되는 듯한 기분이 들어서 마음이 풀어지니<br>만일 좀 걱정된다 싶으면 망설이지말고 보내보는걸 추천한다.</p>
+        <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lhcHAtMTd0aC9pT1NfMl9CYWNrZW5k">https://github.com/Yapp-17th/iOS_2_Backend<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
+<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
+<li>레벨 관리 로직 만들기</li>
+<li>피드 압축 저장하는 법 알아보기</li>
+</ul>
 
     </div>
 
@@ -350,6 +341,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/DRF/" rel="tag"># DRF</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
 
         
 
@@ -357,13 +352,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/03/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8011/" rel="prev" title="Uniplogger개발일지11">
-      <i class="fa fa-chevron-left"></i> Uniplogger개발일지11
+    <a href="/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/" rel="prev" title="AWS 과금에 대처하는 법">
+      <i class="fa fa-chevron-left"></i> AWS 과금에 대처하는 법
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/11/15/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8012/" rel="next" title="Uniplogger개발일지12">
-      Uniplogger개발일지12 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -497,9 +489,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/";
-    this.page.identifier = "2020/11/04/AWS과금대처/";
-    this.page.title = "AWS 과금에 대처하는 법";
+    this.page.url = "http://juhyung990122.github.io/2020/11/15/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8012/";
+    this.page.identifier = "2020/11/15/Uniplogger개발일지12/";
+    this.page.title = "Uniplogger개발일지12";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
