@@ -24,15 +24,15 @@
   </script>
 
 
-  <meta name="description" content="🌟 빅데이터 처리 오류처리로그빅데이터처리 하둡과제를 진행하면서 발생한 에러와 해결법을 기록합니다. 🎯 메모리 제한 에러Container [pid&#x3D;28920,containerID&#x3D;container_1389136889967_0001_01_000121]is running beyond virtual memory limits. Current usage: 1.2">
+  <meta name="description" content="🌟 빅데이터 처리 오류처리로그빅데이터처리 하둡과제를 진행하면서 발생한 에러와 해결법을 기록합니다. 🎯 Container is running beyond virtual memory limits에러 전체내용: Container [pid&#x3D;28920,containerID&#x3D;container_1389136889967_0001_01_000121]is running">
 <meta property="og:type" content="article">
 <meta property="og:title" content="하둡실행 에러정리">
 <meta property="og:url" content="http://juhyung990122.github.io/2020/11/23/2020-11-23-TIL/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="🌟 빅데이터 처리 오류처리로그빅데이터처리 하둡과제를 진행하면서 발생한 에러와 해결법을 기록합니다. 🎯 메모리 제한 에러Container [pid&#x3D;28920,containerID&#x3D;container_1389136889967_0001_01_000121]is running beyond virtual memory limits. Current usage: 1.2">
+<meta property="og:description" content="🌟 빅데이터 처리 오류처리로그빅데이터처리 하둡과제를 진행하면서 발생한 에러와 해결법을 기록합니다. 🎯 Container is running beyond virtual memory limits에러 전체내용: Container [pid&#x3D;28920,containerID&#x3D;container_1389136889967_0001_01_000121]is running">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-23T04:21:25.000Z">
-<meta property="article:modified_time" content="2020-11-23T04:24:21.565Z">
+<meta property="article:modified_time" content="2020-11-23T16:24:02.392Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="Big Data Processing">
 <meta property="article:tag" content="Mapreduce">
@@ -179,7 +179,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟-빅데이터-처리-오류처리로그"><span class="nav-number">1.</span> <span class="nav-text">🌟 빅데이터 처리 오류처리로그</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-메모리-제한-에러"><span class="nav-number">1.1.</span> <span class="nav-text">🎯 메모리 제한 에러</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟-빅데이터-처리-오류처리로그"><span class="nav-number">1.</span> <span class="nav-text">🌟 빅데이터 처리 오류처리로그</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-Container-is-running-beyond-virtual-memory-limits"><span class="nav-number">1.1.</span> <span class="nav-text">🎯 Container is running beyond virtual memory limits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-java-net-authorization-error"><span class="nav-number">1.2.</span> <span class="nav-text">🎯 java.net authorization error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-Could-not-get-lock-var-lib-dpkg-lock-open-11-Resource-temporarily-unavailable"><span class="nav-number">1.3.</span> <span class="nav-text">🎯 Could not get lock &#x2F;var&#x2F;lib&#x2F;dpkg&#x2F;lock - open(11:Resource temporarily unavailable)</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -277,10 +277,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-23 13:21:25 / Modified: 13:24:21" itemprop="dateCreated datePublished" datetime="2020-11-23T13:21:25+09:00">2020-11-23</time>
+              <time title="Created: 2020-11-23 13:21:25" itemprop="dateCreated datePublished" datetime="2020-11-23T13:21:25+09:00">2020-11-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-24 01:24:02" itemprop="dateModified" datetime="2020-11-24T01:24:02+09:00">2020-11-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -328,8 +334,10 @@
 
       
         <h2 id="🌟-빅데이터-처리-오류처리로그"><a href="#🌟-빅데이터-처리-오류처리로그" class="headerlink" title="🌟 빅데이터 처리 오류처리로그"></a>🌟 빅데이터 처리 오류처리로그</h2><p>빅데이터처리 하둡과제를 진행하면서 발생한 에러와 해결법을 기록합니다.</p>
-<h3 id="🎯-메모리-제한-에러"><a href="#🎯-메모리-제한-에러" class="headerlink" title="🎯 메모리 제한 에러"></a>🎯 메모리 제한 에러</h3><p>Container [pid=28920,containerID=container_1389136889967_0001_01_000121]<br>is running beyond virtual memory limits. Current usage: 1.2 GB of 1 GB<br>physical memory used; 2.2 GB of 2.1 GB virtual memory used.<br>Killing container.</p>
-<p><strong>문제 :</strong> 맵작업에서 필요한 메모리의 용량이 limit보다 초과되어 나타나는 에러입니다.</p>
+<h3 id="🎯-Container-is-running-beyond-virtual-memory-limits"><a href="#🎯-Container-is-running-beyond-virtual-memory-limits" class="headerlink" title="🎯 Container is running beyond virtual memory limits"></a>🎯 Container is running beyond virtual memory limits</h3><p>에러 전체내용: Container [pid=28920,containerID=container_1389136889967_0001_01_000121]<br>is running beyond virtual memory limits. Current usage: 1.2 GB of 1 GB<br>physical memory used; 2.2 GB of 2.1 GB virtual memory used.<br>Killing container.</p>
+<p><strong>문제 :</strong> 맵작업에서 필요한 메모리의 용량이 limit보다 초과되어 나타나는 에러입니다.<br><strong>해결 :</strong> 가상환경(vm)내에서 사용할 가용메모리 크기를 늘려주었습니다. 추가로 yarn-site에<br>메모리 크기 검사 설정을 false로 변경햐였습니다</p>
+<h3 id="🎯-java-net-authorization-error"><a href="#🎯-java-net-authorization-error" class="headerlink" title="🎯 java.net authorization error"></a>🎯 java.net authorization error</h3><p><strong>문제 :</strong> 네임노드가 실횅되지 않아서 생기는 에러입니다.<br><strong>해결 :</strong> start-dfs.sh실행시 네임노드가 정상적으로 켜지지 않아 생기는 문제이므로<br>hadoop설치 위치 바로 아래의 sbin으로 이동하여 stop-all.sh을 실행합니다.<br>하둡이 종료되면 hadoop/etc/sbin 내에 있는 core-site.xml에서<br>tmp directory정보를 삭제한 뒤 저장하고<br>hadoop namenode -format을 통해 포맷해준뒤<br>다시 sbin으로 돌아가 start-all.sh 를 실행해주면 정상적으로 작동합니다.<br>jps 명령어를 통해 namenode가 정상작동 되는 걸 확인한 뒤에는<br>core-site.xml에 tmp 디렉토리 정보를 다시 추가해줍니다.</p>
+<h3 id="🎯-Could-not-get-lock-var-lib-dpkg-lock-open-11-Resource-temporarily-unavailable"><a href="#🎯-Could-not-get-lock-var-lib-dpkg-lock-open-11-Resource-temporarily-unavailable" class="headerlink" title="🎯 Could not get lock /var/lib/dpkg/lock - open(11:Resource temporarily unavailable)"></a>🎯 Could not get lock /var/lib/dpkg/lock - open(11:Resource temporarily unavailable)</h3><p><strong>문제 :</strong> apt-get을 사용하면 발생하는 에러입니다.<br><strong>해결 :</strong>해당 파일을 열지못해 생기는 에러이니 에러메세지에 나와있는 /var/lib/dpkg/lock을 삭제해주면 됩니다.</p>
 
     </div>
 
