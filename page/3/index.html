@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -243,6 +243,129 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/09/10/2020-09-10-TIL2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/10/2020-09-10-TIL2/" class="post-title-link" itemprop="url">[우아한 테크러닝] 4회차 정리</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-10 21:29:44" itemprop="dateCreated datePublished" datetime="2020-09-10T21:29:44+09:00">2020-09-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-29 23:41:47" itemprop="dateModified" datetime="2020-10-29T23:41:47+09:00">2020-10-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EB%9F%AC%EB%8B%9D/" itemprop="url" rel="index"><span itemprop="name">우아한 테크러닝</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/10/2020-09-10-TIL2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/10/2020-09-10-TIL2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟우아한-테크러닝-4회차"><a href="#🌟우아한-테크러닝-4회차" class="headerlink" title="🌟우아한 테크러닝 4회차"></a>🌟우아한 테크러닝 4회차</h2><h3 id="🎯promise"><a href="#🎯promise" class="headerlink" title="🎯promise"></a>🎯promise</h3><p>비동기<br>const x = 10;<br>const y = x * 10;<br>동시실행 가능? -&gt; 못함 왜? -&gt; x가 할당되기 전이기 때문(dependency) == 변수적 의존성</p>
+<p>const x = () =&gt; 10;<br>const y = x() * 10;<br>x값 확정순간은 y가 호출할때이므로 실행 가능 -&gt; 지연호출</p>
+<p>Promise는 지연과 비슷<br>두개의 함수를 전달하기위해 함수호출<br>const p = new Promise(funcion(resolve,reject){<br>    //p안에서 어떤일이 일어나도<br>    resolve(“1”);</p>
+<pre><code>//closuer 처럼 다른함수에 resolve삽입해두면
+setTimeout(()=&gt;{
+    resolve(&quot;1&quot;)
+},1000) 
+//함수안에서 지연되어 호출됨</code></pre><p>})<br>p.then(function(r){<br>    console.log(r)<br>    //얘가 1이 됨<br>})</p>
+<h3 id="🎯generator"><a href="#🎯generator" class="headerlink" title="🎯generator"></a>🎯generator</h3><ul>
+<li>yeild -&gt; 프로미스 외에도 다양한 타입에서 사용가능</li>
+</ul>
+<p>function* make(){<br>    return 1;<br>}</p>
+<p>const i = make();<br>//메이크 호출 -&gt; i에는 보통 1ㅇ이 들어오지만, generator을 쓰면 객체가 됨.<br>이 객체는 제너레이터 객체 </p>
+<p>함수는 인자를 받고 입력값을 받아 계산 한 뒤 값을 리턴<br>리턴이 없으면 프로시져 -&gt; 값을 넘겨서 계산할 수 잇으므로 상태 못가짐</p>
+<p>함수가 호출자한테 리턴을 여러번 할 수 있다면? == 함수가 호출될때<br>처음부터 시작하지않고 마지막 리턴지점부터 다시 시작한다면? == 코루틴</p>
+<p>코루틴의 일부를 차용해서 제너레이터로 명명<br>계속 어떤 값을 생성해내므로..ㅇㅇ </p>
+<p>let num = 1;<br>function* makenumber(){<br>    while(true){<br>        //제너레이터 안의 리턴은 yeild == 함수를 끝내지않고 다시 돌아오겠다~<br>        yeild num++;<br>    }</p>
+<p>}</p>
+<p>const i = makeNumber();</p>
+<p>원래라면 무한루프니까 브라우저가 죽는데 제너레이터하면 안죽음<br>어떻게?<br>컴퓨터가 알아서 후루루룩 하는게 아니라 next메소드를 통해서 함수 실행<br>i가 제너레이터 객체를 넘겨받음 -&gt; 이 안에 next라는 메소드가 있는데 얘를 통해 함수 실행 -&gt; i.next() 실행시 객체를 넘김 -&gt; 더이상 호출 불가하다면 next대신 done 이 옴</p>
+<p>함수 바깥이랑 함수 내부랑 커뮤니케이션 하는 느낌으로 이해하면 좋을듯!</p>
+<p>let num = 1;<br>function* makenumber(){<br>    while(true){<br>        //제너레이터 안의 리턴은 yeild == 함수를 끝내지않고 다시 돌아오겠다~<br>        yeild num++;<br>    }</p>
+<p>}</p>
+<p>const delay = ms =&gt; new Promise((resolve)=&gt;seTimeout(resolve,ms));</p>
+<p>//dealy(10)은 프로미스 객체를 반환하므로 then으로 받음(콜백함수 구조)<br>delay(10).then()=&gt;{<br>    console.log(‘3초뒤’)<br>}</p>
+<p>//위의 방법 말고 이렇게 작성하면..?<br>바깥쪽에선 함수 내부를 제어하고 함수안에서는 비동기를 동기처럼 푸는 느낌.</p>
+<p>function* main(){<br>    yeild delay(3000);<br>    console.log(‘3초뒤’);<br>}</p>
+<p>//여기서 부터 지워보면 main이 동기처럼 보임.<br>//넥스트가 담긴 객체가 리턴됨<br>const it = main();<br>//넥스트하면 프로미스 객체가 리턴됨<br>//프로미스 객체가 value 랑 done이 오는데 value만 취하겠다는 뜻 (구조분해할당)<br>const {value} = it.next()</p>
+<p>value.then(()=&gt;{<br>    //3초뒤에 콘솔로그 문자 출력<br>    it.next();<br>})</p>
+<h3 id="🎯async"><a href="#🎯async" class="headerlink" title="🎯async"></a>🎯async</h3><p>async function bar()<br>async await -&gt; 프로미스객체 있을때만 사용</p>
+<p>async function* main(){<br>    await delay(3000);<br>    console.log(‘3초뒤’);<br>}</p>
+<p>main();</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1237,125 +1360,10 @@ document.getElementById(&apos;root&apos;)
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/08/26/2020-08-26-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/26/2020-08-26-TIL/" class="post-title-link" itemprop="url">[Django] Settings.py 분리하기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-26 14:18:43" itemprop="dateCreated datePublished" datetime="2020-08-26T14:18:43+09:00">2020-08-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-29 23:41:02" itemprop="dateModified" datetime="2020-10-29T23:41:02+09:00">2020-10-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/08/26/2020-08-26-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/26/2020-08-26-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="🌟Django-Settings-분리하기"><a href="#🌟Django-Settings-분리하기" class="headerlink" title="🌟Django Settings 분리하기"></a>🌟Django Settings 분리하기</h2><h3 id="🎯settings-py를-하나로-쓸때의-문제점"><a href="#🎯settings-py를-하나로-쓸때의-문제점" class="headerlink" title="🎯settings.py를 하나로 쓸때의 문제점"></a>🎯settings.py를 하나로 쓸때의 문제점</h3><p>기존처럼 settings.py를 하나로 사용하게 되면 개발 시<br>DEBUG값을 true 로 두었다가 배포할때 false로 바꾸어야 하는 번거로움이 있습니다.<br>이외에도 환경마다 설정을 일일이 달리해야하는 등의 불편함도 있습니다.</p>
-<h3 id="🎯settings-py-왜-분리해서-사용할까요"><a href="#🎯settings-py-왜-분리해서-사용할까요" class="headerlink" title="🎯settings.py 왜 분리해서 사용할까요?"></a>🎯settings.py 왜 분리해서 사용할까요?</h3><p>settings.py를 분리하게 되면 몇가지 장점들이 있는데 다음과 같습니다.</p>
-<ol>
-<li>기본 환경에 들어있는 디버그 변수를 사용하지 않아도 된다.</li>
-<li>개발할 땐 개발용 세팅을, 배포할땐 배포용 세팅을 따로 분리해두므로 그때그때 변경하지 않아도 된다.</li>
-<li>local환경 버전관리에도 좀더 용이하다.<br>결론적으로 얘기하자면 <code>환경마다 settings.py 설정 및 적용을 달리할 수 있다는 장점때문에</code><br>실무에서는 주로 settings.py를 분리해서 사용합니다.</li>
-</ol>
-<h3 id="🎯settings-py-분리방식"><a href="#🎯settings-py-분리방식" class="headerlink" title="🎯settings.py 분리방식"></a>🎯settings.py 분리방식</h3><p>settings.py를 쪼갤때는 <code>공개여부</code>에 따라 파일을 분리합니다.<br>모든 환경에서 공통적으로 사용되는 공개 설정은 base.py 라는 파일에 작성하고<br>환경에 따라 설정을 달리 작성할 때는 local(development).py,production.py를 활용합니다.<br>비공개 설정은 대부분 환경변수를 활용합니다. 설정값에 환경변수를 로드하여 공개여부를 설정할 수 있습니다.<br>공개적인 설정은 레포지토리에서 저장되지만, 비공개 설정은 gitignore에 반드시 추가하여 관리해야 합니다.</p>
-<h3 id="🎯settings-py-분리하기"><a href="#🎯settings-py-분리하기" class="headerlink" title="🎯settings.py 분리하기"></a>🎯settings.py 분리하기</h3><ol>
-<li><p><strong>development.py</strong><br>베이스를 전부 임포트해와서 상속받은 뒤, debug는 true로,<br>database는 개발용 임시db(default)로 정의해줍니다.<br>이때는 debug가 true이므로 allowed_host엔 자동으로 로컬주소가 입력됩니다.</p>
-</li>
-<li><p><strong>production.py</strong><br>베이스를 전부 임포트해와서 상속받은 뒤, debug는 false로, database는 배포용 데이터베이스로 정의해줍니다.<br>추가적으로 allowed_host에 실제로 런칭할 서비스의 웹사이트 도메인을 추가하여,<br>권한을 도용하여 중요기능을 실행시키는 <code>CSRF 공격</code>으로부터 웹사이트를 보호합니다.<br>이는 debug가 false값일때 활성화되며 allowed_host에 도메인이 추가되어있지 않으면<br>Disallowedhost가 발생하여 웹사이트가 정상적으로 작동하지 않습니다.</p>
-</li>
-<li><p><strong>settings.py</strong><br>base.py에 있는 <code>BASE_DIR은 프로젝트의 root 경로를 저장해두는 변수</code>입니다.<br>이 변수를 통해 파일의 경로를 지정하는데, 우리는 기존의 settings.py를 안쪽으로 한번 쪼갰으므로<br>기존의 변수에서 os.path.dirname()을 한번 더 추가하여 root 경로를 한단계 더 안쪽으로 설정해줍니다.</p>
-</li>
-</ol>
-<h3 id="🎯분리한-settings-py-적용하기"><a href="#🎯분리한-settings-py-적용하기" class="headerlink" title="🎯분리한 settings.py 적용하기"></a>🎯분리한 settings.py 적용하기</h3><p>각각 나눠진 파일들을 아래의 명령어를 통해 따로따로 적용하여 runserver 할 수 있습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py shell --settings = 프로젝트 폴더.settings.사용할 파일명</span><br><span class="line">python3 manage.py runserver --settings = 프로젝트 폴더.settings.사용할 파일명</span><br></pre></td></tr></table></figure>
-<p>이외에도 shell을 통해서 환경변수를 지정해주는 방식도 있습니다.</p>
-<p>하지만 두 방법 다 매번 runserver마다 작성해야하므로 쓰기 번거롭습니다.<br>이때 <code>가상환경 내</code>에 DJANGO_SETTINGS_MODULE 환경변수를<br>등록해두면 –settings 없이도 사용할 수 있게 됩니다.<br>shell을 통해 .env 위치로 들어간 뒤, 가상환경을 활성화 하고<br>다음 내용을 작성하여 환경변수를 등록해줍니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DJANGO_SETTINGS_MODULE = 프로젝트 폴더.settings.사용할 파일명</span><br></pre></td></tr></table></figure>
-
-<h3 id="🎯-requirements-txt-분리하기"><a href="#🎯-requirements-txt-분리하기" class="headerlink" title="🎯 requirements.txt 분리하기"></a>🎯 requirements.txt 분리하기</h3><p>settings.py를 개발용과 배포용으로 나눈김에 requirements.txt도 공통,개발용,배포용으로 나누면<br>패키지설치에 필요한 시간과 메모리를 줄일 수 있습니다.<br>두 환경 다 <code>공통적으로 설치해야하는 것</code>은 <strong>base.txt</strong>에<br><code>개발할때만 필요한 패키지</code>는 <strong>development.txt</strong>에<br><code>배포할때 필요한 패키지</code>는 <strong>production.txt</strong>에 넣어서 따로따로 설정합니다.</p>
-<p>참고링크<br><span class="exturl" data-url="aHR0cHM6Ly9jamg1NDE0LmdpdGh1Yi5pby9kamFuZ28tc2V0dGluZ3Mtc2VwYXJhdGUv">https://cjh5414.github.io/django-settings-separate/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly93aWtpZG9jcy5uZXQvNjYwNiNfNQ==">https://wikidocs.net/6606#_5<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9laGZnazc4LmdpdGh1Yi5pby8yMDE4LzAyLzAyL0RqYW5nby1TZXR0aW5nc19SZXF1aXJlbWVudHMvI2hlYWRpbmctNS1yZXF1aXJlbWVudHN0eHQtJUVCJUI2JTg0JUVCJUE2JUFD">https://ehfgk78.github.io/2018/02/02/Django-Settings_Requirements/#heading-5-requirementstxt-%EB%B6%84%EB%A6%AC<i class="fa fa-external-link-alt"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
