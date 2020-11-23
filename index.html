@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -243,6 +243,101 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/" class="post-title-link" itemprop="url">Uniplogger개발일지13</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-23 13:09:15 / Modified: 13:20:03" itemprop="dateCreated datePublished" datetime="2020-11-23T13:09:15+09:00">2020-11-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/23/Uniplogger개발일지13/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lhcHAtMTd0aC9pT1NfMl9CYWNrZW5k">https://github.com/Yapp-17th/iOS_2_Backend<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
+<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
+<li>REST API 테스트 및 수정</li>
+</ul>
+<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
+<li>{“detail”: “Authentication credentials were not provided.”}</li>
+</ol>
+<p><strong>문제 :</strong> JWT 활성화 후 API 테스트를 진행하자 뜬 에러입니다.<br><strong>해결 :</strong> Authorization: jwt &lt;사용자토큰&gt;을 헤더에 넣고 전송하니 정상적으로 작동되었습니다.<br>테스트에는 Insomnia라는 REST API 테스트 툴을 사용했지만<br>이외에도 프로젝트내에 테스트파일을 생성하여 테스트하는 방법도 있습니다. 코드는 다음과 같습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">client</span><span class="params">()</span>:</span>    </span><br><span class="line">    token_h = <span class="string">"발급받은 토큰"</span></span><br><span class="line">    headers = &#123;<span class="string">"Authorization"</span>: <span class="string">'jwt'</span>+token_h&#125;</span><br><span class="line"></span><br><span class="line">    response = requests.get(<span class="string">"요청보낼 url"</span>, headers=headers)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"Status Code:"</span>, response.status_code)</span><br><span class="line">    response_data = response.json()</span><br><span class="line">    print(response_data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    client()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1123,109 +1218,6 @@
 <li><p>AttributeError: ‘ListSerializer’ object has no attribute ‘rank_save’<br> <strong>문제:</strong> serializer의 매개변수중 many = True 를 설정할 시 ListSerializer형태로 바뀌게 되는데, rank_save는 일반 ModelSerailizer 내에 선언되어 있어서 발생하는 에러입니다.</p>
 </li>
 <li><p>알고리즘…<br> 요청을 보내면 여태까지의 기록을 통해 순위를 갱신해주는 함수를 만들었는데,<br> (feed 내 사진갯수,uid)로 불러온 뒤 사진갯수 수대로 내림차순 정렬 후<br> feed 내 사진 갯수를 인덱스값+1 (순위값)으로 바꾸고 uid 오름차순으로 정렬<br> 모델 내 데이터를 차례대로 순회하면서 순위값을 갱신하는 방식입니다.<br> 근데 정렬이 두번이나 들어가는게 맘에 안들어서.. 좀 더 효율적인 방법 없을까 고민중입니다..</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/10/01/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%805/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/01/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%805/" class="post-title-link" itemprop="url">Uniplogger개발일지5</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-10-01 02:43:07" itemprop="dateCreated datePublished" datetime="2020-10-01T02:43:07+09:00">2020-10-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-31 15:54:53" itemprop="dateModified" datetime="2020-10-31T15:54:53+09:00">2020-10-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/10/01/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%805/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/01/Uniplogger개발일지5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lhcHAtMTd0aC9pT1NfMl9CYWNrZW5k">https://github.com/Yapp-17th/iOS_2_Backend<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
-<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
-<li>fcm-django를 이용하여 푸시알림 기능 추가</li>
-<li>애플로그인 추가 시도</li>
-</ul>
-<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
-<li><p>클라이언트 푸시키 없음.<br> 푸시알림을 클라이언트단에서 파이어베이스에서 발급되는 키값(기기정보)을 서버에 넘겨주면<br> 서버가 그걸 받아서 서버내 데이터베이스에 작성(기기등록)해뒀다가<br> 때마다 조건이 맞는 유저를 필터링해서 FCM에 요청을 보내면<br> FCM은 해당 기기에 푸시알림을 보내는 구조로 이해했습니다.<br> 서버를 구축하고 간단하게 테스트 하려했는데, 클라이언트단에서 넘겨주는 푸시키가<br> 없어서 테스트가 불가능했고 이에 기기등록, 요청전송 함수의 틀만 짜놓는 것으로<br> 오늘의 작업을 마무리했습니다.</p>
-</li>
-<li><p>애플로그인 추가보류<br> 만드는 어플이 iOS라 애플로그인 기능이 필수적인데<br> 애플로그인을 넣으려면 애플 개발자로 등록되어있어야 합니다.<br> 애플 개발자라니 어쩐지 간지도 나도 해서 신나게 신청서를 작성했는데<br> 맨 마지막 고지서에 연당 12만 9000원을 내라는 소리 보고 일단 드롭..ㅎ..<br> 스크럼시간때 프론트팀과 상의해서 비벼볼 예정입니다.</p>
 </li>
 </ol>
 

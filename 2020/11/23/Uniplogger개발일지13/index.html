@@ -24,20 +24,21 @@
   </script>
 
 
-  <meta name="description" content="🌟Java 언어공부3본 포스팅은 기본 문법 정리를 포함하지 않습니다. 🎯method overriding상위 클래스에서 넘겨준 기능을 하위클래스가 받아서 사용할때하위 클래스 단에서 필요에 맞게 기능을 수정하는 것을 의미합니다.오버라이딩을 할때는 다음과 같은 조건(메소드의 서명)을 충족시켜야합니다.    1. 메소드의 이름이 동일해야합니다.    2. 매개">
+  <meta name="description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : https:&#x2F;&#x2F;github.com&#x2F;Yapp-17th&#x2F;iOS_2_Backend 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 REST API 테스트 및">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Java] 자바 내용정리3">
-<meta property="og:url" content="http://juhyung990122.github.io/2020/09/09/2020-09-09-TIL/index.html">
+<meta property="og:title" content="Uniplogger개발일지13">
+<meta property="og:url" content="http://juhyung990122.github.io/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="🌟Java 언어공부3본 포스팅은 기본 문법 정리를 포함하지 않습니다. 🎯method overriding상위 클래스에서 넘겨준 기능을 하위클래스가 받아서 사용할때하위 클래스 단에서 필요에 맞게 기능을 수정하는 것을 의미합니다.오버라이딩을 할때는 다음과 같은 조건(메소드의 서명)을 충족시켜야합니다.    1. 메소드의 이름이 동일해야합니다.    2. 매개">
+<meta property="og:description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : https:&#x2F;&#x2F;github.com&#x2F;Yapp-17th&#x2F;iOS_2_Backend 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 REST API 테스트 및">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-09T02:38:58.000Z">
-<meta property="article:modified_time" content="2020-10-29T14:41:29.350Z">
+<meta property="article:published_time" content="2020-11-23T04:09:15.000Z">
+<meta property="article:modified_time" content="2020-11-23T04:20:03.003Z">
 <meta property="article:author" content="Guinness">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="DRF">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://juhyung990122.github.io/2020/09/09/2020-09-09-TIL/">
+<link rel="canonical" href="http://juhyung990122.github.io/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/">
 
 
 <script class="page-configurations">
@@ -50,7 +51,7 @@
   };
 </script>
 
-  <title>[Java] 자바 내용정리3 | 여름산책</title>
+  <title>Uniplogger개발일지13 | 여름산책</title>
   
 
 
@@ -178,7 +179,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Java-언어공부3"><span class="nav-number">1.</span> <span class="nav-text">🌟Java 언어공부3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯method-overriding"><span class="nav-number">1.1.</span> <span class="nav-text">🎯method overriding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯super"><span class="nav-number">1.2.</span> <span class="nav-text">🎯super</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯method-overloading"><span class="nav-number">1.3.</span> <span class="nav-text">🎯method overloading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Class-path"><span class="nav-number">1.4.</span> <span class="nav-text">🎯Class path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Package"><span class="nav-number">1.5.</span> <span class="nav-text">🎯Package</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯깃허브-링크"><span class="nav-number">1.</span> <span class="nav-text">🎯깃허브 링크</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯프로젝트-소개"><span class="nav-number">2.</span> <span class="nav-text">🎯프로젝트 소개</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯진행내역"><span class="nav-number">3.</span> <span class="nav-text">🎯진행내역</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯에러로그"><span class="nav-number">4.</span> <span class="nav-text">🎯에러로그</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -254,7 +255,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/09/09/2020-09-09-TIL/">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/profile.png">
@@ -267,7 +268,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Java] 자바 내용정리3
+          Uniplogger개발일지13
         </h1>
 
         <div class="post-meta">
@@ -276,27 +277,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-09-09 11:38:58" itemprop="dateCreated datePublished" datetime="2020-09-09T11:38:58+09:00">2020-09-09</time>
+              <time title="Created: 2020-11-23 13:09:15 / Modified: 13:20:03" itemprop="dateCreated datePublished" datetime="2020-11-23T13:09:15+09:00">2020-11-23</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-29 23:41:29" itemprop="dateModified" datetime="2020-10-29T23:41:29+09:00">2020-10-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
                 </span>
             </span>
 
@@ -316,8 +311,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/09/09/2020-09-09-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/09/2020-09-09-TIL/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/23/Uniplogger개발일지13/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -332,14 +327,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="🌟Java-언어공부3"><a href="#🌟Java-언어공부3" class="headerlink" title="🌟Java 언어공부3"></a>🌟Java 언어공부3</h2><p>본 포스팅은 기본 문법 정리를 포함하지 않습니다.</p>
-<h3 id="🎯method-overriding"><a href="#🎯method-overriding" class="headerlink" title="🎯method overriding"></a>🎯method overriding</h3><p>상위 클래스에서 넘겨준 기능을 하위클래스가 받아서 사용할때<br>하위 클래스 단에서 필요에 맞게 기능을 수정하는 것을 의미합니다.<br>오버라이딩을 할때는 다음과 같은 조건(메소드의 서명)을 충족시켜야합니다.<br>    1. 메소드의 이름이 동일해야합니다.<br>    2. 매개변수의 데이터 정보와 갯수가 동일해야합니다.<br>    3. 리턴타입이 동일해야합니다.</p>
-<h3 id="🎯super"><a href="#🎯super" class="headerlink" title="🎯super"></a>🎯super</h3><p>부모 클래스의 메소드와 자식 클래스의 메소드가 중복될때는<br>상위클래스의 메소드를 호출하는 super()을 이용하여 중복을 제거해줍니다.</p>
-<h3 id="🎯method-overloading"><a href="#🎯method-overloading" class="headerlink" title="🎯method overloading"></a>🎯method overloading</h3><p>이름은 같지만 서명이 다른 메소드를 중복해서 선언할 수 있는 것을 의미합니다.<br>오버로딩된 메소드는 자바단에서 매개변수의 타입이나 갯수에 따라<br>어떤 메소드를 호출할 지 판단합니다.<br>다만 서명중에서 <code>리턴타입</code>을 달리하면 오류가 발생합니다.<br>리턴타입은 호출시점에서 전달되지 않기 때문에<br>자바가 메소드를 구별할 수 없기 때문입니다.</p>
-<h3 id="🎯Class-path"><a href="#🎯Class-path" class="headerlink" title="🎯Class path"></a>🎯Class path</h3><p>컴파일 시 클래스 파일은 클래스 하나당 한개씩 생성됩니다.<br>만약 한 클래스가 다른 한 클래스를 참조하는데, 이 둘이 같은 디렉토리에 위치하고 있지않으면 다음명령어를 통해 참조 클래스의 위치를 지정하여, 가상머신에게 알려줍니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -classpath &quot;.;참조되는 메소드의 class파일이 위치한 디렉토리명&quot; 메인 class명</span><br></pre></td></tr></table></figure>
-
-<h3 id="🎯Package"><a href="#🎯Package" class="headerlink" title="🎯Package"></a>🎯Package</h3><p>같은 이름을 가진 클래스의 충돌을 막기위해 사용됩니다.<br>코드 상단에 디렉토리 이름과 똑같은 패키지를 호출하여 사용한다.</p>
+        <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lhcHAtMTd0aC9pT1NfMl9CYWNrZW5k">https://github.com/Yapp-17th/iOS_2_Backend<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
+<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
+<li>REST API 테스트 및 수정</li>
+</ul>
+<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
+<li>{“detail”: “Authentication credentials were not provided.”}</li>
+</ol>
+<p><strong>문제 :</strong> JWT 활성화 후 API 테스트를 진행하자 뜬 에러입니다.<br><strong>해결 :</strong> Authorization: jwt &lt;사용자토큰&gt;을 헤더에 넣고 전송하니 정상적으로 작동되었습니다.<br>테스트에는 Insomnia라는 REST API 테스트 툴을 사용했지만<br>이외에도 프로젝트내에 테스트파일을 생성하여 테스트하는 방법도 있습니다. 코드는 다음과 같습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">client</span><span class="params">()</span>:</span>    </span><br><span class="line">    token_h = <span class="string">"발급받은 토큰"</span></span><br><span class="line">    headers = &#123;<span class="string">"Authorization"</span>: <span class="string">'jwt'</span>+token_h&#125;</span><br><span class="line"></span><br><span class="line">    response = requests.get(<span class="string">"요청보낼 url"</span>, headers=headers)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"Status Code:"</span>, response.status_code)</span><br><span class="line">    response_data = response.json()</span><br><span class="line">    print(response_data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    client()</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -349,7 +346,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/DRF/" rel="tag"># DRF</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
 
         
@@ -358,13 +356,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/08/2020-09-08-TIL-2/" rel="prev" title="[우아한 테크러닝] 3회차 정리">
-      <i class="fa fa-chevron-left"></i> [우아한 테크러닝] 3회차 정리
+    <a href="/2020/11/15/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8012/" rel="prev" title="Uniplogger개발일지12">
+      <i class="fa fa-chevron-left"></i> Uniplogger개발일지12
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/10/2020-09-10-TIL2/" rel="next" title="[우아한 테크러닝] 4회차 정리">
-      [우아한 테크러닝] 4회차 정리 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -498,9 +493,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://juhyung990122.github.io/2020/09/09/2020-09-09-TIL/";
-    this.page.identifier = "2020/09/09/2020-09-09-TIL/";
-    this.page.title = "[Java] 자바 내용정리3";
+    this.page.url = "http://juhyung990122.github.io/2020/11/23/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8013/";
+    this.page.identifier = "2020/11/23/Uniplogger개발일지13/";
+    this.page.title = "Uniplogger개발일지13";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
