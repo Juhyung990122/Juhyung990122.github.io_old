@@ -278,7 +278,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-24 01:24:02" itemprop="dateModified" datetime="2020-11-24T01:24:02+09:00">2020-11-24</time>
+                <time title="Modified: 2020-11-24 01:28:25" itemprop="dateModified" datetime="2020-11-24T01:28:25+09:00">2020-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,7 +321,7 @@
       
           <h2 id="🌟-빅데이터-처리-오류처리로그"><a href="#🌟-빅데이터-처리-오류처리로그" class="headerlink" title="🌟 빅데이터 처리 오류처리로그"></a>🌟 빅데이터 처리 오류처리로그</h2><p>빅데이터처리 하둡과제를 진행하면서 발생한 에러와 해결법을 기록합니다.</p>
 <h3 id="🎯-Container-is-running-beyond-virtual-memory-limits"><a href="#🎯-Container-is-running-beyond-virtual-memory-limits" class="headerlink" title="🎯 Container is running beyond virtual memory limits"></a>🎯 Container is running beyond virtual memory limits</h3><p>에러 전체내용: Container [pid=28920,containerID=container_1389136889967_0001_01_000121]<br>is running beyond virtual memory limits. Current usage: 1.2 GB of 1 GB<br>physical memory used; 2.2 GB of 2.1 GB virtual memory used.<br>Killing container.</p>
-<p><strong>문제 :</strong> 맵작업에서 필요한 메모리의 용량이 limit보다 초과되어 나타나는 에러입니다.<br><strong>해결 :</strong> 가상환경(vm)내에서 사용할 가용메모리 크기를 늘려주었습니다. 추가로 yarn-site에<br>메모리 크기 검사 설정을 false로 변경햐였습니다</p>
+<p><strong>문제 :</strong> 맵작업에서 필요한 메모리의 용량이 limit보다 초과되어 나타나는 에러입니다.<br><strong>해결 :</strong> 가상환경(vm)내에서 사용할 가용메모리 크기를 늘려주었습니다. 추가로 yarn-site의<br>메모리 크기 검사 설정을 false로 변경햐였습니다<br>참고링크는 여기 <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMjEwMDU2NDMvY29udGFpbmVyLWlzLXJ1bm5pbmctYmV5b25kLW1lbW9yeS1saW1pdHM=">https://stackoverflow.com/questions/21005643/container-is-running-beyond-memory-limits<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="🎯-java-net-authorization-error"><a href="#🎯-java-net-authorization-error" class="headerlink" title="🎯 java.net authorization error"></a>🎯 java.net authorization error</h3><p><strong>문제 :</strong> 네임노드가 실횅되지 않아서 생기는 에러입니다.<br><strong>해결 :</strong> start-dfs.sh실행시 네임노드가 정상적으로 켜지지 않아 생기는 문제이므로<br>hadoop설치 위치 바로 아래의 sbin으로 이동하여 stop-all.sh을 실행합니다.<br>하둡이 종료되면 hadoop/etc/sbin 내에 있는 core-site.xml에서<br>tmp directory정보를 삭제한 뒤 저장하고<br>hadoop namenode -format을 통해 포맷해준뒤<br>다시 sbin으로 돌아가 start-all.sh 를 실행해주면 정상적으로 작동합니다.<br>jps 명령어를 통해 namenode가 정상작동 되는 걸 확인한 뒤에는<br>core-site.xml에 tmp 디렉토리 정보를 다시 추가해줍니다.</p>
 <h3 id="🎯-Could-not-get-lock-var-lib-dpkg-lock-open-11-Resource-temporarily-unavailable"><a href="#🎯-Could-not-get-lock-var-lib-dpkg-lock-open-11-Resource-temporarily-unavailable" class="headerlink" title="🎯 Could not get lock /var/lib/dpkg/lock - open(11:Resource temporarily unavailable)"></a>🎯 Could not get lock /var/lib/dpkg/lock - open(11:Resource temporarily unavailable)</h3><p><strong>문제 :</strong> apt-get을 사용하면 발생하는 에러입니다.<br><strong>해결 :</strong>해당 파일을 열지못해 생기는 에러이니 에러메세지에 나와있는 /var/lib/dpkg/lock을 삭제해주면 됩니다.</p>
 
