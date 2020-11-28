@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -243,6 +243,106 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/08/27/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-python3-%EC%8A%A4%ED%82%AC%ED%8A%B8%EB%A6%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/27/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-python3-%EC%8A%A4%ED%82%AC%ED%8A%B8%EB%A6%AC/" class="post-title-link" itemprop="url">[프로그래머스/python3]스킬트리</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-27 18:38:13" itemprop="dateCreated datePublished" datetime="2020-08-27T18:38:13+09:00">2020-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-28 00:23:15" itemprop="dateModified" datetime="2020-08-28T00:23:15+09:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/08/27/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-python3-%EC%8A%A4%ED%82%AC%ED%8A%B8%EB%A6%AC/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/27/프로그래머스-python3-스킬트리/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟프로그래머스-lv2-스킬트리-문제풀이"><a href="#🌟프로그래머스-lv2-스킬트리-문제풀이" class="headerlink" title="🌟프로그래머스 lv2 스킬트리 문제풀이"></a>🌟프로그래머스 lv2 스킬트리 문제풀이</h2><h3 id="🎯문제"><a href="#🎯문제" class="headerlink" title="🎯문제"></a>🎯문제</h3><p><span class="exturl" data-url="aHR0cHM6Ly9wcm9ncmFtbWVycy5jby5rci9sZWFybi9jb3Vyc2VzLzMwL2xlc3NvbnMvNDk5OTM=">문제링크<i class="fa fa-external-link-alt"></i></span><br>선행 스킬이란 어떤 스킬을 배우기 전에 먼저 배워야 하는 스킬을 뜻합니다.</p>
+<p>예를 들어 선행 스킬 순서가 스파크 → 라이트닝 볼트 → 썬더일때, 썬더를 배우려면 먼저 라이트닝 볼트를 배워야 하고, 라이트닝 볼트를 배우려면 먼저 스파크를 배워야 합니다.</p>
+<p>위 순서에 없는 다른 스킬(힐링 등)은 순서에 상관없이 배울 수 있습니다. 따라서 스파크 → 힐링 → 라이트닝 볼트 → 썬더와 같은 스킬트리는 가능하지만, 썬더 → 스파크나 라이트닝 볼트 → 스파크 → 힐링 → 썬더와 같은 스킬트리는 불가능합니다.</p>
+<ul>
+<li>제한조건<br>  선행 스킬 순서 skill과 유저들이 만든 스킬트리1를 담은 배열 skill_trees가 매개변수로 주어질 때, 가능한 스킬트리 개수를 return 하는 solution 함수를 작성해주세요<br>  스킬은 알파벳 대문자로 표기하며, 모든 문자열은 알파벳 대문자로만 이루어져 있습니다.<br>  스킬 순서와 스킬트리는 문자열로 표기합니다.<br>  예를 들어, C → B → D 라면 CBD로 표기합니다<br>  선행 스킬 순서 skill의 길이는 1 이상 26 이하이며, 스킬은 중복해 주어지지 않습니다.<br>  skill_trees는 길이 1 이상 20 이하인 배열입니다.<br>  skill_trees의 원소는 스킬을 나타내는 문자열입니다.<br>  skill_trees의 원소는 길이가 2 이상 26 이하인 문자열이며, 스킬이 중복해 주어지지 않습니다.</li>
+</ul>
+<h3 id="🎯소스코드"><a href="#🎯소스코드" class="headerlink" title="🎯소스코드"></a>🎯소스코드</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(skill, skill_trees)</span>:</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> skill_list <span class="keyword">in</span> skill_trees:</span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line">        sequence_skill = list(skill)</span><br><span class="line">        <span class="keyword">for</span> skills <span class="keyword">in</span> skill_list: <span class="comment">#스킬을 하나하나 돌껀데</span></span><br><span class="line">            <span class="keyword">if</span> skills <span class="keyword">in</span> sequence_skill: <span class="comment"># 해당 스킬이 순서가 있는 스킬인지 확인</span></span><br><span class="line">                <span class="keyword">if</span> skills != sequence_skill[<span class="number">0</span>]: <span class="comment"># 지금 배울 순서인지 확인</span></span><br><span class="line">                    flag = <span class="literal">False</span></span><br><span class="line">                    <span class="keyword">break</span> <span class="comment"># 전단계 스킬을 배우지 않았다면 성립할 수 없는 스킬트리이므로 break</span></span><br><span class="line">                <span class="keyword">else</span>: <span class="comment">#지금 배울 수 있는 스킬이면</span></span><br><span class="line">                    sequence_skill.pop(<span class="number">0</span>) <span class="comment">#배웠으니 순서도에서 빼주기</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> flag == <span class="literal">True</span>:</span><br><span class="line">            answer += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+<h3 id="🎯함수-정리"><a href="#🎯함수-정리" class="headerlink" title="🎯함수 정리"></a>🎯함수 정리</h3><p>문자열을 한글자씩 리스트로 만들기 : list(문자열)<br>두 리스트간 중복값을 리스트로 만들기 : list(set(리스트1.intersection(리스트2)))</p>
+<h3 id="🎯개선안"><a href="#🎯개선안" class="headerlink" title="🎯개선안"></a>🎯개선안</h3><p>본 개선안은 다른사람의 코드를 참고하여 작성합니다.</p>
+<ul>
+<li>if skills != sequence_skill[0]:를 sequence_skill.pop(0)으로 변환시 조건검사 후 pop을 실행하므로 else문을 생략할 수 있습니다. </li>
+<li>파이썬에서 지원하는 for-else문(for문이 중간에 break나 다른 이유로 끊기지 않았을때 else문 작동)을 사용하면 플래그 변수를 쓰지않고 스킬트리의 유효성을 변별할 수 있습니다.</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1172,102 +1272,6 @@
 <li>프로젝트가 커질수록 설계가 복잡해집니다.</li>
 <li>프로시저(프로그램을 기능에 따라 여러개로 분리한 것)가 많은 프로젝트이면<br>다시 객체로 변환시켜야하는 테스크가 많아 되려 비효율적일 수 있습니다.</li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/07/30/2020-07-30-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/30/2020-07-30-TIL/" class="post-title-link" itemprop="url">[DRF] ViewSet이란?</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-07-30 22:43:30" itemprop="dateCreated datePublished" datetime="2020-07-30T22:43:30+09:00">2020-07-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-29 23:37:03" itemprop="dateModified" datetime="2020-10-29T23:37:03+09:00">2020-10-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/DRF/" itemprop="url" rel="index"><span itemprop="name">DRF</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/07/30/2020-07-30-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/07/30/2020-07-30-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="🌟DRF-ViewSet"><a href="#🌟DRF-ViewSet" class="headerlink" title="🌟DRF ViewSet"></a>🌟DRF ViewSet</h2><h3 id="🎯Viewset이란"><a href="#🎯Viewset이란" class="headerlink" title="🎯Viewset이란?"></a>🎯Viewset이란?</h3><p>자주 사용하는 기능을 묶어둔 세트입니다. Viewset을 통해 중복되는 로직을 줄이고 코드를 간소화 할 수 있습니다.<br>Viewset은 다음과 같이 두가지 종류가 있으며, Viewset내의 기능은 Mixin을 상속받는 형태로 이루어집니다</p>
-<ul>
-<li>ReadOnlyModelViewSet : 목록 생성 + 데이터 조회</li>
-<li>ModelViewSet : 목록 생성 + 데이터 조회 + 데이터 생성 + 데이터 수정 + 데이터 삭제</li>
-</ul>
 
       
     </div>
