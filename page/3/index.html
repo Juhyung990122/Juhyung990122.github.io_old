@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -243,6 +243,102 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/09/16/2020-09-16-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/16/2020-09-16-TIL/" class="post-title-link" itemprop="url">[Java] 계산기 실습</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-16 00:51:37" itemprop="dateCreated datePublished" datetime="2020-09-16T00:51:37+09:00">2020-09-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-29 23:42:16" itemprop="dateModified" datetime="2020-10-29T23:42:16+09:00">2020-10-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/16/2020-09-16-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/16/2020-09-16-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟Java-계산기-실습"><a href="#🌟Java-계산기-실습" class="headerlink" title="🌟Java 계산기 실습"></a>🌟Java 계산기 실습</h2><h3 id="🎯기본형"><a href="#🎯기본형" class="headerlink" title="🎯기본형"></a>🎯기본형</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_class</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line">    <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOperands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left + <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left - <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mul</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left * <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left / <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calculator_class cal = <span class="keyword">new</span> Calculator_class();</span><br><span class="line">        cal.setOperands(<span class="number">25</span>,<span class="number">10</span>);</span><br><span class="line">        System.out.println(cal.sum());</span><br><span class="line">        System.out.println(cal.sub());</span><br><span class="line">        System.out.println(cal.mul());</span><br><span class="line">        System.out.println(cal.div());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="🎯초기화-수정버전"><a href="#🎯초기화-수정버전" class="headerlink" title="🎯초기화 수정버전"></a>🎯초기화 수정버전</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_class</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line">    <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Calculator_class</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left + <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left - <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mul</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left * <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left / <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calculator_class cal = <span class="keyword">new</span> Calculator_class(<span class="number">25</span>,<span class="number">10</span>);</span><br><span class="line">        System.out.println(cal.sum());</span><br><span class="line">        System.out.println(cal.sub());</span><br><span class="line">        System.out.println(cal.mul());</span><br><span class="line">        System.out.println(cal.div());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="🎯상속-버전"><a href="#🎯상속-버전" class="headerlink" title="🎯상속 버전"></a>🎯상속 버전</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_set</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line">    <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOperands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator_func</span> <span class="keyword">extends</span> <span class="title">Calculator_set</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left + <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left - <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mul</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left * <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">()</span></span>&#123;</span><br><span class="line">        total = <span class="keyword">this</span>.left / <span class="keyword">this</span>.right;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calculator_func cal = <span class="keyword">new</span> Calculator_func();</span><br><span class="line">        cal.setOperands(<span class="number">25</span>,<span class="number">10</span>);</span><br><span class="line">        System.out.println(cal.sum());</span><br><span class="line">        System.out.println(cal.sub());</span><br><span class="line">        System.out.println(cal.mul());</span><br><span class="line">        System.out.println(cal.div());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1232,124 +1328,6 @@ document.getElementById(&apos;root&apos;)
 );
 
 ``` </code></pre><p><strong>+) CLI 장단점</strong><br>장점 : 간단하고 앵간한건 다 제공합니다.<br>단점 : 제공하지 않는 세팅을 하는게 힘들며 다양한 환경에 대한 대응이 어렵습니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/08/29/2020-08-29-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/29/2020-08-29-TIL/" class="post-title-link" itemprop="url">[Django] CBV 알아보기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-29 23:59:51" itemprop="dateCreated datePublished" datetime="2020-08-29T23:59:51+09:00">2020-08-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-29 23:59:46" itemprop="dateModified" datetime="2020-10-29T23:59:46+09:00">2020-10-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TIL/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/08/29/2020-08-29-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/29/2020-08-29-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="🌟Django-CBV"><a href="#🌟Django-CBV" class="headerlink" title="🌟Django CBV"></a>🌟Django CBV</h2><h3 id="🎯CBV란"><a href="#🎯CBV란" class="headerlink" title="🎯CBV란?"></a>🎯CBV란?</h3><p>CBV란 클래스형 뷰의 약자로 Class로 views.py를 구성하는 것을 의미합니다.<br>다른 말로는 제네릭뷰(generic view)라고도 합니다.<br>CBV는 장고에서 자주 쓰는 기능들을 클래스로 미리 구현해 둔 것이라<br>상속과 오버라이딩을 사용할 수 있는데 이를 통해 중복되는 코드를 최소화시켜<br>가독성과 효율을 높일 수 있습니다.</p>
-<h3 id="🎯CBV-사용방법"><a href="#🎯CBV-사용방법" class="headerlink" title="🎯CBV 사용방법"></a>🎯CBV 사용방법</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL2VuLzIuMi9yZWYvY2xhc3MtYmFzZWQtdmlld3Mv">공식문서<i class="fa fa-external-link-alt"></i></span><br>CBV는 크게 용도에 따라 상속받을 제네릭뷰를 선택하고, 해당 제네릭뷰에서<br>제공하는 메소드를 용도에 맞게 상속해 쓰거나 오버라이딩하여 사용하면 됩니다.<br>자주 쓰는 제네릭뷰는 다음과 같습니다.</p>
-<h4 id="🎯CBV-BaseView"><a href="#🎯CBV-BaseView" class="headerlink" title="🎯CBV BaseView"></a>🎯CBV BaseView</h4><p>뷰 클래스를 생성하는 기본 제네릭 뷰입니다. </p>
-<ul>
-<li><p><strong>View</strong><br>  가장 기본적인 View로 제네릭뷰 중에서도 최상위에 있는 부모클래스입니다.<br>  주로 HTTP 메소드별로 액션을 정의할때 사용합니다.</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HTTPResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> View</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleView</span><span class="params">(View)</span>:</span></span><br><span class="line">    template_name = <span class="string">'index.html'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self,request,*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HTTPResonse(<span class="string">'get'</span>) <span class="comment">#이런식으로 표현해도 되고</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self,request,*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> render(request,self.template_name) <span class="comment">#이런식으로도 가능</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>TemplateView</strong><br>  주어진 템플릿으로 랜더링해주는 뷰입니다.</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HTTPResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> TemplateView</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleView</span><span class="params">(TemplateView)</span>:</span></span><br><span class="line">    template_name = <span class="string">'index.html'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_context_data</span><span class="params">(self,**kwargs)</span>:</span> <span class="comment">#넘겨주는 데이터 추가/변경 메소드</span></span><br><span class="line">        context = super().get_context_data(**kwargs) <span class="comment">#부모클래스에서 context 값을 받아옴</span></span><br><span class="line">        context[<span class="string">'object_ilst'</span>] = Model.objects.all() <span class="comment">#context에 쿼리값 추가</span></span><br><span class="line">        <span class="keyword">return</span> context</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="🎯CBV-Generic-Display-View"><a href="#🎯CBV-Generic-Display-View" class="headerlink" title="🎯CBV Generic Display View"></a>🎯CBV Generic Display View</h4><p>객체의 목록이나 상세정보를 보여주는 뷰 입니다.<br>Display View를 사용하기 위해서는 기본적으로 다음의 과정을 거칩니다.</p>
-<ol>
-<li>어떤 테이블의 객체리스트를 가져올건지 지정(속성변수 model이나 queryset, 메소드 get_queryset 오버라이딩)</li>
-<li>해당 객체를 랜더링 할 템플릿 파일위치 지정(속성변수 template_name)</li>
-<li>템플릿 파일로 넘겨줄 객체리스트의 이름 지정(속성변수 context_object_name)</li>
-<li>+) 페이지네이션(속성변수 paginate_by)</li>
-</ol>
-<ul>
-<li><strong>DetailView</strong><br>  조건을 정하고 그에 맞는 객체의 상세내역을 보여줍니다.  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HTTPResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> DetailView</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleView</span><span class="params">(DetailView)</span>:</span></span><br><span class="line">    model = ExampleModel <span class="comment">#객체가 있는 모델</span></span><br><span class="line">    template_name = <span class="string">'detail.html'</span> </span><br><span class="line">    <span class="comment">#별도의 지정값이 없으면 url에서 넘어온 pk값으로 구분하여 랜더링</span></span><br></pre></td></tr></table></figure></li>
-<li><strong>ListView</strong><br>  조건을 정하고 그에 맞는 객체들의 목록을 보여줍니다.  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HTTPResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> ListView</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleView</span><span class="params">(ListView)</span>:</span></span><br><span class="line">    model = ExampleModel <span class="comment"># 객체가 있는 모델</span></span><br><span class="line">    <span class="comment">#queryset = ExampleModel.objects.all()로도 표현가능</span></span><br><span class="line">    template_name = <span class="string">'list.html'</span> </span><br><span class="line">    <span class="comment">#별도의 지정값이 없으면 url에서 넘어온 pk값으로 구분하여 랜더링</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="🎯URL-패턴-매핑"><a href="#🎯URL-패턴-매핑" class="headerlink" title="🎯URL 패턴 매핑"></a>🎯URL 패턴 매핑</h3><p>view에서 사용했던 CBV를 호출하여 페이지를 랜더링하려면 <code>as_view()</code>라는 메소드를 호출해야합니다.<br>해당 메소드는 지정된 클래스의 인스턴스를 생성한 후,<br>인스턴스의 dispatch 메소드를 호출하여 요청을 검사합니다.<br>검사 후 정의된 HTTP 메소드라면 해당 요청에 맞는 동작을, 정의되지 않은 메소드라면<br>HttpResponseNotAllowed 라는 예외처리를 해줍니다.</p>
-<p>참고<br><span class="exturl" data-url="aHR0cHM6Ly93aWtpZG9jcy5uZXQvOTYyMw==">https://wikidocs.net/9623<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9kb3d0ZWNoLnRpc3RvcnkuY29tLzQ=">https://dowtech.tistory.com/4<i class="fa fa-external-link-alt"></i></span></p>
 
       
     </div>
