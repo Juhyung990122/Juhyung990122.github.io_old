@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -200,7 +200,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -247,6 +247,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2021/01/05/2021-01-05-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/05/2021-01-05-TIL/" class="post-title-link" itemprop="url">2021-01-05-TIL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-05 22:32:42" itemprop="dateCreated datePublished" datetime="2021-01-05T22:32:42+09:00">2021-01-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-07 17:17:25" itemprop="dateModified" datetime="2021-01-07T17:17:25+09:00">2021-01-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/01/05/2021-01-05-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/05/2021-01-05-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟Git-원격저장소-되돌리기"><a href="#🌟Git-원격저장소-되돌리기" class="headerlink" title="🌟Git 원격저장소 되돌리기"></a>🌟Git 원격저장소 되돌리기</h2><p>너무 살떨리는 경험이였어서 남김…후 </p>
+<p>발단을 간단하게 얘기하자면 포크떠놓은거 동기화시키려고 풀을 했는데 포크뜬거를 마스터에 덮어씌워버린거임 목표는 머지했던 코드를 되돌리고, 커밋기록을 지우기..!</p>
+<p>git reset –hard HEAD~1로 돌려서 머지직전 커밋으로 시점변경<br>이러면 내가 남기고 싶은 코드들로 상태가 바뀜<br>이상태로 git push origin master하게되면 로컬이 원격보다 뒤에있는데 푸시한다고 에러가난다.<br>(보통은 로컬에서 수정 -&gt; 원격에 반영 식이였지만 지금상태는 원격에 반영 -&gt; 로컬은 되돌렸는데?) 순인것<br>그럴땐 그냥 로컬저장소의 커밋을 원격으로 그냥그냥 덮어씌워버리는 수가있다.<br>고게 바로 git push -f origin master 요거<br>이러면 원격저장소에 내 과오를 남기지 않을 수 있다..ㅎ 대신 다른팀원이 풀해가서 작업하고 푸시하면?<br>나의 과오가 다시 업로드되겠지..^^</p>
+<p>이럴떈 내가 되돌렸다는걸 커밋으로 남겨야하는데 그건 git revert로 가능하다.<br>git revert –no-commit HEAD~되돌리고싶은 커밋의 범위..<br>하고 git commit -m , push 해주면<br>내가 되돌렸다는 커밋을 남겨서 팀원들이 알 수 있다.</p>
+<p>이렇게하면 원격저장소는 다시 평화를 되찾는다..^^</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2021/01/04/2021-01-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -270,10 +362,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-04 19:47:54 / Modified: 21:56:01" itemprop="dateCreated datePublished" datetime="2021-01-04T19:47:54+09:00">2021-01-04</time>
+              <time title="Created: 2021-01-04 19:47:54" itemprop="dateCreated datePublished" datetime="2021-01-04T19:47:54+09:00">2021-01-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-07 20:26:35" itemprop="dateModified" datetime="2021-01-07T20:26:35+09:00">2021-01-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -319,10 +417,15 @@
 </blockquote>
 <p><strong>1. 자주 접근하게 되는 경우</strong><br>    ‘자주 접근한다’는 <code>지역성의 원리</code>에 기반하여 판단합니다.<br>    지역성은 <code>시간지역성</code>과 <code>공간지역성</code>으로 나뉘어집니다.<br>    <strong>- 시간지역성</strong><br>    최근 접근한 데이터에 다시 접근하는 경향<br>    <strong>- 공간지역성</strong><br>    접근한 데이터 주변에 있는 데이터에 다시 접근하는 경향<br><strong>2. 값을 다시 계산하여 써야하는데 이 계산시간이 오래 걸리는 경우</strong></p>
 <p>또한 캐시는 반응속도 자체가 빠른 SRAM임과 동시에<br>주소가 키로 주어졌을떄 바로 접근할 수 있는 해시테이블 형식의 하드웨어이므로<br>접근시간자체도 O(1)정도로 매우 빨라 시스템 성능향상에 큰 역할을 합니다.</p>
-<h3 id="🎯캐시의-동작방식"><a href="#🎯캐시의-동작방식" class="headerlink" title="🎯캐시의 동작방식"></a>🎯캐시의 동작방식</h3><p>웹서버가 캐시에 접근하는 원리는 다음과 같습니다.<br><strong>1. CPU에서 메모리 가상주소를 사용하여 캐시메모리에 접근한다.</strong><br><strong>2. MMU라는 관리장치에서 가상주소를 번역하여 메모리의 물리주소로 변환한다.</strong>(데이터 저장방식에 따라 물리주소가 다르게 변환된다.)<br><strong>3. 변환한 주소에 찾는 데이터가 있는지 확인한다.</strong><br><strong>if  캐시내에 있다면?</strong><br>캐시된 데이터를 보여준다.<br><strong>if  캐시내에 없다면?</strong><br>데이터를 가져오고 캐시에 저장한뒤 보여준다.</p>
-<h3 id="🎯장고가-지원하는-캐시유형"><a href="#🎯장고가-지원하는-캐시유형" class="headerlink" title="🎯장고가 지원하는 캐시유형"></a>🎯장고가 지원하는 캐시유형</h3><p>장고에서 지원하는 기본 캐시 중 가장 빠르고 효율적인 것은 <code>Memcached</code> 입니다.<br>DB나 API호출 이후 받아오는 결과데이터를 작은단위(청크)의 key-value 형태로 <code>메모리</code>에 저장하는 형식이며<br>CPU가 처리할 데이터를 임시로 저장하는 RAM에 데이터 및 오브젝트를 캐시함으로써<br>데이터를 읽는 횟수를 줄이는 방식을 사용합니다.<br>Memcached를 사용하면 서버단에서는 부족한 메모리를 충족시키기 더욱 좋아지는데요.<br><strong>- 기존</strong><br>하나의 웹서버에서 쓸 수 있는 메모리가 정해져있고,<br>한 서버당 정해진 크기의 메모리만 사용할 수 있습니다.<br><strong>- Memcached 도입 후</strong><br>웹서버에서 쓸 수 있는 메모리들을 논리적으로 결합시켜<br>각각의 웹서버는 전체 메모리 캐시 크기만큼 사용할 수 있게 됩니다.</p>
+<h3 id="🎯캐시의-동작방식"><a href="#🎯캐시의-동작방식" class="headerlink" title="🎯캐시의 동작방식"></a>🎯캐시의 동작방식</h3><p>웹서버가 캐시에 접근하는 원리는 다음과 같습니다.</p>
+<ul>
+<li>Look aside cache<br>  <strong>1. CPU에서 메모리 가상주소를 사용하여 캐시메모리에 접근한다.</strong><br>  <strong>2. MMU라는 관리장치에서 가상주소를 번역하여 메모리의 물리주소로 변환한다.</strong>(데이터 저장방식에 따라 물리주소가 다르게 변환된다.)<br>  <strong>3. 변환한 주소에 찾는 데이터가 있는지 확인한다.</strong><br>  <strong>if  캐시내에 있다면?</strong><br>  캐시된 데이터를 보여준다.<br>  <strong>if  캐시내에 없다면?</strong><br>  데이터를 가져오고 캐시에 저장한뒤 보여준다.</li>
+<li>Write back<br>  <strong>1. CPU에서 사용할 데이터를 캐시에 기록한다.</strong><br>  <strong>2. 사용 후 블록단위로 캐시의 내용을 삭제할 때 메모리에 저장한다.</strong><br>  해당 방식의 특성상 캐시와 메모리 사이 업데이트 시기가 달라<br>  데이터가 일치하지않는 inconsisteny가 발생할 수 있습니다.</li>
+<li>Write through<br>  <strong>1. CPU에서 사용할 데이터를 캐시와 메모리내에 기록한다.</strong><br>  inconsistency나 loss가 발생하지 않는다는 장점이 있으나<br>  메모리 자체가 느리다면 성능저하가 발생합니다.</li>
+</ul>
+<h3 id="🎯장고가-지원하는-캐시유형"><a href="#🎯장고가-지원하는-캐시유형" class="headerlink" title="🎯장고가 지원하는 캐시유형"></a>🎯장고가 지원하는 캐시유형</h3><p>장고에서 지원하는 기본 캐시 중 가장 빠르고 효율적인 것은 <code>Memcached</code> 입니다.<br>DB나 API호출 이후 받아오는 결과데이터를 작은단위(청크)의 key-value 형태로 <code>메모리</code>에 저장하는 형식이며<br>CPU가 처리할 데이터를 임시로 저장하는 RAM에 데이터 및 오브젝트를 캐시함으로써<br>데이터를 읽는 횟수를 줄이는 방식을 사용합니다. 이를 통해 디스크를 거치지 않으므로<br>속도가 매우 빠르다는 장점도 있습니다.<br>Memcached를 사용하면 서버단에서는 부족한 메모리를 충족시키기 더욱 좋아지는데요.<br><strong>- 기존</strong><br>하나의 웹서버에서 쓸 수 있는 메모리가 정해져있고,<br>한 서버당 정해진 크기의 메모리만 사용할 수 있습니다.<br><strong>- Memcached 도입 후</strong><br>웹서버에서 쓸 수 있는 메모리들을 논리적으로 결합시켜<br>각각의 웹서버는 전체 메모리 캐시 크기만큼 사용할 수 있게 됩니다.</p>
 <p>이처럼 Memcached를 사용하면 웹서버들이 할당된 메모리가 아닌<br>전체 캐시 크기만큼 메모리를 사용할 수 있어 부족한 메모리를 쉽게 융통할 수 있습니다.</p>
-<p><strong>참고</strong><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL2VuLzMuMS90b3BpY3MvY2FjaGUv">https://docs.djangoproject.com/en/3.1/topics/cache/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly90ZXN0ZHJpdmVuLmlvL2Jsb2cvZGphbmdvLWNhY2hpbmcvIzp+OnRleHQ9UmVkaXMlMjB2cyUyME1lbWNhY2hlZCwlMkMlMjBrZXklMkR2YWx1ZSUyMGRhdGElMjBzdG9yZXMuJmFtcDt0ZXh0PVJlZGlzJTJDJTIwb24lMjB0aGUlMjBvdGhlciUyMGhhbmQsaW4lMjBhJTIwcHViJTJGc3ViJTIwc3lzdGVt">https://testdriven.io/blog/django-caching/#:~:text=Redis%20vs%20Memcached,%2C%20key%2Dvalue%20data%20stores.&amp;text=Redis%2C%20on%20the%20other%20hand,in%20a%20pub%2Fsub%20system<i class="fa fa-external-link-alt"></i></span>.<br><span class="exturl" data-url="aHR0cHM6Ly9rby53aWtpcGVkaWEub3JnL3dpa2kvTWVtY2FjaGVk">https://ko.wikipedia.org/wiki/Memcached<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL21pbG9veS5naXRodWIuaW8vVElML0RqYW5nby9kamFuZ28tY2FjaGUuaHRtbCMlRTElODQlOEYlRTElODUlQTIlRTElODQlODklRTElODUlQjU=">http://milooy.github.io/TIL/Django/django-cache.html#%E1%84%8F%E1%85%A2%E1%84%89%E1%85%B5<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9wYXJrc2IuZ2l0aHViLmlvL2FydGljbGUvMjkuaHRtbCM6fjp0ZXh0PSVGMCU5RiU5MiVCNSUyMCVFQyVCQSU5MCVFQyU4QiU5QyVFQSVCMCU4MCUyMCVFQiU4RiU5OSVFQyU5RSU5MSVFRCU5NSU5OCVFQiU4QSU5NCUyMCVFQyU5NSU4NCVFQyVBMyVCQyUyMCVFQSVCNSVBQyVFQyVCMiVCNCVFQyVBMCU4MSVFQyU5RCVCOCUyMCVFQyU5QiU5MCVFQiVBNiVBQywtJUVEJTk1JTk4JUVCJTkzJTlDJUVDJTlCJUE4JUVDJTk2JUI0JUVCJUExJTlDJTIwJUVBJUI1JUFDJUVEJTk4JTg0JmFtcDt0ZXh0PSVFQSVCOCVCMCVFQyU4OCVBMCVFQyU5RCU5OCUyMCVFQiVCMCU5QyVFQyVBMCU4NCVFQyU5QyVCQyVFQiVBMSU5QyUyMCVFRCU5NCU4NCVFQiVBMSU5QyVFQyU4NCVCOCVFQyU4NCU5QywlRUIlQjAlOTQlRUIlQTElOUMlMjAlRUMlQkElOTAlRUMlOEIlOUMoQ2FjaGUpJUVCJThCJUE0">https://parksb.github.io/article/29.html#:~:text=%F0%9F%92%B5%20%EC%BA%90%EC%8B%9C%EA%B0%80%20%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%20%EC%95%84%EC%A3%BC%20%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8%20%EC%9B%90%EB%A6%AC,-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%EB%A1%9C%20%EA%B5%AC%ED%98%84&amp;text=%EA%B8%B0%EC%88%A0%EC%9D%98%20%EB%B0%9C%EC%A0%84%EC%9C%BC%EB%A1%9C%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C,%EB%B0%94%EB%A1%9C%20%EC%BA%90%EC%8B%9C(Cache)%EB%8B%A4<i class="fa fa-external-link-alt"></i></span>.</p>
+<p><strong>참고</strong><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL2VuLzMuMS90b3BpY3MvY2FjaGUv">https://docs.djangoproject.com/en/3.1/topics/cache/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly90ZXN0ZHJpdmVuLmlvL2Jsb2cvZGphbmdvLWNhY2hpbmcvIzp+OnRleHQ9UmVkaXMlMjB2cyUyME1lbWNhY2hlZCwlMkMlMjBrZXklMkR2YWx1ZSUyMGRhdGElMjBzdG9yZXMuJmFtcDt0ZXh0PVJlZGlzJTJDJTIwb24lMjB0aGUlMjBvdGhlciUyMGhhbmQsaW4lMjBhJTIwcHViJTJGc3ViJTIwc3lzdGVt">https://testdriven.io/blog/django-caching/#:~:text=Redis%20vs%20Memcached,%2C%20key%2Dvalue%20data%20stores.&amp;text=Redis%2C%20on%20the%20other%20hand,in%20a%20pub%2Fsub%20system<i class="fa fa-external-link-alt"></i></span>.<br><span class="exturl" data-url="aHR0cHM6Ly9rby53aWtpcGVkaWEub3JnL3dpa2kvTWVtY2FjaGVk">https://ko.wikipedia.org/wiki/Memcached<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL21pbG9veS5naXRodWIuaW8vVElML0RqYW5nby9kamFuZ28tY2FjaGUuaHRtbCMlRTElODQlOEYlRTElODUlQTIlRTElODQlODklRTElODUlQjU=">http://milooy.github.io/TIL/Django/django-cache.html#%E1%84%8F%E1%85%A2%E1%84%89%E1%85%B5<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9wYXJrc2IuZ2l0aHViLmlvL2FydGljbGUvMjkuaHRtbCM6fjp0ZXh0PSVGMCU5RiU5MiVCNSUyMCVFQyVCQSU5MCVFQyU4QiU5QyVFQSVCMCU4MCUyMCVFQiU4RiU5OSVFQyU5RSU5MSVFRCU5NSU5OCVFQiU4QSU5NCUyMCVFQyU5NSU4NCVFQyVBMyVCQyUyMCVFQSVCNSVBQyVFQyVCMiVCNCVFQyVBMCU4MSVFQyU5RCVCOCUyMCVFQyU5QiU5MCVFQiVBNiVBQywtJUVEJTk1JTk4JUVCJTkzJTlDJUVDJTlCJUE4JUVDJTk2JUI0JUVCJUExJTlDJTIwJUVBJUI1JUFDJUVEJTk4JTg0JmFtcDt0ZXh0PSVFQSVCOCVCMCVFQyU4OCVBMCVFQyU5RCU5OCUyMCVFQiVCMCU5QyVFQyVBMCU4NCVFQyU5QyVCQyVFQiVBMSU5QyUyMCVFRCU5NCU4NCVFQiVBMSU5QyVFQyU4NCVCOCVFQyU4NCU5QywlRUIlQjAlOTQlRUIlQTElOUMlMjAlRUMlQkElOTAlRUMlOEIlOUMoQ2FjaGUpJUVCJThCJUE0">https://parksb.github.io/article/29.html#:~:text=%F0%9F%92%B5%20%EC%BA%90%EC%8B%9C%EA%B0%80%20%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%20%EC%95%84%EC%A3%BC%20%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8%20%EC%9B%90%EB%A6%AC,-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%EB%A1%9C%20%EA%B5%AC%ED%98%84&amp;text=%EA%B8%B0%EC%88%A0%EC%9D%98%20%EB%B0%9C%EC%A0%84%EC%9C%BC%EB%A1%9C%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C,%EB%B0%94%EB%A1%9C%20%EC%BA%90%EC%8B%9C(Cache)%EB%8B%A4<i class="fa fa-external-link-alt"></i></span>.<br><span class="exturl" data-url="aHR0cDovL21lbG9uaWNlZGxhdHRlLmNvbS9jb21wdXRlcmFyY2hpdGVjdHVyZS8yMDE5LzAyLzEyLzIwMzc0OS5odG1s">http://melonicedlatte.com/computerarchitecture/2019/02/12/203749.html<i class="fa fa-external-link-alt"></i></span></p>
 
       
     </div>
@@ -1106,112 +1209,6 @@
 </ul>
 <h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><p><strong>문제 :</strong> 주간개인통계값 최종저장이 안됐습니다.<br><strong>해결 :</strong> filter()로 불러온 객체는 list형태로 반환되고, 그에대해서 save()메소드를 제공하지않아 생기는 문제였습니다. 이에 객체를 불러올떄 get()으로 불러오게끔 수정한 뒤 save() 메소드를 사용하였습니다.</p>
 <p><strong>문제 :</strong> 통계값 갱신 불필요한 과정 제거<br><strong>해결 :</strong> 처음엔  모든 유저를 불러온 뒤 그 유저의 일주일간 활동을 필터링하여<br>이를 기반으로 통계값 계산 및 갱신하게끔 하였으나 그주에 활동한 유저만 값을 갱신하면 된다고 생각하여<br>일주일간 쌓인 피드만 로드한 뒤, 그 피드의 작성자 id를 value_list().distinct()를 활용하여 중복없이 리스트로 저장하고 해당 리스트를 돌면서 통계값 계산 및 갱신을 하도록 수정했습니다. </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/10/31/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8010/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/31/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8010/" class="post-title-link" itemprop="url">Uniplogger개발일지10</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-10-31 15:39:24" itemprop="dateCreated datePublished" datetime="2020-10-31T15:39:24+09:00">2020-10-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-11 00:17:33" itemprop="dateModified" datetime="2020-11-11T00:17:33+09:00">2020-11-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/10/31/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8010/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/31/Uniplogger개발일지10/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lhcHAtMTd0aC9pT1NfMl9CYWNrZW5k">https://github.com/Yapp-17th/iOS_2_Backend<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
-<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
-<li>중복 닉네임 방지기능 </li>
-<li>crontab을 활용한 유저상태 스케줄링 작업</li>
-</ul>
-<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
-<li><p>크론탭 실행X<br> <strong>문제:</strong> 로그 찍어가며 잘 돌아가던 크론탭이 갑자기 실행이 안됐습니다.<br> <strong>해결:</strong> cron 파일내에 코드를 수정하는 과정내에서 실수가 있었습니다.<br> 에러가 따로 찍히지 않으므로 view에서 완벽하게 돌아가게끔 만든 후에<br> 크론탭에는 복사만 하는것을 추천합니다.</p>
-</li>
-<li><p>MYSQL 마이그레이션 dependency에러<br> <strong>문제:</strong> 유저가 다른앱들과 dependency가 있어서 migrate 명령어로는 순차적 처리가 안됐습니다.<br> <strong>해결:</strong> makemigrations 폴더내의 0001_initial.py 파일 확인후 dependency를 확인한 후<br> dependency에 맞춰서 앱별로 따로 makemigraitons, migrate 해줍니다.</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py makemigrations appname</span><br><span class="line">python3 manage.py migrate appname</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>다음 파일의 로컬 변경 사항을 병합 때문에 덮어 쓰게 됩니다:<br>  <strong>문제:</strong> git pull 시 pull 받는 파일 내에 변경사항이 있어서 충돌 났습니다.<br>  <strong>해결:</strong> 저같은 경우는 pull 할 develop 브랜치와 pull을 받을 feature/users 브랜치가<br>  그닥 차이가 안나서 그냥 맘편하게 받을쪽을 push한뒤 충돌을 해결하는 방식을 택했습니다.<br>  공백이나 엔터도 변경사항으로 처리되니 비슷한 경우라면 맘편하게 받을쪽을 push 추천합니다.<br>  그 다음 pull받아서 둘이 머지한 뒤 충돌나는거 해결했습니다.<br>  애시당초 브랜치 체크아웃을 잘했으면 안해도 되는 테스크였으니<br>  git branch로 체크아웃된 브랜치 확인하는 습관을 들입시다..</p>
-</li>
-</ol>
 
       
     </div>

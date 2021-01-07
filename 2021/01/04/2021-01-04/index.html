@@ -32,7 +32,7 @@
 <meta property="og:description" content="🌟Django cache🎯캐시란?캐시는 프로세서의 속도를 따라가지 못하는 메인메모리를 보완하여처리속도를 빠르게 개선하기 위한 장치입니다.위키백과에는 다음과 같이 정의되어있습니다.  “데이터나 값을 미리 복사해서 놓는 임시 장소를 의미한다.”정의된 대로 캐시는 주 메모리 이외에 캐시메모리라는 공간을 의미하며이 공간에 데이터를 미리 복사해두고 아래와 같은">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-04T10:47:54.000Z">
-<meta property="article:modified_time" content="2021-01-04T12:56:01.796Z">
+<meta property="article:modified_time" content="2021-01-07T11:26:35.769Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="TIL">
 <meta property="article:tag" content="Django">
@@ -195,7 +195,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -208,7 +208,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -278,10 +278,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-04 19:47:54 / Modified: 21:56:01" itemprop="dateCreated datePublished" datetime="2021-01-04T19:47:54+09:00">2021-01-04</time>
+              <time title="Created: 2021-01-04 19:47:54" itemprop="dateCreated datePublished" datetime="2021-01-04T19:47:54+09:00">2021-01-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-07 20:26:35" itemprop="dateModified" datetime="2021-01-07T20:26:35+09:00">2021-01-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -334,10 +340,15 @@
 </blockquote>
 <p><strong>1. 자주 접근하게 되는 경우</strong><br>    ‘자주 접근한다’는 <code>지역성의 원리</code>에 기반하여 판단합니다.<br>    지역성은 <code>시간지역성</code>과 <code>공간지역성</code>으로 나뉘어집니다.<br>    <strong>- 시간지역성</strong><br>    최근 접근한 데이터에 다시 접근하는 경향<br>    <strong>- 공간지역성</strong><br>    접근한 데이터 주변에 있는 데이터에 다시 접근하는 경향<br><strong>2. 값을 다시 계산하여 써야하는데 이 계산시간이 오래 걸리는 경우</strong></p>
 <p>또한 캐시는 반응속도 자체가 빠른 SRAM임과 동시에<br>주소가 키로 주어졌을떄 바로 접근할 수 있는 해시테이블 형식의 하드웨어이므로<br>접근시간자체도 O(1)정도로 매우 빨라 시스템 성능향상에 큰 역할을 합니다.</p>
-<h3 id="🎯캐시의-동작방식"><a href="#🎯캐시의-동작방식" class="headerlink" title="🎯캐시의 동작방식"></a>🎯캐시의 동작방식</h3><p>웹서버가 캐시에 접근하는 원리는 다음과 같습니다.<br><strong>1. CPU에서 메모리 가상주소를 사용하여 캐시메모리에 접근한다.</strong><br><strong>2. MMU라는 관리장치에서 가상주소를 번역하여 메모리의 물리주소로 변환한다.</strong>(데이터 저장방식에 따라 물리주소가 다르게 변환된다.)<br><strong>3. 변환한 주소에 찾는 데이터가 있는지 확인한다.</strong><br><strong>if  캐시내에 있다면?</strong><br>캐시된 데이터를 보여준다.<br><strong>if  캐시내에 없다면?</strong><br>데이터를 가져오고 캐시에 저장한뒤 보여준다.</p>
-<h3 id="🎯장고가-지원하는-캐시유형"><a href="#🎯장고가-지원하는-캐시유형" class="headerlink" title="🎯장고가 지원하는 캐시유형"></a>🎯장고가 지원하는 캐시유형</h3><p>장고에서 지원하는 기본 캐시 중 가장 빠르고 효율적인 것은 <code>Memcached</code> 입니다.<br>DB나 API호출 이후 받아오는 결과데이터를 작은단위(청크)의 key-value 형태로 <code>메모리</code>에 저장하는 형식이며<br>CPU가 처리할 데이터를 임시로 저장하는 RAM에 데이터 및 오브젝트를 캐시함으로써<br>데이터를 읽는 횟수를 줄이는 방식을 사용합니다.<br>Memcached를 사용하면 서버단에서는 부족한 메모리를 충족시키기 더욱 좋아지는데요.<br><strong>- 기존</strong><br>하나의 웹서버에서 쓸 수 있는 메모리가 정해져있고,<br>한 서버당 정해진 크기의 메모리만 사용할 수 있습니다.<br><strong>- Memcached 도입 후</strong><br>웹서버에서 쓸 수 있는 메모리들을 논리적으로 결합시켜<br>각각의 웹서버는 전체 메모리 캐시 크기만큼 사용할 수 있게 됩니다.</p>
+<h3 id="🎯캐시의-동작방식"><a href="#🎯캐시의-동작방식" class="headerlink" title="🎯캐시의 동작방식"></a>🎯캐시의 동작방식</h3><p>웹서버가 캐시에 접근하는 원리는 다음과 같습니다.</p>
+<ul>
+<li>Look aside cache<br>  <strong>1. CPU에서 메모리 가상주소를 사용하여 캐시메모리에 접근한다.</strong><br>  <strong>2. MMU라는 관리장치에서 가상주소를 번역하여 메모리의 물리주소로 변환한다.</strong>(데이터 저장방식에 따라 물리주소가 다르게 변환된다.)<br>  <strong>3. 변환한 주소에 찾는 데이터가 있는지 확인한다.</strong><br>  <strong>if  캐시내에 있다면?</strong><br>  캐시된 데이터를 보여준다.<br>  <strong>if  캐시내에 없다면?</strong><br>  데이터를 가져오고 캐시에 저장한뒤 보여준다.</li>
+<li>Write back<br>  <strong>1. CPU에서 사용할 데이터를 캐시에 기록한다.</strong><br>  <strong>2. 사용 후 블록단위로 캐시의 내용을 삭제할 때 메모리에 저장한다.</strong><br>  해당 방식의 특성상 캐시와 메모리 사이 업데이트 시기가 달라<br>  데이터가 일치하지않는 inconsisteny가 발생할 수 있습니다.</li>
+<li>Write through<br>  <strong>1. CPU에서 사용할 데이터를 캐시와 메모리내에 기록한다.</strong><br>  inconsistency나 loss가 발생하지 않는다는 장점이 있으나<br>  메모리 자체가 느리다면 성능저하가 발생합니다.</li>
+</ul>
+<h3 id="🎯장고가-지원하는-캐시유형"><a href="#🎯장고가-지원하는-캐시유형" class="headerlink" title="🎯장고가 지원하는 캐시유형"></a>🎯장고가 지원하는 캐시유형</h3><p>장고에서 지원하는 기본 캐시 중 가장 빠르고 효율적인 것은 <code>Memcached</code> 입니다.<br>DB나 API호출 이후 받아오는 결과데이터를 작은단위(청크)의 key-value 형태로 <code>메모리</code>에 저장하는 형식이며<br>CPU가 처리할 데이터를 임시로 저장하는 RAM에 데이터 및 오브젝트를 캐시함으로써<br>데이터를 읽는 횟수를 줄이는 방식을 사용합니다. 이를 통해 디스크를 거치지 않으므로<br>속도가 매우 빠르다는 장점도 있습니다.<br>Memcached를 사용하면 서버단에서는 부족한 메모리를 충족시키기 더욱 좋아지는데요.<br><strong>- 기존</strong><br>하나의 웹서버에서 쓸 수 있는 메모리가 정해져있고,<br>한 서버당 정해진 크기의 메모리만 사용할 수 있습니다.<br><strong>- Memcached 도입 후</strong><br>웹서버에서 쓸 수 있는 메모리들을 논리적으로 결합시켜<br>각각의 웹서버는 전체 메모리 캐시 크기만큼 사용할 수 있게 됩니다.</p>
 <p>이처럼 Memcached를 사용하면 웹서버들이 할당된 메모리가 아닌<br>전체 캐시 크기만큼 메모리를 사용할 수 있어 부족한 메모리를 쉽게 융통할 수 있습니다.</p>
-<p><strong>참고</strong><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL2VuLzMuMS90b3BpY3MvY2FjaGUv">https://docs.djangoproject.com/en/3.1/topics/cache/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly90ZXN0ZHJpdmVuLmlvL2Jsb2cvZGphbmdvLWNhY2hpbmcvIzp+OnRleHQ9UmVkaXMlMjB2cyUyME1lbWNhY2hlZCwlMkMlMjBrZXklMkR2YWx1ZSUyMGRhdGElMjBzdG9yZXMuJmFtcDt0ZXh0PVJlZGlzJTJDJTIwb24lMjB0aGUlMjBvdGhlciUyMGhhbmQsaW4lMjBhJTIwcHViJTJGc3ViJTIwc3lzdGVt">https://testdriven.io/blog/django-caching/#:~:text=Redis%20vs%20Memcached,%2C%20key%2Dvalue%20data%20stores.&amp;text=Redis%2C%20on%20the%20other%20hand,in%20a%20pub%2Fsub%20system<i class="fa fa-external-link-alt"></i></span>.<br><span class="exturl" data-url="aHR0cHM6Ly9rby53aWtpcGVkaWEub3JnL3dpa2kvTWVtY2FjaGVk">https://ko.wikipedia.org/wiki/Memcached<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL21pbG9veS5naXRodWIuaW8vVElML0RqYW5nby9kamFuZ28tY2FjaGUuaHRtbCMlRTElODQlOEYlRTElODUlQTIlRTElODQlODklRTElODUlQjU=">http://milooy.github.io/TIL/Django/django-cache.html#%E1%84%8F%E1%85%A2%E1%84%89%E1%85%B5<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9wYXJrc2IuZ2l0aHViLmlvL2FydGljbGUvMjkuaHRtbCM6fjp0ZXh0PSVGMCU5RiU5MiVCNSUyMCVFQyVCQSU5MCVFQyU4QiU5QyVFQSVCMCU4MCUyMCVFQiU4RiU5OSVFQyU5RSU5MSVFRCU5NSU5OCVFQiU4QSU5NCUyMCVFQyU5NSU4NCVFQyVBMyVCQyUyMCVFQSVCNSVBQyVFQyVCMiVCNCVFQyVBMCU4MSVFQyU5RCVCOCUyMCVFQyU5QiU5MCVFQiVBNiVBQywtJUVEJTk1JTk4JUVCJTkzJTlDJUVDJTlCJUE4JUVDJTk2JUI0JUVCJUExJTlDJTIwJUVBJUI1JUFDJUVEJTk4JTg0JmFtcDt0ZXh0PSVFQSVCOCVCMCVFQyU4OCVBMCVFQyU5RCU5OCUyMCVFQiVCMCU5QyVFQyVBMCU4NCVFQyU5QyVCQyVFQiVBMSU5QyUyMCVFRCU5NCU4NCVFQiVBMSU5QyVFQyU4NCVCOCVFQyU4NCU5QywlRUIlQjAlOTQlRUIlQTElOUMlMjAlRUMlQkElOTAlRUMlOEIlOUMoQ2FjaGUpJUVCJThCJUE0">https://parksb.github.io/article/29.html#:~:text=%F0%9F%92%B5%20%EC%BA%90%EC%8B%9C%EA%B0%80%20%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%20%EC%95%84%EC%A3%BC%20%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8%20%EC%9B%90%EB%A6%AC,-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%EB%A1%9C%20%EA%B5%AC%ED%98%84&amp;text=%EA%B8%B0%EC%88%A0%EC%9D%98%20%EB%B0%9C%EC%A0%84%EC%9C%BC%EB%A1%9C%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C,%EB%B0%94%EB%A1%9C%20%EC%BA%90%EC%8B%9C(Cache)%EB%8B%A4<i class="fa fa-external-link-alt"></i></span>.</p>
+<p><strong>참고</strong><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL2VuLzMuMS90b3BpY3MvY2FjaGUv">https://docs.djangoproject.com/en/3.1/topics/cache/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly90ZXN0ZHJpdmVuLmlvL2Jsb2cvZGphbmdvLWNhY2hpbmcvIzp+OnRleHQ9UmVkaXMlMjB2cyUyME1lbWNhY2hlZCwlMkMlMjBrZXklMkR2YWx1ZSUyMGRhdGElMjBzdG9yZXMuJmFtcDt0ZXh0PVJlZGlzJTJDJTIwb24lMjB0aGUlMjBvdGhlciUyMGhhbmQsaW4lMjBhJTIwcHViJTJGc3ViJTIwc3lzdGVt">https://testdriven.io/blog/django-caching/#:~:text=Redis%20vs%20Memcached,%2C%20key%2Dvalue%20data%20stores.&amp;text=Redis%2C%20on%20the%20other%20hand,in%20a%20pub%2Fsub%20system<i class="fa fa-external-link-alt"></i></span>.<br><span class="exturl" data-url="aHR0cHM6Ly9rby53aWtpcGVkaWEub3JnL3dpa2kvTWVtY2FjaGVk">https://ko.wikipedia.org/wiki/Memcached<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL21pbG9veS5naXRodWIuaW8vVElML0RqYW5nby9kamFuZ28tY2FjaGUuaHRtbCMlRTElODQlOEYlRTElODUlQTIlRTElODQlODklRTElODUlQjU=">http://milooy.github.io/TIL/Django/django-cache.html#%E1%84%8F%E1%85%A2%E1%84%89%E1%85%B5<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9wYXJrc2IuZ2l0aHViLmlvL2FydGljbGUvMjkuaHRtbCM6fjp0ZXh0PSVGMCU5RiU5MiVCNSUyMCVFQyVCQSU5MCVFQyU4QiU5QyVFQSVCMCU4MCUyMCVFQiU4RiU5OSVFQyU5RSU5MSVFRCU5NSU5OCVFQiU4QSU5NCUyMCVFQyU5NSU4NCVFQyVBMyVCQyUyMCVFQSVCNSVBQyVFQyVCMiVCNCVFQyVBMCU4MSVFQyU5RCVCOCUyMCVFQyU5QiU5MCVFQiVBNiVBQywtJUVEJTk1JTk4JUVCJTkzJTlDJUVDJTlCJUE4JUVDJTk2JUI0JUVCJUExJTlDJTIwJUVBJUI1JUFDJUVEJTk4JTg0JmFtcDt0ZXh0PSVFQSVCOCVCMCVFQyU4OCVBMCVFQyU5RCU5OCUyMCVFQiVCMCU5QyVFQyVBMCU4NCVFQyU5QyVCQyVFQiVBMSU5QyUyMCVFRCU5NCU4NCVFQiVBMSU5QyVFQyU4NCVCOCVFQyU4NCU5QywlRUIlQjAlOTQlRUIlQTElOUMlMjAlRUMlQkElOTAlRUMlOEIlOUMoQ2FjaGUpJUVCJThCJUE0">https://parksb.github.io/article/29.html#:~:text=%F0%9F%92%B5%20%EC%BA%90%EC%8B%9C%EA%B0%80%20%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%20%EC%95%84%EC%A3%BC%20%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8%20%EC%9B%90%EB%A6%AC,-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%EB%A1%9C%20%EA%B5%AC%ED%98%84&amp;text=%EA%B8%B0%EC%88%A0%EC%9D%98%20%EB%B0%9C%EC%A0%84%EC%9C%BC%EB%A1%9C%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C,%EB%B0%94%EB%A1%9C%20%EC%BA%90%EC%8B%9C(Cache)%EB%8B%A4<i class="fa fa-external-link-alt"></i></span>.<br><span class="exturl" data-url="aHR0cDovL21lbG9uaWNlZGxhdHRlLmNvbS9jb21wdXRlcmFyY2hpdGVjdHVyZS8yMDE5LzAyLzEyLzIwMzc0OS5odG1s">http://melonicedlatte.com/computerarchitecture/2019/02/12/203749.html<i class="fa fa-external-link-alt"></i></span></p>
 
     </div>
 
@@ -361,7 +372,10 @@
     <a href="/2020/12/22/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8016/" rel="prev" title="Uniplogger개발일지16">
       <i class="fa fa-chevron-left"></i> Uniplogger개발일지16
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/05/2021-01-05-TIL/" rel="next" title="2021-01-05-TIL">
+      2021-01-05-TIL <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
