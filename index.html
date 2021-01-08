@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -243,6 +243,104 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2021/01/08/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8017/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/08/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8017/" class="post-title-link" itemprop="url">Uniplogger개발일지17</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-08 23:42:38 / Modified: 23:51:30" itemprop="dateCreated datePublished" datetime="2021-01-08T23:42:38+09:00">2021-01-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/01/08/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8017/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/08/Uniplogger개발일지17/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lhcHAtMTd0aC9pT1NfMl9CYWNrZW5k">https://github.com/Yapp-17th/iOS_2_Backend<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
+<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
+<li>push알림 구현 및 수정</li>
+</ul>
+<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
+<li>django push notification 라이브러리 작동안됨.</li>
+</ol>
+<p><strong>문제:</strong>회원가입과 로그인쪽에서 사용하는 jwt와 충돌이 났었습니다.<br><strong>해결:</strong> FCM으로 구현하였습니다.</p>
+<ol start="2">
+<li>push알림이 주기적으로 발송되지 않음.<br>lastlogined를 기점으로 3일 7일간격으로 와야하는 푸시알림이 오지 않았습니다.</li>
+</ol>
+<p><strong>문제:</strong> lastlogined값 설정에 auto_add가 True로 되어있어서 lastlogined 날짜가 자동적으로 갱신되어왔습니다.<br><strong>해결:</strong> auto_add를 False로 바꾸고, 현재시간을 반영해주는 users/update_lastlogined/를 활용하여 접속시간을 갱신합니다. </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -570,10 +668,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-08 23:42:31 / Modified: 23:45:02" itemprop="dateCreated datePublished" datetime="2020-12-08T23:42:31+09:00">2020-12-08</time>
+              <time title="Created: 2020-12-08 23:42:31" itemprop="dateCreated datePublished" datetime="2020-12-08T23:42:31+09:00">2020-12-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-08 23:47:11" itemprop="dateModified" datetime="2021-01-08T23:47:11+09:00">2021-01-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -618,7 +722,7 @@
 <h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
 <li>REST API 테스트 및 수정3 - 미사용필드 정리,rank default값 수정</li>
 </ul>
-<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><p>필드 정리 이후 서버에 배포 - 삭제된 필드값이 없다는 column에러 발생<br>우분투 서버에서 ./manage.py makemigrations와 ./manage.py migrate</p>
+<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><p><strong>문제:</strong> 필드 정리 이후 서버에 배포하자 삭제된 필드값이 없다는 column에러가 발생했습니다.<br><strong>해결:</strong> 우분투 서버에서 ./manage.py makemigrations와 ./manage.py migrate로 서버 내 DB에 변경사항을 반영해주었습니다.</p>
 
       
     </div>
@@ -957,7 +1061,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-19 23:54:30" itemprop="dateModified" datetime="2020-11-19T23:54:30+09:00">2020-11-19</time>
+                <time title="Modified: 2021-01-08 23:49:45" itemprop="dateModified" datetime="2021-01-08T23:49:45+09:00">2021-01-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1006,8 +1110,9 @@
 </ul>
 <h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
 <li>Image object has no attribute ‘write’<br>이미지 리사이징을 통해 압축저장(PIL -&gt; image활용)<br>image.save()의 첫번째 인자 입력시 에러발생</li>
-<li>django에서 PIL 로 압축한 이미지를 인식하지 못함(upload a valid image.)<br>장고가 인식하는 이미지포멧과 압축된 이미지 포멧이 달라서 생기는 문제<br>따로 설정을 해도 인식하지 못하기에 모델 내 필드를 django-resized 의 Resizedfield로 대체하여 해결</li>
+<li>django에서 PIL 로 압축한 이미지를 인식하지 못함(upload a valid image.)</li>
 </ol>
+<p><strong>문제:</strong> 장고가 인식하는 이미지포멧과 압축된 이미지 포멧이 달라서 생기는 문제입니다.<br><strong>해결:</strong> 따로 설정을 해도 인식하지 못하기에 모델 내 필드를 django-resized 의 Resizedfield로 대체하여 해결했습니다.</p>
 
       
     </div>
@@ -1110,105 +1215,6 @@
 
 <p>web 선택시 이메일, phone 선택시 전화로 해결책을 알려준다.<br>나는 web으로 선택했는데 한 네다섯시간 후에 전화도 왔다.<br>번호가 거진 스팸전화처럼 오는데 그거 AWS 맞으니 안심하고 받으면 된다.<br>처음받으면 갑작스런 영어에 뇌가 1차 충격받고 그와중에 소리가 끊겨서 2차 충격을 받게되지만<br>그래도 누가 언어는 기세라고 했다. 쫄지말고 들어보자.<br>나는 전화받았을때 본인확인+계정으로 메일이랑 메세지 (my support case에서 제출한 문의제목 클릭하면 볼 수 있음.) 보낼테니 시도해보고 연락주라는 것 같아서 응응 오케이~하고 끊었다.</p>
 <h3 id="🎯메세지-메일-따라하기"><a href="#🎯메세지-메일-따라하기" class="headerlink" title="🎯메세지(메일) 따라하기"></a>🎯메세지(메일) 따라하기</h3><p>사람마다 메세지 내용이 다르니까 각자 따라해보고<br>다했다고 답하면 뭘 더하라느니 아니면 이제 됐으니 기다리라는 회신이 온다.<br>그럼 존버하면된다. 청구서는 거의 바로..아님 하루? 정도 걸리고 입금은 한 3~5일정도 지나면 들어온다.<br>안되면 언제쯤 처리되느냐고 메세지 보내면 기다리라는 답변이 올거다.<br>어차피 기다리라곤 하겠지만 그래도 재촉하면 괜히 빨리 되는 듯한 기분이 들어서 마음이 풀어지니<br>만일 좀 걱정된다 싶으면 망설이지말고 보내보는걸 추천한다.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/11/03/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8011/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/03/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8011/" class="post-title-link" itemprop="url">Uniplogger개발일지11</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-03 23:43:10" itemprop="dateCreated datePublished" datetime="2020-11-03T23:43:10+09:00">2020-11-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-11 00:23:02" itemprop="dateModified" datetime="2020-11-11T00:23:02+09:00">2020-11-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-log/" itemprop="url" rel="index"><span itemprop="name">Project_log</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project-log/Uniplogger/" itemprop="url" rel="index"><span itemprop="name">Uniplogger</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/11/03/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8011/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/03/Uniplogger개발일지11/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="🎯깃허브-링크"><a href="#🎯깃허브-링크" class="headerlink" title="🎯깃허브 링크"></a>🎯깃허브 링크</h3><p>개인연습 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1aHl1bmc5OTAxMjIvWWFwcF90ZW1w">https://github.com/Juhyung990122/Yapp_temp<i class="fa fa-external-link-alt"></i></span><br>팀 : <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lhcHAtMTd0aC9pT1NfMl9CYWNrZW5k">https://github.com/Yapp-17th/iOS_2_Backend<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="🎯프로젝트-소개"><a href="#🎯프로젝트-소개" class="headerlink" title="🎯프로젝트 소개"></a>🎯프로젝트 소개</h3><p>조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여<br>일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다.</p>
-<h3 id="🎯진행내역"><a href="#🎯진행내역" class="headerlink" title="🎯진행내역"></a>🎯진행내역</h3><ul>
-<li>랭크 업데이트 리턴값 퍼센테이지로 변경</li>
-<li>유저 거리,시간 기반 개인 통계</li>
-</ul>
-<h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><p><strong>문제 :</strong> 주간개인통계값 최종저장이 안됐습니다.<br><strong>해결 :</strong> filter()로 불러온 객체는 list형태로 반환되고, 그에대해서 save()메소드를 제공하지않아 생기는 문제였습니다. 이에 객체를 불러올떄 get()으로 불러오게끔 수정한 뒤 save() 메소드를 사용하였습니다.</p>
-<p><strong>문제 :</strong> 통계값 갱신 불필요한 과정 제거<br><strong>해결 :</strong> 처음엔  모든 유저를 불러온 뒤 그 유저의 일주일간 활동을 필터링하여<br>이를 기반으로 통계값 계산 및 갱신하게끔 하였으나 그주에 활동한 유저만 값을 갱신하면 된다고 생각하여<br>일주일간 쌓인 피드만 로드한 뒤, 그 피드의 작성자 id를 value_list().distinct()를 활용하여 중복없이 리스트로 저장하고 해당 리스트를 돌면서 통계값 계산 및 갱신을 하도록 수정했습니다. </p>
 
       
     </div>

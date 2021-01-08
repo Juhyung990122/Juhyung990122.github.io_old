@@ -32,7 +32,7 @@
 <meta property="og:description" content="🎯깃허브 링크개인연습 : https:&#x2F;&#x2F;github.com&#x2F;Juhyung990122&#x2F;Yapp_temp팀 : https:&#x2F;&#x2F;github.com&#x2F;Yapp-17th&#x2F;iOS_2_Backend 🎯프로젝트 소개조깅을 하며 쓰레기를 줍는 ‘플로깅’에 재미요소를 가미하여일상에서 환경운동에 동참할 수 있도록 돕는 앱서비스입니다. 🎯진행내역 레벨 관리 로직 만들기 피드">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-15T14:40:58.000Z">
-<meta property="article:modified_time" content="2020-11-19T14:54:30.182Z">
+<meta property="article:modified_time" content="2021-01-08T14:49:45.644Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="DRF">
 <meta property="article:tag" content="Python">
@@ -194,7 +194,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -285,7 +285,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-19 23:54:30" itemprop="dateModified" datetime="2020-11-19T23:54:30+09:00">2020-11-19</time>
+                <time title="Modified: 2021-01-08 23:49:45" itemprop="dateModified" datetime="2021-01-08T23:49:45+09:00">2021-01-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -341,8 +341,9 @@
 </ul>
 <h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
 <li>Image object has no attribute ‘write’<br>이미지 리사이징을 통해 압축저장(PIL -&gt; image활용)<br>image.save()의 첫번째 인자 입력시 에러발생</li>
-<li>django에서 PIL 로 압축한 이미지를 인식하지 못함(upload a valid image.)<br>장고가 인식하는 이미지포멧과 압축된 이미지 포멧이 달라서 생기는 문제<br>따로 설정을 해도 인식하지 못하기에 모델 내 필드를 django-resized 의 Resizedfield로 대체하여 해결</li>
+<li>django에서 PIL 로 압축한 이미지를 인식하지 못함(upload a valid image.)</li>
 </ol>
+<p><strong>문제:</strong> 장고가 인식하는 이미지포멧과 압축된 이미지 포멧이 달라서 생기는 문제입니다.<br><strong>해결:</strong> 따로 설정을 해도 인식하지 못하기에 모델 내 필드를 django-resized 의 Resizedfield로 대체하여 해결했습니다.</p>
 
     </div>
 
