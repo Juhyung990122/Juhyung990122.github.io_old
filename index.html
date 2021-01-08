@@ -270,10 +270,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-08 23:42:38 / Modified: 23:51:30" itemprop="dateCreated datePublished" datetime="2021-01-08T23:42:38+09:00">2021-01-08</time>
+              <time title="Created: 2021-01-08 23:42:38" itemprop="dateCreated datePublished" datetime="2021-01-08T23:42:38+09:00">2021-01-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-09 00:38:51" itemprop="dateModified" datetime="2021-01-09T00:38:51+09:00">2021-01-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -319,13 +325,11 @@
 <li>push알림 구현 및 수정</li>
 </ul>
 <h3 id="🎯에러로그"><a href="#🎯에러로그" class="headerlink" title="🎯에러로그"></a>🎯에러로그</h3><ol>
-<li>django push notification 라이브러리 작동안됨.</li>
+<li><p>django push notification 라이브러리 작동안됨.<br> <strong>문제:</strong>회원가입과 로그인쪽에서 사용하는 jwt와 충돌이 났었습니다.<br> <strong>해결:</strong> FCM으로 구현하였습니다.</p>
+</li>
+<li><p>push알림이 주기적으로 발송되지 않음.<br>lastlogined를 기점으로 3일 7일간격으로 와야하는 푸시알림이 오지 않았습니다.<br> <strong>문제:</strong> lastlogined값 설정에 auto_add가 True로 되어있어서 lastlogined 날짜가 자동적으로 갱신되어왔습니다.<br> <strong>해결:</strong> auto_add를 False로 바꾸고, 현재시간을 반영해주는 users/update_lastlogined/를 활용하여 접속시간을 갱신합니다. </p>
+</li>
 </ol>
-<p><strong>문제:</strong>회원가입과 로그인쪽에서 사용하는 jwt와 충돌이 났었습니다.<br><strong>해결:</strong> FCM으로 구현하였습니다.</p>
-<ol start="2">
-<li>push알림이 주기적으로 발송되지 않음.<br>lastlogined를 기점으로 3일 7일간격으로 와야하는 푸시알림이 오지 않았습니다.</li>
-</ol>
-<p><strong>문제:</strong> lastlogined값 설정에 auto_add가 True로 되어있어서 lastlogined 날짜가 자동적으로 갱신되어왔습니다.<br><strong>해결:</strong> auto_add를 False로 바꾸고, 현재시간을 반영해주는 users/update_lastlogined/를 활용하여 접속시간을 갱신합니다. </p>
 
       
     </div>
