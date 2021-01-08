@@ -187,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -349,6 +349,116 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2021/01/07/2021-01-07TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/07/2021-01-07TIL/" class="post-title-link" itemprop="url">[Django]Redis를 활용한 캐싱</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-07 17:17:01" itemprop="dateCreated datePublished" datetime="2021-01-07T17:17:01+09:00">2021-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-09 01:00:55" itemprop="dateModified" datetime="2021-01-09T01:00:55+09:00">2021-01-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/01/07/2021-01-07TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/07/2021-01-07TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="🌟Django에-Redis를-이용하여-캐싱하기"><a href="#🌟Django에-Redis를-이용하여-캐싱하기" class="headerlink" title="🌟Django에 Redis를 이용하여 캐싱하기."></a>🌟Django에 Redis를 이용하여 캐싱하기.</h2><h3 id="🎯Redis-Remote-Dictionary-Server-란"><a href="#🎯Redis-Remote-Dictionary-Server-란" class="headerlink" title="🎯Redis(Remote Dictionary Server) 란?"></a>🎯Redis(Remote Dictionary Server) 란?</h3><p>redis는 비관계형 데이터베이스인 NOSQL의 일종입니다.<br>프로세스로 존재하며 메모리기반으로 키-값 구조로 데이터를 저장하여 “키-값” 구조 데이터를 관리하는 시스템이라고 할 수 있습니다. 여러가지 형태의 데이터를 지원하며 특히 리스트형식의 데이터처리에 유리합니다.(MYSQL대비 10배나 빠르다고…)<br>주로 Cache나 Persistent Store로 사용합니다.<br>앞서 다루었던 memcached와 속도,성능측면에서 대부분 비슷하나 다음 세가지에서 차이를 보입니다.</p>
+<ol>
+<li>데이터 저장위치<ul>
+<li>Memcached : 메모리에만 저장됩니다. </li>
+<li>Redis : 메모리와 디스크 두쪽 다 저장됩니다.</li>
+</ul>
+</li>
+<li>저장소 메모리 재사용여부<ul>
+<li>Memcached : 메모리가 꽉 차면 LRU방식으로 데이터를 삭제합니다. </li>
+<li>Redis : 명시적으로 데이터를 삭제해야만 데이터가 삭제됩니다.</li>
+</ul>
+</li>
+<li>지원하는 형식<ul>
+<li>Memcached : 문자열만 지원합니다.</li>
+<li>Redis : string list set sorted set hash형을 지원합니다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="🎯"><a href="#🎯" class="headerlink" title="🎯"></a>🎯</h3><p><span class="exturl" data-url="aHR0cHM6Ly9qdXBpbnkuY29tLzIwMTgvMDIvMjcvY2FjaGluZy11c2luZy1yZWRpcy1vbi1kamFuZ28v">https://jupiny.com/2018/02/27/caching-using-redis-on-django/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9pY3QtbnJvby50aXN0b3J5LmNvbS8xMzM=">https://ict-nroo.tistory.com/133<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL3JlY2lwZXMuZWdsb29zLmNvbS81MTcwODA5">http://recipes.egloos.com/5170809<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2021/01/05/2021-01-05-TIL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -363,7 +473,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/05/2021-01-05-TIL/" class="post-title-link" itemprop="url">2021-01-05-TIL</a>
+            <a href="/2021/01/05/2021-01-05-TIL/" class="post-title-link" itemprop="url">[Git]Git 원격저장소 되돌리기</a>
         </h2>
 
         <div class="post-meta">
@@ -380,7 +490,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-09 00:44:51" itemprop="dateModified" datetime="2021-01-09T00:44:51+09:00">2021-01-09</time>
+                <time title="Modified: 2021-01-09 01:00:44" itemprop="dateModified" datetime="2021-01-09T01:00:44+09:00">2021-01-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -420,7 +530,7 @@
           <h2 id="🌟Git-원격저장소-되돌리기"><a href="#🌟Git-원격저장소-되돌리기" class="headerlink" title="🌟Git 원격저장소 되돌리기"></a>🌟Git 원격저장소 되돌리기</h2><p>너무 살떨리는 경험이였어서 기록합니다..ㅎ<br>컴퓨터가 실수에서 배우는게 많지만 이럴때마다 심장철렁하는건 어쩔수가 없네요</p>
 <p>발단을 간단하게 얘기하자면 포크떠놓은 레포를 본 레포와 동기화시키려고 병합을 했는데<br>나중에 알아보니 이는 <code>포크 레포를 본 레포에 반영 시키는 것</code> 였더라고요.<br>완전 반대로 생각했었습니다.. 으휴<br>아무튼 제 목표는 머지했던 코드를 이전으로 되돌리는 것 이었습니다.</p>
 <p><strong>❗들어가기에 앞서 주의사항!.</strong><br>저는 모든 작업 내용을 원격에 푸시한 뒤, 머지만 하고 이후에 다른 작업은 하지 않았습니다.<br>다음에 나올 ‘머지직전 커밋으로 시점을 되돌린다’ 는 ‘머지 전 상태가 가장 마지막 상태이다’ 를 가정하고<br>진행하는 것이며, 만일 머지 후 무언가를 작업하셨다면 어딘가에 백업해두시길 바랍니다(커밋시점을 되돌리면 그 내용들은 날아가니까요.)</p>
-<h3 id="🎯-머지직전-커밋으로-시점되돌리기"><a href="#🎯-머지직전-커밋으로-시점되돌리기" class="headerlink" title="🎯  머지직전 커밋으로 시점되돌리기"></a>🎯  머지직전 커밋으로 시점되돌리기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure>
+<h3 id="🎯-머지직전-커밋으로-시점되돌리기"><a href="#🎯-머지직전-커밋으로-시점되돌리기" class="headerlink" title="🎯  머지직전 커밋으로 시점되돌리기"></a>🎯  머지직전 커밋으로 시점되돌리기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~커밋하는게 상위로부터 몇번째인지</span><br></pre></td></tr></table></figure>
 <p>해당 명령어를 통해 동기화하기 직전, 즉 내가 남기고 싶은 코드들로 상태를 바꿔줍니다.<br>이상태에서 git push origin master하게되면 로컬이 원격보다 뒤에있는데 푸시한다고 에러가나게 됩니다.<br>일반적으로는 <code>로컬에서 수정한 내용을 원격에 반영</code> 하는 순이였지만<br>지금상태는 <code>원격에 반영은 됐지만 로컬은 반영 전 시점인데?</code> 라서 생기는 에러인데<br>당최 뭔말이냐 싶으신 분들을 위해 비유적으로 표현해볼까 합니다.<br>지금 창의력이 빛나는 시간대가 아니라 예시가 구리지만 로컬이 잡지사고 원격이 구독자라고 해봅시다.<br>정상적인 순서를 비유해보자면 다음과 같습니다.</p>
 <blockquote>
 <p>잡지사가 구독자에게 잡지를 보내줍니다. 구독자는 그 잡지를 읽고 정보를 머리속에 넣습니다.</p>
@@ -429,14 +539,16 @@
 <blockquote>
 <p>잡지사는 구독자를 위한 잡지를 아직 보내지 않았는데,<br>구독자는 이미 그 잡지에 대한 정보가 머릿속에 있습니다. </p>
 </blockquote>
-<p>이상하죠? 지금 깃이 보기에는 이렇게 이상한 상황인겁니다.<br>그럼 이걸 어떻게 해결할까요?</p>
+<p>이상하죠? 지금 깃이 보기에는 이렇게 이상한 상황인겁니다.<br>그럼 이걸 어떻게 해결할까요? </p>
 <h3 id="🎯-되돌린-사실을-커밋으로-남기기"><a href="#🎯-되돌린-사실을-커밋으로-남기기" class="headerlink" title="🎯 되돌린 사실을 커밋으로 남기기"></a>🎯 되돌린 사실을 커밋으로 남기기</h3><p>구독자 머릿속에서 정보를 지우는 대신 잘못된 정보가 있었다고 알려주는 방법입니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git revert --no-commit HEAD~되돌리고싶은 커밋 시작..되돌리고싶은 커밋 끝</span><br><span class="line">git commit -m &quot;revert commit 어쩌구&quot;</span><br><span class="line">git push origin 브랜치명</span><br></pre></td></tr></table></figure>
-<p>이렇게 해주면 내가 어떤 커밋시점으로 되돌는지를 커밋으로 남겨둘 수 있습니다.</p>
+<p>이렇게 해주면 이전작업들의 이력은 남아있지만 원격저장소에서는 사라지며<br>되돌리고싶은 커밋의 시점으로 이동되어있습니다.<br>또한 이때 어떤 커밋시점으로 되돌아갔는지를 커밋으로 남겨둘 수 있습니다.<br>예시로 라버트를 진행하면</p>
+<p>1-2-3-4 의 커밋이 있다면<br>1 = 나 4로 되돌아갈거임! 4까지의 코드는 없는걸로 치자!<br>2 = 코드에서는 삭제(뭐했는지는 남아있음)<br>3 = 코드에서는 삭제(뭐했는지는 남아있음)<br>4 = 코드는 이상태로 돌아와있음.</p>
+<p>이런식으로 남게됩니다.</p>
 <h3 id="🎯-로컬저장소의-커밋을-원격으로-덮어씌우기"><a href="#🎯-로컬저장소의-커밋을-원격으로-덮어씌우기" class="headerlink" title="🎯  로컬저장소의 커밋을 원격으로 덮어씌우기"></a>🎯  로컬저장소의 커밋을 원격으로 덮어씌우기</h3><p>외쳐볼까요 오블리비아테..^-^<br><img src="https://33.media.tumblr.com/6dfe58fe587cc923e3828d43a0ffebd6/tumblr_mkwd37FsRb1r43qb9o1_500.gif"/><br>구독자한테 마법을 걸어서 정보를 지우고 아무일 없다는 듯이 잡지를 건네는 방법입니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
 <p>이렇게 원격저장소의 기억을 지우고 로컬이 새거인것마냥 강제로 push를 하게되면<br>부끄러운 과오를 남기지 않을 수 있습니다. 대신 협업중인데 다른팀원이 그새 풀해가서 작업하고 있었고,<br>이 작업이 끝난 뒤 푸시하면? 과오도 다시 업로드된다는 단점이 있습니다.</p>
-<h3 id="🎯-결론"><a href="#🎯-결론" class="headerlink" title="🎯 결론"></a>🎯 결론</h3><p>이런걸 방지하기 위해서는 앞서말한 revert가 더 나을 것 같군요.<br>실제로도 revert가 더 자주 사용되는 방법이고, 덮어씌우기는 단독으로 프로젝트를 할때처럼<br>커밋을 어떻게 구워삶아도 별 타격이 없을때 쓰시는게 좋을 듯 합니다!<br>뭐 이러나 저러나 실수로 인해 하는 불필요한 고생?이니<br>다음부턴 웬만하면 이렇게 되돌리지말고 처음부터 제대로 하는걸로…<br>잘하자 주형아…^-^</p>
+<h3 id="🎯-결론"><a href="#🎯-결론" class="headerlink" title="🎯 결론"></a>🎯 결론</h3><p>이런걸 방지하기 위해서는 앞서말한 revert가 더 나을 것 같군요.<br>실제로도 revert가 더 자주 사용되는 방법이고, 덮어씌우기는 단독으로 프로젝트를 할때처럼<br>커밋을 어떻게 구워삶아도 별 타격이 없을때 쓰시는게 좋을 듯 합니다!<br>뭐 이러나 저러나 실수로 인해 하게되는 고생(?)이니<br>다음부턴 웬만하면 이렇게 되돌리지말고 처음부터 제대로 하는걸로…<br>잘하자 주형아…^-^</p>
 
       
     </div>
@@ -1132,108 +1244,6 @@
 <li>django에서 PIL 로 압축한 이미지를 인식하지 못함(upload a valid image.)</li>
 </ol>
 <p><strong>문제:</strong> 장고가 인식하는 이미지포멧과 압축된 이미지 포멧이 달라서 생기는 문제입니다.<br><strong>해결:</strong> 따로 설정을 해도 인식하지 못하기에 모델 내 필드를 django-resized 의 Resizedfield로 대체하여 해결했습니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile.png">
-      <meta itemprop="name" content="Guinness">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="여름산책">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/" class="post-title-link" itemprop="url">AWS 과금에 대처하는 법</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-04 03:21:47" itemprop="dateCreated datePublished" datetime="2020-11-04T03:21:47+09:00">2020-11-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-05 14:51:14" itemprop="dateModified" datetime="2020-11-05T14:51:14+09:00">2020-11-05</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/11/04/AWS%EA%B3%BC%EA%B8%88%EB%8C%80%EC%B2%98/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/04/AWS과금대처/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>⚠️ <strong>본 포스팅은 2019.10.10 에 작성된 포스팅을 백업한 것이므로<br>실제 AWS 웹 화면이 첨부이미지와 다를 수 있습니다</strong></p>
-<h2 id="🌟AWS-해킹-및-실수로-인한-청구-해결하기"><a href="#🌟AWS-해킹-및-실수로-인한-청구-해결하기" class="headerlink" title="🌟AWS 해킹 및 실수로 인한 청구 해결하기"></a>🌟AWS 해킹 및 실수로 인한 청구 해결하기</h2><p>저번달에 aws에서 과금문제가 발생했었다.<br>내가 사용하는 리전에는 인스턴스가 하나도 없는거보면 내 과실은 아니란 얘기고<br>아마 플젝 배포하면서 키가 노출되지 않았나 싶었다.</p>
-<p>보통 이런건 크게당하면 백만원에서 천만원단위 까지 털리기도 하던데 난 학생이라 불쌍했는지 3만원 썼더라.</p>
-<p>환불받을 기회는 한번뿐이라 적게 쓰면 그냥 돈 내고 마는 사람들도 있긴한데<br>괜히 털린게 찝찝해서 한번 환불받고 계정을 닫을 각오로 문의를 보냈다.</p>
-<h3 id="🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭"><a href="#🎯-AWS-접속시-오른쪽-상단-맨-끝에-지원을-누르면-지원센터-클릭" class="headerlink" title="🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭"></a>🎯 AWS 접속시 오른쪽 상단 맨 끝에 지원을 누르면 지원센터 클릭</h3><img src = "/assets/images/aws1.png" height='300'/>
-
-<h3 id="🎯-create-case-주황버튼-을-클릭"><a href="#🎯-create-case-주황버튼-을-클릭" class="headerlink" title="🎯 create case(주황버튼)을 클릭"></a>🎯 create case(주황버튼)을 클릭</h3><img src = "/assets/images/aws2.png" />
-
-<h3 id="🎯-account-and-billing-support-로-선택"><a href="#🎯-account-and-billing-support-로-선택" class="headerlink" title="🎯 account and billing support 로 선택"></a>🎯 account and billing support 로 선택</h3><img src = "/assets/images/aws3.png" />
-
-<h3 id="🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택"><a href="#🎯-case-classification-Type-gt-Billing-Category-gt-Charge-Inquiry-선택" class="headerlink" title="🎯 case classification Type -&gt; Billing / Category -&gt; Charge Inquiry 선택"></a>🎯 case classification Type -&gt; Billing / Category -&gt; Charge Inquiry 선택</h3><p>다른 카테고리도 많긴했는데 난 모르겠어서 그냥 저걸로 했었다. 환불 된거보면 별 상관은 없는 듯 하다<br>    <img src = "/assets/images/aws4.png" /></p>
-<h3 id="🎯-결백하다는-or-실수했다는-호소문-작성"><a href="#🎯-결백하다는-or-실수했다는-호소문-작성" class="headerlink" title="🎯 결백하다는 (or 실수했다는) 호소문 작성"></a>🎯 결백하다는 (or 실수했다는) 호소문 작성</h3><img src = "/assets/images/aws5.png" />
-간단하게 작성해도 된다. 예시로 내가 쓴걸 들자면 
-
-
-<blockquote>
-<p>안부인사<br>나 한국의 학생인데 빌지보고 겁나 놀랐다.<br>교육목적으로 1시간 쓰고 다 지웠는데 청구가 됐더라,<br>자주쓰는 리전 확인도 해봤는데 아무것도 없다 등등 상황설명<br>내가 시도했던 것들 나열..<br>다른사람이 내 계정을 쓰고있는 것 같은데 어떻게 해야함?</p>
-</blockquote>
-<p>딱 알아먹을 수 있을 정도로만 썼는데 불쌍해보여서 효과가 좋았던 것 같다.<br>간혹가다가 너무 유려하게 쓰면 환불안해준다는 말도 있으니<br>내가 영어를 좀 한다 싶으면 적당히 띨띨해보이게 쓰는걸 추천한다.</p>
-<p>첨부파일 넣어주면 더 좋단 소리가 있어서  청구서 + 자주 썼던 리전의 EC2 리소스목록 요렇게 두장 넣어줬다.<br><img src = "/assets/images/aws6.png" /><br><img src = "/assets/images/aws7.png" /></p>
-<h3 id="🎯컨택방법-선택하기"><a href="#🎯컨택방법-선택하기" class="headerlink" title="🎯컨택방법 선택하기"></a>🎯컨택방법 선택하기</h3><img src = "/assets/images/aws8.png" />
-
-<p>web 선택시 이메일, phone 선택시 전화로 해결책을 알려준다.<br>나는 web으로 선택했는데 한 네다섯시간 후에 전화도 왔다.<br>번호가 거진 스팸전화처럼 오는데 그거 AWS 맞으니 안심하고 받으면 된다.<br>처음받으면 갑작스런 영어에 뇌가 1차 충격받고 그와중에 소리가 끊겨서 2차 충격을 받게되지만<br>그래도 누가 언어는 기세라고 했다. 쫄지말고 들어보자.<br>나는 전화받았을때 본인확인+계정으로 메일이랑 메세지 (my support case에서 제출한 문의제목 클릭하면 볼 수 있음.) 보낼테니 시도해보고 연락주라는 것 같아서 응응 오케이~하고 끊었다.</p>
-<h3 id="🎯메세지-메일-따라하기"><a href="#🎯메세지-메일-따라하기" class="headerlink" title="🎯메세지(메일) 따라하기"></a>🎯메세지(메일) 따라하기</h3><p>사람마다 메세지 내용이 다르니까 각자 따라해보고<br>다했다고 답하면 뭘 더하라느니 아니면 이제 됐으니 기다리라는 회신이 온다.<br>그럼 존버하면된다. 청구서는 거의 바로..아님 하루? 정도 걸리고 입금은 한 3~5일정도 지나면 들어온다.<br>안되면 언제쯤 처리되느냐고 메세지 보내면 기다리라는 답변이 올거다.<br>어차피 기다리라곤 하겠지만 그래도 재촉하면 괜히 빨리 되는 듯한 기분이 들어서 마음이 풀어지니<br>만일 좀 걱정된다 싶으면 망설이지말고 보내보는걸 추천한다.</p>
 
       
     </div>

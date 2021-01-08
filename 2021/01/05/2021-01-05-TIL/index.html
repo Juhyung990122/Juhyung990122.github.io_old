@@ -26,14 +26,14 @@
 
   <meta name="description" content="🌟Git 원격저장소 되돌리기너무 살떨리는 경험이였어서 기록합니다..ㅎ컴퓨터가 실수에서 배우는게 많지만 이럴때마다 심장철렁하는건 어쩔수가 없네요 발단을 간단하게 얘기하자면 포크떠놓은 레포를 본 레포와 동기화시키려고 병합을 했는데나중에 알아보니 이는 포크 레포를 본 레포에 반영 시키는 것 였더라고요.완전 반대로 생각했었습니다.. 으휴아무튼 제 목표는 머지했던">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2021-01-05-TIL">
+<meta property="og:title" content="[Git]Git 원격저장소 되돌리기">
 <meta property="og:url" content="http://juhyung990122.github.io/2021/01/05/2021-01-05-TIL/index.html">
 <meta property="og:site_name" content="여름산책">
 <meta property="og:description" content="🌟Git 원격저장소 되돌리기너무 살떨리는 경험이였어서 기록합니다..ㅎ컴퓨터가 실수에서 배우는게 많지만 이럴때마다 심장철렁하는건 어쩔수가 없네요 발단을 간단하게 얘기하자면 포크떠놓은 레포를 본 레포와 동기화시키려고 병합을 했는데나중에 알아보니 이는 포크 레포를 본 레포에 반영 시키는 것 였더라고요.완전 반대로 생각했었습니다.. 으휴아무튼 제 목표는 머지했던">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://33.media.tumblr.com/6dfe58fe587cc923e3828d43a0ffebd6/tumblr_mkwd37FsRb1r43qb9o1_500.gif">
 <meta property="article:published_time" content="2021-01-05T13:32:42.000Z">
-<meta property="article:modified_time" content="2021-01-08T15:44:51.854Z">
+<meta property="article:modified_time" content="2021-01-08T16:00:44.685Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="TIL">
 <meta property="article:tag" content="Git">
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>2021-01-05-TIL | 여름산책</title>
+  <title>[Git]Git 원격저장소 되돌리기 | 여름산책</title>
   
 
 
@@ -196,7 +196,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -270,7 +270,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2021-01-05-TIL
+          [Git]Git 원격저장소 되돌리기
         </h1>
 
         <div class="post-meta">
@@ -287,7 +287,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-09 00:44:51" itemprop="dateModified" datetime="2021-01-09T00:44:51+09:00">2021-01-09</time>
+                <time title="Modified: 2021-01-09 01:00:44" itemprop="dateModified" datetime="2021-01-09T01:00:44+09:00">2021-01-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,7 +334,7 @@
         <h2 id="🌟Git-원격저장소-되돌리기"><a href="#🌟Git-원격저장소-되돌리기" class="headerlink" title="🌟Git 원격저장소 되돌리기"></a>🌟Git 원격저장소 되돌리기</h2><p>너무 살떨리는 경험이였어서 기록합니다..ㅎ<br>컴퓨터가 실수에서 배우는게 많지만 이럴때마다 심장철렁하는건 어쩔수가 없네요</p>
 <p>발단을 간단하게 얘기하자면 포크떠놓은 레포를 본 레포와 동기화시키려고 병합을 했는데<br>나중에 알아보니 이는 <code>포크 레포를 본 레포에 반영 시키는 것</code> 였더라고요.<br>완전 반대로 생각했었습니다.. 으휴<br>아무튼 제 목표는 머지했던 코드를 이전으로 되돌리는 것 이었습니다.</p>
 <p><strong>❗들어가기에 앞서 주의사항!.</strong><br>저는 모든 작업 내용을 원격에 푸시한 뒤, 머지만 하고 이후에 다른 작업은 하지 않았습니다.<br>다음에 나올 ‘머지직전 커밋으로 시점을 되돌린다’ 는 ‘머지 전 상태가 가장 마지막 상태이다’ 를 가정하고<br>진행하는 것이며, 만일 머지 후 무언가를 작업하셨다면 어딘가에 백업해두시길 바랍니다(커밋시점을 되돌리면 그 내용들은 날아가니까요.)</p>
-<h3 id="🎯-머지직전-커밋으로-시점되돌리기"><a href="#🎯-머지직전-커밋으로-시점되돌리기" class="headerlink" title="🎯  머지직전 커밋으로 시점되돌리기"></a>🎯  머지직전 커밋으로 시점되돌리기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure>
+<h3 id="🎯-머지직전-커밋으로-시점되돌리기"><a href="#🎯-머지직전-커밋으로-시점되돌리기" class="headerlink" title="🎯  머지직전 커밋으로 시점되돌리기"></a>🎯  머지직전 커밋으로 시점되돌리기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~커밋하는게 상위로부터 몇번째인지</span><br></pre></td></tr></table></figure>
 <p>해당 명령어를 통해 동기화하기 직전, 즉 내가 남기고 싶은 코드들로 상태를 바꿔줍니다.<br>이상태에서 git push origin master하게되면 로컬이 원격보다 뒤에있는데 푸시한다고 에러가나게 됩니다.<br>일반적으로는 <code>로컬에서 수정한 내용을 원격에 반영</code> 하는 순이였지만<br>지금상태는 <code>원격에 반영은 됐지만 로컬은 반영 전 시점인데?</code> 라서 생기는 에러인데<br>당최 뭔말이냐 싶으신 분들을 위해 비유적으로 표현해볼까 합니다.<br>지금 창의력이 빛나는 시간대가 아니라 예시가 구리지만 로컬이 잡지사고 원격이 구독자라고 해봅시다.<br>정상적인 순서를 비유해보자면 다음과 같습니다.</p>
 <blockquote>
 <p>잡지사가 구독자에게 잡지를 보내줍니다. 구독자는 그 잡지를 읽고 정보를 머리속에 넣습니다.</p>
@@ -343,14 +343,16 @@
 <blockquote>
 <p>잡지사는 구독자를 위한 잡지를 아직 보내지 않았는데,<br>구독자는 이미 그 잡지에 대한 정보가 머릿속에 있습니다. </p>
 </blockquote>
-<p>이상하죠? 지금 깃이 보기에는 이렇게 이상한 상황인겁니다.<br>그럼 이걸 어떻게 해결할까요?</p>
+<p>이상하죠? 지금 깃이 보기에는 이렇게 이상한 상황인겁니다.<br>그럼 이걸 어떻게 해결할까요? </p>
 <h3 id="🎯-되돌린-사실을-커밋으로-남기기"><a href="#🎯-되돌린-사실을-커밋으로-남기기" class="headerlink" title="🎯 되돌린 사실을 커밋으로 남기기"></a>🎯 되돌린 사실을 커밋으로 남기기</h3><p>구독자 머릿속에서 정보를 지우는 대신 잘못된 정보가 있었다고 알려주는 방법입니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git revert --no-commit HEAD~되돌리고싶은 커밋 시작..되돌리고싶은 커밋 끝</span><br><span class="line">git commit -m &quot;revert commit 어쩌구&quot;</span><br><span class="line">git push origin 브랜치명</span><br></pre></td></tr></table></figure>
-<p>이렇게 해주면 내가 어떤 커밋시점으로 되돌는지를 커밋으로 남겨둘 수 있습니다.</p>
+<p>이렇게 해주면 이전작업들의 이력은 남아있지만 원격저장소에서는 사라지며<br>되돌리고싶은 커밋의 시점으로 이동되어있습니다.<br>또한 이때 어떤 커밋시점으로 되돌아갔는지를 커밋으로 남겨둘 수 있습니다.<br>예시로 라버트를 진행하면</p>
+<p>1-2-3-4 의 커밋이 있다면<br>1 = 나 4로 되돌아갈거임! 4까지의 코드는 없는걸로 치자!<br>2 = 코드에서는 삭제(뭐했는지는 남아있음)<br>3 = 코드에서는 삭제(뭐했는지는 남아있음)<br>4 = 코드는 이상태로 돌아와있음.</p>
+<p>이런식으로 남게됩니다.</p>
 <h3 id="🎯-로컬저장소의-커밋을-원격으로-덮어씌우기"><a href="#🎯-로컬저장소의-커밋을-원격으로-덮어씌우기" class="headerlink" title="🎯  로컬저장소의 커밋을 원격으로 덮어씌우기"></a>🎯  로컬저장소의 커밋을 원격으로 덮어씌우기</h3><p>외쳐볼까요 오블리비아테..^-^<br><img src="https://33.media.tumblr.com/6dfe58fe587cc923e3828d43a0ffebd6/tumblr_mkwd37FsRb1r43qb9o1_500.gif"/><br>구독자한테 마법을 걸어서 정보를 지우고 아무일 없다는 듯이 잡지를 건네는 방법입니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
 <p>이렇게 원격저장소의 기억을 지우고 로컬이 새거인것마냥 강제로 push를 하게되면<br>부끄러운 과오를 남기지 않을 수 있습니다. 대신 협업중인데 다른팀원이 그새 풀해가서 작업하고 있었고,<br>이 작업이 끝난 뒤 푸시하면? 과오도 다시 업로드된다는 단점이 있습니다.</p>
-<h3 id="🎯-결론"><a href="#🎯-결론" class="headerlink" title="🎯 결론"></a>🎯 결론</h3><p>이런걸 방지하기 위해서는 앞서말한 revert가 더 나을 것 같군요.<br>실제로도 revert가 더 자주 사용되는 방법이고, 덮어씌우기는 단독으로 프로젝트를 할때처럼<br>커밋을 어떻게 구워삶아도 별 타격이 없을때 쓰시는게 좋을 듯 합니다!<br>뭐 이러나 저러나 실수로 인해 하는 불필요한 고생?이니<br>다음부턴 웬만하면 이렇게 되돌리지말고 처음부터 제대로 하는걸로…<br>잘하자 주형아…^-^</p>
+<h3 id="🎯-결론"><a href="#🎯-결론" class="headerlink" title="🎯 결론"></a>🎯 결론</h3><p>이런걸 방지하기 위해서는 앞서말한 revert가 더 나을 것 같군요.<br>실제로도 revert가 더 자주 사용되는 방법이고, 덮어씌우기는 단독으로 프로젝트를 할때처럼<br>커밋을 어떻게 구워삶아도 별 타격이 없을때 쓰시는게 좋을 듯 합니다!<br>뭐 이러나 저러나 실수로 인해 하게되는 고생(?)이니<br>다음부턴 웬만하면 이렇게 되돌리지말고 처음부터 제대로 하는걸로…<br>잘하자 주형아…^-^</p>
 
     </div>
 
@@ -374,8 +376,8 @@
       <i class="fa fa-chevron-left"></i> [Django]캐시의 정의와 동작원리
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/01/08/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8017/" rel="next" title="Uniplogger개발일지17">
-      Uniplogger개발일지17 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/01/07/2021-01-07TIL/" rel="next" title="[Django]Redis를 활용한 캐싱">
+      [Django]Redis를 활용한 캐싱 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -512,7 +514,7 @@
   var disqus_config = function() {
     this.page.url = "http://juhyung990122.github.io/2021/01/05/2021-01-05-TIL/";
     this.page.identifier = "2021/01/05/2021-01-05-TIL/";
-    this.page.title = "2021-01-05-TIL";
+    this.page.title = "[Git]Git 원격저장소 되돌리기";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

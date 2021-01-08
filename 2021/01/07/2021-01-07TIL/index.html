@@ -24,17 +24,22 @@
   </script>
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="여름산책">
-<meta property="og:url" content="http://juhyung990122.github.io/tags/index.html">
+  <meta name="description" content="🌟Django에 Redis를 이용하여 캐싱하기.🎯Redis(Remote Dictionary Server) 란?redis는 비관계형 데이터베이스인 NOSQL의 일종입니다.프로세스로 존재하며 메모리기반으로 키-값 구조로 데이터를 저장하여 “키-값” 구조 데이터를 관리하는 시스템이라고 할 수 있습니다. 여러가지 형태의 데이터를 지원하며 특히 리스트형식의 데이">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Django]Redis를 활용한 캐싱">
+<meta property="og:url" content="http://juhyung990122.github.io/2021/01/07/2021-01-07TIL/index.html">
 <meta property="og:site_name" content="여름산책">
+<meta property="og:description" content="🌟Django에 Redis를 이용하여 캐싱하기.🎯Redis(Remote Dictionary Server) 란?redis는 비관계형 데이터베이스인 NOSQL의 일종입니다.프로세스로 존재하며 메모리기반으로 키-값 구조로 데이터를 저장하여 “키-값” 구조 데이터를 관리하는 시스템이라고 할 수 있습니다. 여러가지 형태의 데이터를 지원하며 특히 리스트형식의 데이">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-07T14:38:08.952Z">
-<meta property="article:modified_time" content="2020-07-07T14:38:08.952Z">
+<meta property="article:published_time" content="2021-01-07T08:17:01.000Z">
+<meta property="article:modified_time" content="2021-01-08T16:00:55.581Z">
 <meta property="article:author" content="Guinness">
+<meta property="article:tag" content="TIL">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://juhyung990122.github.io/tags/">
+<link rel="canonical" href="http://juhyung990122.github.io/2021/01/07/2021-01-07TIL/">
 
 
 <script class="page-configurations">
@@ -42,13 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag | 여름산책
-</title>
+  <title>[Django]Redis를 활용한 캐싱 | 여름산책</title>
   
 
 
@@ -164,7 +168,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -176,6 +180,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Django에-Redis를-이용하여-캐싱하기"><span class="nav-number">1.</span> <span class="nav-text">🌟Django에 Redis를 이용하여 캐싱하기.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Redis-Remote-Dictionary-Server-란"><span class="nav-number">1.1.</span> <span class="nav-text">🎯Redis(Remote Dictionary Server) 란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯"><span class="nav-number">1.2.</span> <span class="nav-text">🎯</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -243,52 +248,146 @@
 
       <div class="main-inner">
         
-  
-  
 
-        <div class="content page posts-expand">
+        <div class="content post posts-expand">
           
 
     
-    
-    
-    <div class="post-block" lang="en">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://juhyung990122.github.io/2021/01/07/2021-01-07TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profile.png">
+      <meta itemprop="name" content="Guinness">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="여름산책">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Django]Redis를 활용한 캐싱
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
+              <time title="Created: 2021-01-07 17:17:01" itemprop="dateCreated datePublished" datetime="2021-01-07T17:17:01+09:00">2021-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-09 01:00:55" itemprop="dateModified" datetime="2021-01-09T01:00:55+09:00">2021-01-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TIL/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a>
+                </span>
+            </span>
 
-<div class="post-meta">
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/01/07/2021-01-07TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/07/2021-01-07TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 
-</div>
+        </div>
+      </header>
 
-</header>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              27 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/API/" style="font-size: 12px;" class="tag-cloud-0">API</a> <a href="/tags/Algorithm/" style="font-size: 14px;" class="tag-cloud-1">Algorithm</a> <a href="/tags/Big-Data-Processing/" style="font-size: 14px;" class="tag-cloud-1">Big Data Processing</a> <a href="/tags/Crawler/" style="font-size: 16px;" class="tag-cloud-2">Crawler</a> <a href="/tags/DRF/" style="font-size: 30px;" class="tag-cloud-10">DRF</a> <a href="/tags/Database/" style="font-size: 12px;" class="tag-cloud-0">Database</a> <a href="/tags/Django/" style="font-size: 24px;" class="tag-cloud-7">Django</a> <a href="/tags/Git/" style="font-size: 12px;" class="tag-cloud-0">Git</a> <a href="/tags/Java/" style="font-size: 20px;" class="tag-cloud-4">Java</a> <a href="/tags/MYSQL/" style="font-size: 12px;" class="tag-cloud-0">MYSQL</a> <a href="/tags/Mapreduce/" style="font-size: 14px;" class="tag-cloud-1">Mapreduce</a> <a href="/tags/ORM/" style="font-size: 12px;" class="tag-cloud-0">ORM</a> <a href="/tags/Python/" style="font-size: 28px;" class="tag-cloud-9">Python</a> <a href="/tags/REST/" style="font-size: 16px;" class="tag-cloud-2">REST</a> <a href="/tags/React/" style="font-size: 18px;" class="tag-cloud-3">React</a> <a href="/tags/Review/" style="font-size: 12px;" class="tag-cloud-0">Review</a> <a href="/tags/Spring/" style="font-size: 12px;" class="tag-cloud-0">Spring</a> <a href="/tags/TIL/" style="font-size: 28px;" class="tag-cloud-9">TIL</a> <a href="/tags/Typescript/" style="font-size: 18px;" class="tag-cloud-3">Typescript</a> <a href="/tags/Vue-js/" style="font-size: 22px;" class="tag-cloud-6">Vue.js</a> <a href="/tags/javascript/" style="font-size: 22px;" class="tag-cloud-6">javascript</a> <a href="/tags/python/" style="font-size: 26px;" class="tag-cloud-8">python</a> <a href="/tags/%EA%B0%80%EC%9D%B4%EB%93%9C%EB%9D%BC%EC%9D%B8/" style="font-size: 12px;" class="tag-cloud-0">가이드라인</a> <a href="/tags/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/" style="font-size: 14px;" class="tag-cloud-1">오답노트</a> <a href="/tags/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EB%9F%AC%EB%8B%9D/" style="font-size: 18px;" class="tag-cloud-3">우아한 테크러닝</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 16px;" class="tag-cloud-2">정보처리기사</a> <a href="/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/" style="font-size: 14px;" class="tag-cloud-1">프로그래머스</a>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
+        <h2 id="🌟Django에-Redis를-이용하여-캐싱하기"><a href="#🌟Django에-Redis를-이용하여-캐싱하기" class="headerlink" title="🌟Django에 Redis를 이용하여 캐싱하기."></a>🌟Django에 Redis를 이용하여 캐싱하기.</h2><h3 id="🎯Redis-Remote-Dictionary-Server-란"><a href="#🎯Redis-Remote-Dictionary-Server-란" class="headerlink" title="🎯Redis(Remote Dictionary Server) 란?"></a>🎯Redis(Remote Dictionary Server) 란?</h3><p>redis는 비관계형 데이터베이스인 NOSQL의 일종입니다.<br>프로세스로 존재하며 메모리기반으로 키-값 구조로 데이터를 저장하여 “키-값” 구조 데이터를 관리하는 시스템이라고 할 수 있습니다. 여러가지 형태의 데이터를 지원하며 특히 리스트형식의 데이터처리에 유리합니다.(MYSQL대비 10배나 빠르다고…)<br>주로 Cache나 Persistent Store로 사용합니다.<br>앞서 다루었던 memcached와 속도,성능측면에서 대부분 비슷하나 다음 세가지에서 차이를 보입니다.</p>
+<ol>
+<li>데이터 저장위치<ul>
+<li>Memcached : 메모리에만 저장됩니다. </li>
+<li>Redis : 메모리와 디스크 두쪽 다 저장됩니다.</li>
+</ul>
+</li>
+<li>저장소 메모리 재사용여부<ul>
+<li>Memcached : 메모리가 꽉 차면 LRU방식으로 데이터를 삭제합니다. </li>
+<li>Redis : 명시적으로 데이터를 삭제해야만 데이터가 삭제됩니다.</li>
+</ul>
+</li>
+<li>지원하는 형식<ul>
+<li>Memcached : 문자열만 지원합니다.</li>
+<li>Redis : string list set sorted set hash형을 지원합니다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="🎯"><a href="#🎯" class="headerlink" title="🎯"></a>🎯</h3><p><span class="exturl" data-url="aHR0cHM6Ly9qdXBpbnkuY29tLzIwMTgvMDIvMjcvY2FjaGluZy11c2luZy1yZWRpcy1vbi1kamFuZ28v">https://jupiny.com/2018/02/27/caching-using-redis-on-django/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9pY3QtbnJvby50aXN0b3J5LmNvbS8xMzM=">https://ict-nroo.tistory.com/133<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL3JlY2lwZXMuZWdsb29zLmNvbS81MTcwODA5">http://recipes.egloos.com/5170809<i class="fa fa-external-link-alt"></i></span></p>
+
     </div>
-    
 
     
     
     
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIL/" rel="tag"># TIL</a>
+              <a href="/tags/Django/" rel="tag"># Django</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/05/2021-01-05-TIL/" rel="prev" title="[Git]Git 원격저장소 되돌리기">
+      <i class="fa fa-chevron-left"></i> [Git]Git 원격저장소 되돌리기
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/08/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8017/" rel="next" title="Uniplogger개발일지17">
+      Uniplogger개발일지17 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
 
 
         </div>
@@ -414,9 +513,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://juhyung990122.github.io/tags/index.html";
-    this.page.identifier = "tags/index.html";
-    this.page.title = "";
+    this.page.url = "http://juhyung990122.github.io/2021/01/07/2021-01-07TIL/";
+    this.page.identifier = "2021/01/07/2021-01-07TIL/";
+    this.page.title = "[Django]Redis를 활용한 캐싱";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
