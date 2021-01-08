@@ -33,7 +33,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://33.media.tumblr.com/6dfe58fe587cc923e3828d43a0ffebd6/tumblr_mkwd37FsRb1r43qb9o1_500.gif">
 <meta property="article:published_time" content="2021-01-05T13:32:42.000Z">
-<meta property="article:modified_time" content="2021-01-08T15:40:56.056Z">
+<meta property="article:modified_time" content="2021-01-08T15:44:51.854Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="TIL">
 <meta property="article:tag" content="Git">
@@ -181,7 +181,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Git-원격저장소-되돌리기"><span class="nav-number">1.</span> <span class="nav-text">🌟Git 원격저장소 되돌리기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-머지직전-커밋으로-시점되돌리기"><span class="nav-number">1.1.</span> <span class="nav-text">🎯  머지직전 커밋으로 시점되돌리기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-되돌린-사실을-커밋으로-남기기"><span class="nav-number">1.2.</span> <span class="nav-text">🎯 되돌린 사실을 커밋으로 남기기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-로컬저장소의-커밋을-원격으로-덮어씌우기"><span class="nav-number">1.3.</span> <span class="nav-text">🎯  로컬저장소의 커밋을 원격으로 덮어씌우기</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟Git-원격저장소-되돌리기"><span class="nav-number">1.</span> <span class="nav-text">🌟Git 원격저장소 되돌리기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-머지직전-커밋으로-시점되돌리기"><span class="nav-number">1.1.</span> <span class="nav-text">🎯  머지직전 커밋으로 시점되돌리기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-되돌린-사실을-커밋으로-남기기"><span class="nav-number">1.2.</span> <span class="nav-text">🎯 되돌린 사실을 커밋으로 남기기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-로컬저장소의-커밋을-원격으로-덮어씌우기"><span class="nav-number">1.3.</span> <span class="nav-text">🎯  로컬저장소의 커밋을 원격으로 덮어씌우기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯-결론"><span class="nav-number">1.4.</span> <span class="nav-text">🎯 결론</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -287,7 +287,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-09 00:40:56" itemprop="dateModified" datetime="2021-01-09T00:40:56+09:00">2021-01-09</time>
+                <time title="Modified: 2021-01-09 00:44:51" itemprop="dateModified" datetime="2021-01-09T00:44:51+09:00">2021-01-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -350,7 +350,7 @@
 <h3 id="🎯-로컬저장소의-커밋을-원격으로-덮어씌우기"><a href="#🎯-로컬저장소의-커밋을-원격으로-덮어씌우기" class="headerlink" title="🎯  로컬저장소의 커밋을 원격으로 덮어씌우기"></a>🎯  로컬저장소의 커밋을 원격으로 덮어씌우기</h3><p>외쳐볼까요 오블리비아테..^-^<br><img src="https://33.media.tumblr.com/6dfe58fe587cc923e3828d43a0ffebd6/tumblr_mkwd37FsRb1r43qb9o1_500.gif"/><br>구독자한테 마법을 걸어서 정보를 지우고 아무일 없다는 듯이 잡지를 건네는 방법입니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
 <p>이렇게 원격저장소의 기억을 지우고 로컬이 새거인것마냥 강제로 push를 하게되면<br>부끄러운 과오를 남기지 않을 수 있습니다. 대신 협업중인데 다른팀원이 그새 풀해가서 작업하고 있었고,<br>이 작업이 끝난 뒤 푸시하면? 과오도 다시 업로드된다는 단점이 있습니다.</p>
-<p>이런걸 방지하기 위해서는 앞서말한 revert가 더 나을 것 같군요.<br>실제로도 revert가 더 자주 사용되는 방법이고, 덮어씌우기는 단독으로 프로젝트를 할때처럼<br>커밋을 어떻게 구워삶아도 별 타격이 없을때 쓰시는게 좋을 듯 합니다!</p>
+<h3 id="🎯-결론"><a href="#🎯-결론" class="headerlink" title="🎯 결론"></a>🎯 결론</h3><p>이런걸 방지하기 위해서는 앞서말한 revert가 더 나을 것 같군요.<br>실제로도 revert가 더 자주 사용되는 방법이고, 덮어씌우기는 단독으로 프로젝트를 할때처럼<br>커밋을 어떻게 구워삶아도 별 타격이 없을때 쓰시는게 좋을 듯 합니다!<br>뭐 이러나 저러나 실수로 인해 하는 불필요한 고생?이니<br>다음부턴 웬만하면 이렇게 되돌리지말고 처음부터 제대로 하는걸로…<br>잘하자 주형아…^-^</p>
 
     </div>
 
