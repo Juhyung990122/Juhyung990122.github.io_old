@@ -24,15 +24,15 @@
   </script>
 
 
-  <meta name="description" content="🌟 Lombok🎯Lombok이란?🎯Getter와 Setter">
+  <meta name="description" content="🌟 Spring 데이터처리🎯DAO란?Data Access Object레포지토리라는 패키지를 사용하여 실제로 DB에 접근하는 객체DB를 사용하여 데이터를 조회, 조작하는 기능을 전담한다. 데이터베이스 액세스를 DAO 에서 맡아서 하게 되면 다수의 호출로 인한 오버헤드를 VO나 DTO과 같은 를 통해 줄일수 있음. 🎯DTO란?@Controller(웹요청,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2021-01-31TIL">
 <meta property="og:url" content="http://juhyung990122.github.io/2021/01/31/2021-01-31TIL/index.html">
 <meta property="og:site_name" content="여름산책">
-<meta property="og:description" content="🌟 Lombok🎯Lombok이란?🎯Getter와 Setter">
+<meta property="og:description" content="🌟 Spring 데이터처리🎯DAO란?Data Access Object레포지토리라는 패키지를 사용하여 실제로 DB에 접근하는 객체DB를 사용하여 데이터를 조회, 조작하는 기능을 전담한다. 데이터베이스 액세스를 DAO 에서 맡아서 하게 되면 다수의 호출로 인한 오버헤드를 VO나 DTO과 같은 를 통해 줄일수 있음. 🎯DTO란?@Controller(웹요청,">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-31T09:04:57.000Z">
-<meta property="article:modified_time" content="2021-01-31T09:06:32.237Z">
+<meta property="article:modified_time" content="2021-02-01T10:53:55.917Z">
 <meta property="article:author" content="Guinness">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Springboot">
@@ -179,7 +179,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟-Lombok"><span class="nav-number">1.</span> <span class="nav-text">🌟 Lombok</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Lombok이란"><span class="nav-number">1.1.</span> <span class="nav-text">🎯Lombok이란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Getter와-Setter"><span class="nav-number">1.2.</span> <span class="nav-text">🎯Getter와 Setter</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌟-Spring-데이터처리"><span class="nav-number">1.</span> <span class="nav-text">🌟 Spring 데이터처리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯DAO란"><span class="nav-number">1.1.</span> <span class="nav-text">🎯DAO란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯DTO란"><span class="nav-number">1.2.</span> <span class="nav-text">🎯DTO란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯VO-vs-DTO"><span class="nav-number">1.3.</span> <span class="nav-text">🎯VO vs DTO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Lombok이란"><span class="nav-number">1.4.</span> <span class="nav-text">🎯Lombok이란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎯Getter와-Setter"><span class="nav-number">1.5.</span> <span class="nav-text">🎯Getter와 Setter</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -194,7 +194,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -277,10 +277,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-31 18:04:57 / Modified: 18:06:32" itemprop="dateCreated datePublished" datetime="2021-01-31T18:04:57+09:00">2021-01-31</time>
+              <time title="Created: 2021-01-31 18:04:57" itemprop="dateCreated datePublished" datetime="2021-01-31T18:04:57+09:00">2021-01-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-01 19:53:55" itemprop="dateModified" datetime="2021-02-01T19:53:55+09:00">2021-02-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -327,7 +333,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="🌟-Lombok"><a href="#🌟-Lombok" class="headerlink" title="🌟 Lombok"></a>🌟 Lombok</h2><h3 id="🎯Lombok이란"><a href="#🎯Lombok이란" class="headerlink" title="🎯Lombok이란?"></a>🎯Lombok이란?</h3><h3 id="🎯Getter와-Setter"><a href="#🎯Getter와-Setter" class="headerlink" title="🎯Getter와 Setter"></a>🎯Getter와 Setter</h3>
+        <h2 id="🌟-Spring-데이터처리"><a href="#🌟-Spring-데이터처리" class="headerlink" title="🌟 Spring 데이터처리"></a>🌟 Spring 데이터처리</h2><h3 id="🎯DAO란"><a href="#🎯DAO란" class="headerlink" title="🎯DAO란?"></a>🎯DAO란?</h3><p>Data Access Object<br>레포지토리라는 패키지를 사용하여 실제로 DB에 접근하는 객체<br>DB를 사용하여 데이터를 조회, 조작하는 기능을 전담한다.</p>
+<p>데이터베이스 액세스를 DAO 에서 맡아서 하게 되면 다수의 호출로 인한 오버헤드를 VO나 DTO과 같은 를 통해 줄일수 있음.</p>
+<h3 id="🎯DTO란"><a href="#🎯DTO란" class="headerlink" title="🎯DTO란?"></a>🎯DTO란?</h3><p>@Controller(웹요청,응답을 처리하는 프레젠테이션 레이어), @Service(내부에서 자바로직 수행하는 서비스레이어), @Repository(DAO같이 외부 IO를 처리하는 퍼시스턴스 레이어)</p>
+<p>DAO 에서 넘겨준 key-value형태로 되어있는 날데이터?를 getter을 통해 가져오고<br>보기쉬운 형태로 변환해준 뒤 서비스나 클라이언트한테 보내주는애 데이터를 주고받는 포맷이라고들 많이 표현함</p>
+<h3 id="🎯VO-vs-DTO"><a href="#🎯VO-vs-DTO" class="headerlink" title="🎯VO vs DTO"></a>🎯VO vs DTO</h3><p>VO는 특정한 비즈니스값을 갖는 객체+리드온리<br>DTO는 layer간의 데이터교환을 위해 만드는 객체 + read,write가능 </p>
+<h3 id="🎯Lombok이란"><a href="#🎯Lombok이란" class="headerlink" title="🎯Lombok이란?"></a>🎯Lombok이란?</h3><h3 id="🎯Getter와-Setter"><a href="#🎯Getter와-Setter" class="headerlink" title="🎯Getter와 Setter"></a>🎯Getter와 Setter</h3><p><span class="exturl" data-url="aHR0cHM6Ly9jbndsY2pmLnRpc3RvcnkuY29tLzEy">https://cnwlcjf.tistory.com/12<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9nbWx3amQ5NDA1LmdpdGh1Yi5pby8yMDE4LzEyLzI1L2RpZmZlcmVuY2UtZGFvLWR0by1lbnRpdHkuaHRtbA==">https://gmlwjd9405.github.io/2018/12/25/difference-dao-dto-entity.html<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9wb3N0aXRmb3Job29uZXkudGlzdG9yeS5jb20vZW50cnkvU3ByaW5nLU1WQy0lRUQlOEMlQTglRUQlODQlQjQlRUMlOTclOTAlRUMlODQlOUMlRUMlOUQlOTgtNSVFQSVCMCU4MCVFQyVBNyU4MC0lRUElQjMlODQlRUMlQjglQjUlRUMlOTclOTAtJUVCJThDJTgwJUVEJTk1JTlDLSVFQyVBMCU5NSVFQiVCMyVCNC0lRUQlOEQlQkMlRUMlOTglQjQ=">https://postitforhooney.tistory.com/entry/Spring-MVC-%ED%8C%A8%ED%84%B4%EC%97%90%EC%84%9C%EC%9D%98-5%EA%B0%80%EC%A7%80-%EA%B3%84%EC%B8%B5%EC%97%90-%EB%8C%80%ED%95%9C-%EC%A0%95%EB%B3%B4-%ED%8D%BC%EC%98%B4<i class="fa fa-external-link-alt"></i></span></p>
+
     </div>
 
     
@@ -349,7 +361,10 @@
     <a href="/2021/01/08/Uniplogger%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%8017/" rel="prev" title="Uniplogger개발일지17">
       <i class="fa fa-chevron-left"></i> Uniplogger개발일지17
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/01/2021-02-01TIL/" rel="next" title="2021-02-01TIL">
+      2021-02-01TIL <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
